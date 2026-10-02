@@ -1,0 +1,5 @@
+interface:
+  display_name: "Spec with Prototype"
+  short_description: "Turn an accepted prototype into a spec"
+  default_prompt: "Use $spec-with-prototype to reconcile the accepted prototype with the project requirements and create or update the implementation-ready feature spec."
+  

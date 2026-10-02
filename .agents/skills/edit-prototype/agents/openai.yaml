@@ -1,0 +1,5 @@
+interface:
+  display_name: "Edit Prototype"
+  short_description: "Edit a prototype by page revision ID"
+  default_prompt: "Use $edit-prototype to update the referenced prototype page, preserve unrelated pages, and increment the changed page revision ID."
+  

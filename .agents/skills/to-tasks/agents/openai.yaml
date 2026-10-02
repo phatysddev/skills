@@ -1,0 +1,4 @@
+interface:
+  display_name: "To Tasks"
+  short_description: "Break a spec into vertical-slice tasks"
+  default_prompt: "Use $to-tasks to break this ready spec into implementation-ready vertical slices with complete acceptance-criteria coverage, valid dependencies, and concrete verification."

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Auto Implement"
+  short_description: "Implement all scoped tasks after blocker preflight"

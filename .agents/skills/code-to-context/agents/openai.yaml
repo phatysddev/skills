@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code to Context"
+  short_description: "Derive safe context from an existing codebase"
+  default_prompt: "Use $code-to-context to inspect this repository safely and refresh the generated codebase context in CONTEXT.md without changing human-authored context."

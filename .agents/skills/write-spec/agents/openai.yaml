@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Spec"
+  short_description: "Turn decisions into a feature spec"
+  default_prompt: "Use $write-spec to turn the agreed requirement into one traceable, implementation-ready feature spec with acceptance criteria and a verification plan."

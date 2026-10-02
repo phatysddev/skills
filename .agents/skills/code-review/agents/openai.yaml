@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Review changes against spec and standards"
+  default_prompt: "Use $code-review to review these changes against the task, acceptance criteria, spec, and repository standards, record evidence-backed findings, and decide whether the task is ready to move to done."

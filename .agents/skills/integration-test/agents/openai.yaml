@@ -1,0 +1,4 @@
+interface:
+  display_name: "Integration Test"
+  short_description: "Run repository-detected integration verification"
+  default_prompt: "Use $integration-test to verify task-owned component boundaries with one repository-detected runner, report scope, commands, results, findings, and file ownership, and never modify production files."

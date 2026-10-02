@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implement Task"
+  short_description: "Implement and verify one task"
+  default_prompt: "Use $implement-task to implement exactly one ready task within scope, verify its acceptance criteria, record concrete evidence, and prepare it for review."

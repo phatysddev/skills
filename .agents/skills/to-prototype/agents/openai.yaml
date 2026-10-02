@@ -1,0 +1,4 @@
+interface:
+  display_name: "To Prototype"
+  short_description: "Turn requirements into a UI prototype"
+  default_prompt: "Use $to-prototype to turn the agreed project requirements into an editable multi-page UI prototype with stable page revision IDs."

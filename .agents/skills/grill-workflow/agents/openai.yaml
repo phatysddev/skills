@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grill Workflow"
+  short_description: "Clarify product and tech decisions"
+  default_prompt: "Use $grill-workflow to clarify this idea through dependency-aware question sets, record confirmed decisions, and hand off when the requirements are ready."

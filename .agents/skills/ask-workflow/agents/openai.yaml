@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ask Workflow"
+  short_description: "Choose the next workflow step"
+  default_prompt: "Use $ask-workflow to inspect this project and recommend the next workflow step."

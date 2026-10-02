@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compact Context"
+  short_description: "Compress agent handoffs without losing decisions"
+  default_prompt: "Use $compact-context to compress this intermediate context into concise, loss-aware English while preserving decisions, constraints, identifiers, references, and material open questions."

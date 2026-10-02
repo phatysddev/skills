@@ -1,0 +1,4 @@
+interface:
+  display_name: "Setup Project"
+  short_description: "Initialize durable project context"
+  default_prompt: "Use $setup-project to inspect this repository, persist agreed decisions, and prepare the minimum durable project context needed for the Phat workflow."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "End-to-End Test"
+  short_description: "Run repository-detected end-to-end verification"
+  default_prompt: "Use $e2e-test to verify a task-owned critical user journey with one repository-detected runner, report scope, commands, results, findings, and file ownership, and never modify production files."

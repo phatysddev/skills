@@ -1,0 +1,4 @@
+interface:
+  display_name: "Unit Test"
+  short_description: "Run repository-detected unit verification"
+  default_prompt: "Use $unit-test to verify task-owned isolated behavior with one repository-detected runner, report scope, commands, results, findings, and file ownership, and never modify production files."
