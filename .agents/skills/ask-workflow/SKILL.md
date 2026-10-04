@@ -25,6 +25,9 @@ Recommend one primary next action when evidence supports it. The table lists rou
 
 | Evidence | Next skill |
 | --- | --- |
+| An intended change to an existing feature must be reconciled across its requirement, spec, and tasks | `$change-scope` |
+| A feature-completeness check is requested, or a concrete unresolved acceptance gap spans multiple tasks | `$verify-feature` |
+| The user is preparing a named release or asks whether a candidate is ready for a target environment | `$release-check` |
 | Only an idea, or the problem/scope/user is unsettled | `$grill-workflow` |
 | Existing code needs onboarding or a broad context refresh, and a concrete repository-knowledge gap prevents the next scoped action | `$code-to-context` |
 | Project workflow/navigation is missing or disconnected; any necessary repository discovery is already sufficient | `$setup-project` |
@@ -41,10 +44,19 @@ Recommend one primary next action when evidence supports it. The table lists rou
 
 ## Continue the current work before onboarding
 
+Honor an explicit scope-change, feature-assessment, or release-readiness request
+before the default continuation route. These are conditional routes, not stages
+inserted after every task. A known defect stays with implementation/diagnosis;
+do not change its spec merely to make it pass. Completed work alone does not
+trigger feature verification or release checks.
+
 Establish the user's current scope and progress from the conversation, owning
 spec/task, and current source/diff. A project started from scratch does not
 become an onboarding project merely because implementation now exists.
 
+- Exclude demonstrably retired tasks from next-work candidates; an accepted
+  scope-change record is not an unresolved implementation blocker. Preserve
+  genuine blockers and never treat retired work as tested or done.
 - Resume a ready `in_progress` task with `$implement-task`; select a ready `todo`
   task when appropriate. An unfinished diff alone does not mean review-ready.
 - Route a task in `in_review`, or implementation with evidence that required

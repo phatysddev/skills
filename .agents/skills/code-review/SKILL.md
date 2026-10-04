@@ -256,6 +256,24 @@ new product/domain/architecture decision
 
 Do not decide a new product or architecture direction inside review.
 
+## Changed agreements and optional assessments
+
+When the user intends to change an existing agreed behavior across its spec and
+task plan, hand that change to `$change-scope`; do not rewrite the contract as
+an implementation fix or review waiver. Unsettled product decisions still
+belong to `$grill-workflow`. Resume only after the affected contract and task
+readiness are reconciled. Existing batch authorization does not include new
+follow-up tasks automatically.
+
+`$verify-feature` can assess a requested cross-task acceptance question and
+`$release-check` can assess a requested release candidate. Neither replaces
+this skill's task verification/review contract or changes its status authority.
+Do not invoke them as extra mandatory completion gates.
+
+A selected task demonstrably retired by an accepted scope change has no pending
+implementation approval. Report the withdrawal evidence and preserve its
+historical status; do not mark it done or review withdrawn criteria as failures.
+
 ## Write boundary
 
 Do not edit implementation code by default.

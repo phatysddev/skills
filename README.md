@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#skill-catalog"><img src="https://img.shields.io/badge/skills-19-244de4?style=flat-square&amp;labelColor=202b26" alt="19 skills"></a>
+  <a href="#skill-catalog"><img src="https://img.shields.io/badge/skills-22-244de4?style=flat-square&amp;labelColor=202b26" alt="22 skills"></a>
   <a href="https://github.com/vercel-labs/skills"><img src="https://img.shields.io/badge/format-Agent%20Skills-244de4?style=flat-square&amp;labelColor=202b26" alt="Agent Skills format"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-244de4?style=flat-square&amp;labelColor=202b26" alt="MIT License"></a>
 </p>
@@ -108,6 +108,9 @@ Prototype when seeing the UI will help you make a decision.
 | Agreed requirements that need visual validation | [`to-prototype`](.agents/skills/to-prototype/SKILL.md), after project setup |
 | One ready implementation task | [`implement-task`](.agents/skills/implement-task/SKILL.md) |
 | A ready task batch you want implemented automatically | [`auto-implement`](.agents/skills/auto-implement/SKILL.md) |
+| A planned feature changes after implementation starts | [`change-scope`](.agents/skills/change-scope/SKILL.md) |
+| Check whether a complete feature meets its acceptance criteria | [`verify-feature`](.agents/skills/verify-feature/SKILL.md) |
+| Assess a candidate before a release | [`release-check`](.agents/skills/release-check/SKILL.md) |
 | A bug or regression whose cause is unclear | [`debug-task`](.agents/skills/debug-task/SKILL.md) |
 
 ## Workflow
@@ -198,9 +201,9 @@ design may skip it. Install it alongside those skills if using a selected subset
 
 ## Skill catalog
 
-The collection contains 19 skills grouped by responsibility.
+The collection contains 22 skills grouped by responsibility.
 
-### Core Workflow — 9
+### Core Workflow — 10
 
 | Skill | Responsibility | Guide |
 | --- | --- | --- |
@@ -213,6 +216,17 @@ The collection contains 19 skills grouped by responsibility.
 | `implement-task` | Implement and verify exactly one ready task. | [Read](.agents/skills/implement-task/SKILL.md) |
 | `auto-implement` | Preflight all blockers, then implement an authorized task batch sequentially. | [Read](.agents/skills/auto-implement/SKILL.md) |
 | `code-review` | Review implementation against the spec and engineering standards. | [Read](.agents/skills/code-review/SKILL.md) |
+| `change-scope` | Reconcile agreed changes across an existing requirement, spec, and task plan. | [Read](.agents/skills/change-scope/SKILL.md) |
+
+### Optional Assessments — 2
+
+| Skill | Responsibility | Guide |
+| --- | --- | --- |
+| `verify-feature` | Assess acceptance criteria and behavior spanning multiple tasks without changing task status. | [Read](.agents/skills/verify-feature/SKILL.md) |
+| `release-check` | Assess a candidate and environment using release evidence without deploying. | [Read](.agents/skills/release-check/SKILL.md) |
+
+These assessments are used on request or for concrete scope-specific gaps. They
+are not mandatory stages after task review and do not add verification-policy modes.
 
 ### Brownfield Support — 1
 
@@ -303,6 +317,9 @@ The canonical source layout for this repository is:
         ├── implement-task/SKILL.md
         ├── auto-implement/SKILL.md
         ├── code-review/SKILL.md
+        ├── change-scope/SKILL.md
+        ├── verify-feature/SKILL.md
+        ├── release-check/SKILL.md
         ├── code-to-context/SKILL.md
         ├── compact-context/SKILL.md
         ├── ui-design/SKILL.md

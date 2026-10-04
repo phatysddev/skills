@@ -20,11 +20,12 @@ The source GitLab repository is public.
 
 ## Current skill pack
 
-The published collection contains 19 installable skills:
+The published collection contains 22 installable skills:
 
 - Core workflow: `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`,
   `write-spec`, `to-tasks`, `implement-task`, `auto-implement`, and
-  `code-review`.
+  `code-review`, `change-scope`.
+- Optional assessments: `verify-feature`, `release-check`.
 - Brownfield support: `code-to-context`.
 - Utility: `compact-context`, `ui-design`, `debug-task`.
 - Optional prototype: `to-prototype`, `edit-prototype`, and
@@ -61,6 +62,16 @@ The skill will:
 
 The skill must not modify code, configuration, `AGENTS.md`, README, specs, or
 tasks, and must not create ADRs or implementation tasks from observations.
+
+## Current capability: scope changes and optional assessments
+
+Add `change-scope`, `verify-feature`, and `release-check` as specified in
+[SPEC-008](specs/SPEC-008-scope-and-assessments.md). Coordinate agreed contract
+changes with existing plans, assess full-feature acceptance across task seams,
+and assess release readiness for a specific candidate/environment. Preserve
+canonical ownership, completed work, verification policy, and explicit batch
+scope. These skills must not form new mandatory stages or recursive handoffs.
+Assessment reports do not authorize implementation, task approval, or deployment.
 
 ## Current capability: `compact-context`
 
@@ -199,7 +210,7 @@ the verified focused diff ready for review, and never push automatically.
 
 - Preserve the `.agents/skills/<skill-name>/SKILL.md` layout.
 - Keep each skill's required `name` and `description` frontmatter.
-- Document discovery, installation, and Phat workflow navigation for all 19
+- Document discovery, installation, and Phat workflow navigation for all 22
   skills across workflow, brownfield, utility, prototype, and verification
   categories.
 - Keep catalog and workflow updates idempotent; change skill instructions only
@@ -214,7 +225,7 @@ the verified focused diff ready for review, and never push automatically.
 ## Verification criteria
 
 - `npx skills@latest add https://gitlab.com/phatysd.dev/skills --list` discovers
-  the current 19 skills across the documented categories after publication.
+  the current 22 skills across the documented categories after publication.
 - A selected skill can be installed by name.
 - The complete collection can be installed with the CLI's all-skills option.
 - The installed skill files retain valid frontmatter and their existing

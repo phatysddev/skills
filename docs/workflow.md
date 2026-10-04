@@ -29,12 +29,15 @@ behavior must be reconciled into the owning spec before task decomposition.
 
 ## Skill categories
 
-The pack distinguishes five kinds of capability:
+The pack distinguishes six kinds of capability:
 
 - **Workflow skills:** `ask-workflow`, `grill-workflow`,
   `grill-design` (optional), `setup-project`, `write-spec`, `to-tasks`,
-  `implement-task`, `auto-implement`, and `code-review`. They own project-state transitions
+  `implement-task`, `auto-implement`, `code-review`, and `change-scope`. They own project-state transitions
   and handoffs.
+- **Optional assessments:** `verify-feature` checks feature-level acceptance
+  across tasks; `release-check` assesses a release candidate and environment.
+  Neither changes task status or adds a verification-policy capability.
 - **Brownfield support:** `code-to-context` derives a safe generated context
   snapshot when existing-codebase onboarding or material context gaps require it.
 - **Utility skills:** `compact-context` reduces a temporary handoff;
@@ -62,6 +65,28 @@ policy changes, push, deployment, or external provisioning.
 and, after entering `in_review`, its single final `code-review` stage. Utility
 skills may be used internally within the parent's scope; the parent remains
 responsible for authoritative documents, verification, and the next explicit handoff.
+
+### Optional change and assessment handoffs
+
+- `$change-scope` reconciles a requested behavioral change across the existing
+  requirement, owning spec, and task plan. It may compose `write-spec` and
+  `to-tasks` for authorized document work, then stops before implementation.
+  It preserves delivered tasks, plans follow-ups, and invalidates only affected
+  evidence/readiness. It does not add new tasks to an already authorized batch.
+- `$verify-feature` assesses a selected feature's ACs and cross-task behavior.
+  It reports satisfied/failed/unverified evidence without closing tasks/specs,
+  rewriting contracts, or replacing the canonical final `code-review`.
+- `$release-check` assesses a named candidate and target using applicable release
+  requirements. It reports ready/blocked/incomplete without deploying, changing
+  configuration, executing migrations, or altering verification policy.
+
+Use these when requested or when a concrete gap justifies the specific route.
+There is no automatic `code-review → verify-feature → release-check` pipeline.
+Successful assessments stop; defects return to their owning implementation or
+investigation, not scope changes that excuse a failure. Missing generated
+context does not restart any of these workflows. The existing four independent
+verification modes remain unchanged. When a named supporting skill is unavailable,
+report the specific gap without auto-installing it or inventing a replacement.
 
 ### Verification and finalization policy
 
@@ -210,8 +235,14 @@ through [`TASK-015`](tasks/TASK-015-configure-verification-policy.md),
 [`TASK-018`](tasks/TASK-018-enforce-verification-gates.md), and
 [`TASK-019`](tasks/TASK-019-integrate-canonical-code-review.md), all `done`.
 
+[`SPEC-008`](specs/SPEC-008-scope-and-assessments.md) is complete through
+[`TASK-020`](tasks/TASK-020-scope-and-assessments.md). It adds scope reconciliation
+and optional feature/release assessments with compatible handoff boundaries.
+
 Specification lifecycle: `write-spec` establishes a spec as `ready` for task
 decomposition. A maintainer or owning workflow changes it to `done` only after
-every linked implementation task is `done` and no open question or blocker
-remains. A spec stays `ready` while any linked task is `todo`, `in_progress`,
-`in_review`, or `blocked`.
+every active linked implementation task is `done`, current ACs are satisfied,
+and no open question or blocker remains. Explicitly retired tasks/criteria are
+linked history and are excluded only by an accepted scope change; they are never
+reported as completed implementation. A spec stays `ready` while any active
+linked task is `todo`, `in_progress`, `in_review`, or `blocked`.

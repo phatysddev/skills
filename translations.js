@@ -34,8 +34,8 @@ window.PHAT_TRANSLATIONS = [
     "เปลี่ยนไอเดียให้เป็นโค้ดที่ตรวจสอบได้"
   ],
   [
-    "With 19 skills that connect every step",
-    "ด้วย 19 skills ที่เชื่อมทุกขั้นตอนเข้าด้วยกัน"
+    "With 22 skills that connect every step",
+    "ด้วย 22 skills ที่เชื่อมทุกขั้นตอนเข้าด้วยกัน"
   ],
   [
     "Start building",
@@ -194,8 +194,8 @@ window.PHAT_TRANSLATIONS = [
     "02 / ชุดเครื่องมือ"
   ],
   [
-    "19 SKILLS. ONE CONNECTED SYSTEM.",
-    "19 สกิล เชื่อมเป็นระบบเดียว"
+    "22 SKILLS. ONE CONNECTED SYSTEM.",
+    "22 สกิล เชื่อมเป็นระบบเดียว"
   ],
   [
     "Small skills.",
@@ -414,8 +414,8 @@ window.PHAT_TRANSLATIONS = [
     "เป็นระบบขึ้น ชัดเจนขึ้น"
   ],
   [
-    "Phat Skills connects product decisions, implementation, and verification evidence through 19 skills for coding agents.",
-    "Phat Skills คือชุด 19 skills สำหรับ coding agents ที่เชื่อมการตัดสินใจเรื่องโปรดักต์เข้ากับการเขียนโค้ดและหลักฐานการตรวจสอบ"
+    "Phat Skills connects product decisions, implementation, and verification evidence through 22 skills for coding agents.",
+    "Phat Skills คือชุด 22 skills สำหรับ coding agents ที่เชื่อมการตัดสินใจเรื่องโปรดักต์เข้ากับการเขียนโค้ดและหลักฐานการตรวจสอบ"
   ],
   [
     "Start here: install the skill pack, then invoke",
@@ -550,8 +550,8 @@ window.PHAT_TRANSLATIONS = [
     "ติดตั้งทั้งชุด"
   ],
   [
-    "Install all 19 skills for the current project, covering workflows, utilities, prototypes, and verification.",
-    "ติดตั้งทั้ง 19 skills สำหรับโปรเจกต์ปัจจุบัน ครอบคลุม workflow, utilities, prototype และ verification"
+    "Install all 22 skills for the current project, covering workflows, utilities, prototypes, and verification.",
+    "ติดตั้งทั้ง 22 skills สำหรับโปรเจกต์ปัจจุบัน ครอบคลุม workflow, utilities, prototype และ verification"
   ],
   [
     "Use it across projects",
@@ -630,8 +630,8 @@ window.PHAT_TRANSLATIONS = [
     "โปรเจกต์ที่มีโค้ดแล้ว"
   ],
   [
-    "If the repository already has code but its generated context is missing or stale, use",
-    "ถ้ามีโค้ดอยู่แล้ว แต่ generated context หายไปหรือล้าสมัย ให้"
+    "When onboarding needs repository facts beyond a targeted read, use",
+    "เมื่อ onboarding ต้องการข้อมูล repository เพิ่มและการอ่านเฉพาะจุดไม่เพียงพอ ให้"
   ],
   [
     "to read the repository first. It updates only the generated Codebase Context and preserves human-authored context.",
@@ -778,8 +778,8 @@ window.PHAT_TRANSLATIONS = [
     "คำถามที่พบบ่อย"
   ],
   [
-    "Do I need all 19 skills?",
-    "ต้องติดตั้งทั้ง 19 skills ไหม?"
+    "Do I need all 22 skills?",
+    "ต้องติดตั้งทั้ง 22 skills ไหม?"
   ],
   [
     "No. Select individual skills with --skill. Some workflows use shared utilities, such as ui-design for UI work, so install the supporting skills needed for your path.",
@@ -790,8 +790,8 @@ window.PHAT_TRANSLATIONS = [
     "ใช้กับโปรเจกต์ที่มีโค้ดอยู่แล้วได้ไหม?"
   ],
   [
-    "Yes. Start with ask-workflow. If generated context is missing or stale, code-to-context reads the repository before setup and specification.",
-    "ได้ เริ่มด้วย ask-workflow ถ้า generated context ยังไม่มีหรือล้าสมัย จะให้ code-to-context อ่าน repository ก่อน setup และ specification"
+    "Yes. Start with ask-workflow to continue active tasks. Use code-to-context for onboarding or material knowledge gaps, not merely because a commit changed.",
+    "ได้ เริ่มด้วย ask-workflow เพื่อทำ task เดิมต่อ ใช้ code-to-context เฉพาะ onboarding หรือช่องว่างบริบทสำคัญ ไม่ refresh เพียงเพราะ commit เปลี่ยน"
   ],
   [
     "Do I always need a prototype?",
@@ -979,7 +979,7 @@ window.PHAT_TRANSLATIONS = [
   ],
   [
     "For existing code, create or refresh generated context before setup, then implement tasks and review.",
-    "เมื่อ repo มีโค้ดอยู่แล้ว ให้สร้างหรือปรับ generated context ก่อน setup แล้วจึงพัฒนาตาม task และ review"
+    "เส้นทาง onboarding เมื่อขาดบริบทที่จำเป็นเท่านั้น · ถ้ามี task ที่พร้อมอยู่แล้วให้ทำต่อโดยไม่เริ่มใหม่"
   ],
   [
     "Use when seeing the UI helps decisions. Iterate the prototype as needed and reconcile it with the spec before tasks.",
@@ -1174,8 +1174,8 @@ window.PHAT_TRANSLATIONS = [
     "สร้างบริบทจากโค้ดพร้อมแหล่งอ้างอิง โดยรักษา context ที่เขียนไว้แล้ว"
   ],
   [
-    "The repository has code but its context is missing or stale.",
-    "repo มีโค้ดอยู่แล้ว แต่ context ไม่มีหรือล้าสมัย"
+    "Onboarding or material repository-knowledge gaps need discovery.",
+    "ต้อง onboarding หรือเติมช่องว่างข้อมูล repository ที่สำคัญ"
   ],
   [
     "Read the repository and update its generated Codebase Context with evidence.",
@@ -1532,3 +1532,23 @@ window.PHAT_TRANSLATION_ALIASES = {
     "th": "ตรวจเส้นทางใช้งานสำคัญ. ตรวจ user journey สำคัญที่อยู่ในขอบเขต task ด้วยระบบทดสอบของโปรเจกต์"
   }
 };
+
+// Optional scope and assessment skills.
+window.PHAT_TRANSLATIONS.push(
+  ["Assessments", "การประเมิน"],
+  ["Assess the requested scope without adding mandatory stages, changing task status, or deploying.", "ตรวจเฉพาะขอบเขตที่ร้องขอ ไม่เพิ่มขั้นบังคับ ไม่เปลี่ยนสถานะ task และไม่ deploy"],
+  ["Reconcile requirements, specs, and tasks with the new scope while preserving valid work and evidence.", "ปรับ requirement, spec และ task ตามขอบเขตใหม่ โดยรักษางานและหลักฐานเดิมที่ยังใช้ได้"],
+  ["An agreed behavior changes after planning or implementation starts.", "เปลี่ยนพฤติกรรมที่ตกลงไว้หลังวางแผนหรือเริ่มพัฒนา"],
+  ["Change the cancellation cutoff to 6 hours and reconcile the spec and tasks without changing code.", "เปลี่ยนเงื่อนไขยกเลิกการจองเป็นก่อนเริ่ม 6 ชั่วโมง แล้วปรับ spec และ tasks ให้ตรงกันโดยยังไม่แก้โค้ด"],
+  ["Check acceptance criteria and cross-task boundaries with evidence without changing task status.", "ตรวจ acceptance criteria และรอยต่อระหว่าง tasks พร้อมหลักฐาน โดยไม่เปลี่ยนสถานะงาน"],
+  ["You want to check whether the feature fully meets its spec.", "ต้องการตรวจว่าฟีเจอร์ครบจริงตาม spec หรือยัง"],
+  ["Assess the complete booking flow against its spec and report criteria that pass, fail, or remain unverified.", "ตรวจฟีเจอร์จองห้องตาม spec ทั้ง flow และสรุป acceptance criteria ที่ผ่าน ขาด หรือยังพิสูจน์ไม่ได้"],
+  ["Assess a candidate and environment using build, configuration, migration, and rollback evidence without deploying.", "ตรวจ candidate และ environment จากหลักฐาน build, configuration, migration และ rollback โดยไม่ deploy"],
+  ["You are preparing a release and want a readiness assessment.", "เตรียมปล่อยเวอร์ชันและต้องการตรวจความพร้อม"],
+  ["Assess this release candidate for staging and report blockers and unknowns without deploying.", "ตรวจ release candidate นี้สำหรับ staging พร้อมระบุ blockers และสิ่งที่ยังไม่ยืนยัน โดยไม่ deploy"]
+);
+window.PHAT_TRANSLATIONS.push(["Keep changed agreements consistent. Reconcile requirements, specs, and tasks while preserving valid work and evidence.", "Keep changed agreements consistent. ปรับ requirement, spec และ task ตามขอบเขตใหม่ โดยรักษางานและหลักฐานเดิมที่ยังใช้ได้"]);
+window.PHAT_TRANSLATIONS.push(["Verify the whole feature. Assess acceptance and cross-task behavior without changing task status.", "Verify the whole feature. ตรวจ acceptance criteria และรอยต่อระหว่าง tasks พร้อมหลักฐาน โดยไม่เปลี่ยนสถานะงาน"]);
+window.PHAT_TRANSLATIONS.push(["Know what is ready to release. Assess the candidate and environment without deploying.", "Know what is ready to release. ตรวจ candidate และ environment จากหลักฐาน build, configuration, migration และ rollback โดยไม่ deploy"]);
+
+window.PHAT_TRANSLATIONS.push(["Onboarding only when essential context is missing. Continue existing ready tasks without restarting.", "เส้นทาง onboarding เมื่อขาดบริบทที่จำเป็นเท่านั้น · ถ้ามี task ที่พร้อมอยู่แล้วให้ทำต่อโดยไม่เริ่มใหม่"]);

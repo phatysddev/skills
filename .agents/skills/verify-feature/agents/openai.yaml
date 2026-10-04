@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify Feature"
+  short_description: "Check feature acceptance across task boundaries"
+  default_prompt: "Use $verify-feature to assess this feature against its acceptance criteria and report evidence and gaps without changing task status."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Change Scope"
+  short_description: "Reconcile agreed changes across specs and tasks"
+  default_prompt: "Use $change-scope to reconcile this agreed requirement change with the existing spec and task plan, preserving completed work."

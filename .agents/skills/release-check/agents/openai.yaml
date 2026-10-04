@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Check"
+  short_description: "Assess a release candidate without deploying"
+  default_prompt: "Use $release-check to assess this release candidate for the target environment and report blockers without deploying."

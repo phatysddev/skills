@@ -120,6 +120,16 @@ Create or keep the spec as `draft`, record the blocking question, and route the 
 
 Do not use grilling for low-impact implementation details that can safely be resolved during task planning or implementation.
 
+## Changes to an existing agreement
+
+Use `$change-scope` when a requested behavioral change requires coordinated
+reconciliation of existing requirements, the owning spec, and its task plan.
+Ordinary spec clarification or decomposition stays here. When this skill is
+already supporting `change-scope` and the changed behavior is settled, complete
+its scoped spec/planning work and return to that parent; do not route back to
+`change-scope` again. Preserve delivered tasks and evidence, and plan follow-up
+work for changed behavior instead of silently reopening completed tasks.
+
 ## Find the owning spec first
 
 Before allocating a new SPEC ID, inspect existing specs for the same feature, behavior, or coherent change.

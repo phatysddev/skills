@@ -72,11 +72,19 @@ window.PHAT_SKILLS = [
     "prompt": "ตรวจ task ที่อยู่ในสถานะ in_review เทียบกับ spec และหลักฐานทดสอบ"
   },
   {
+    "name": "change-scope",
+    "category": "Core workflow",
+    "title": "Keep changed agreements consistent",
+    "description": "ปรับ requirement, spec และ task ตามขอบเขตใหม่ โดยรักษางานและหลักฐานเดิมที่ยังใช้ได้",
+    "when": "เปลี่ยนพฤติกรรมที่ตกลงไว้หลังวางแผนหรือเริ่มพัฒนา",
+    "prompt": "เปลี่ยนเงื่อนไขยกเลิกการจองเป็นก่อนเริ่ม 6 ชั่วโมง แล้วปรับ spec และ tasks ให้ตรงกันโดยยังไม่แก้โค้ด"
+  },
+  {
     "name": "code-to-context",
     "category": "Brownfield",
     "title": "Understand what already exists",
     "description": "สร้างบริบทจากโค้ดพร้อมแหล่งอ้างอิง โดยรักษา context ที่เขียนไว้แล้ว",
-    "when": "repo มีโค้ดอยู่แล้ว แต่ context ไม่มีหรือล้าสมัย",
+    "when": "ต้อง onboarding หรือเติมช่องว่างข้อมูล repository ที่สำคัญ",
     "prompt": "อ่าน repository และปรับปรุง generated Codebase Context พร้อมหลักฐาน"
   },
   {
@@ -150,5 +158,21 @@ window.PHAT_SKILLS = [
     "description": "ตรวจ user journey สำคัญที่อยู่ในขอบเขต task ด้วยระบบทดสอบของโปรเจกต์",
     "when": "task เปลี่ยนเส้นทางใช้งานสำคัญ",
     "prompt": "ตรวจ critical user journey ของ task นี้ตาม acceptance criteria"
+  },
+  {
+    "name": "verify-feature",
+    "category": "Assessments",
+    "title": "Verify the whole feature",
+    "description": "ตรวจ acceptance criteria และรอยต่อระหว่าง tasks พร้อมหลักฐาน โดยไม่เปลี่ยนสถานะงาน",
+    "when": "ต้องการตรวจว่าฟีเจอร์ครบจริงตาม spec หรือยัง",
+    "prompt": "ตรวจฟีเจอร์จองห้องตาม spec ทั้ง flow และสรุป acceptance criteria ที่ผ่าน ขาด หรือยังพิสูจน์ไม่ได้"
+  },
+  {
+    "name": "release-check",
+    "category": "Assessments",
+    "title": "Know what is ready to release",
+    "description": "ตรวจ candidate และ environment จากหลักฐาน build, configuration, migration และ rollback โดยไม่ deploy",
+    "when": "เตรียมปล่อยเวอร์ชันและต้องการตรวจความพร้อม",
+    "prompt": "ตรวจ release candidate นี้สำหรับ staging พร้อมระบุ blockers และสิ่งที่ยังไม่ยืนยัน โดยไม่ deploy"
   }
 ];

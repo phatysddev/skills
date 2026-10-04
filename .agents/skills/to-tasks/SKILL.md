@@ -128,6 +128,16 @@ stop and route to `$spec-with-prototype` or `$grill-workflow`; do not make
 prototype interpretation part of a task. Explicitly excluded or non-blocking
 proposals outside that behavior do not prevent planning the agreed contract.
 
+## Changes to an existing agreement
+
+Use `$change-scope` when a requested behavioral change requires coordinated
+reconciliation of existing requirements, the owning spec, and its task plan.
+Ordinary spec clarification or decomposition stays here. When this skill is
+already supporting `change-scope` and the changed behavior is settled, complete
+its scoped spec/planning work and return to that parent; do not route back to
+`change-scope` again. Preserve delivered tasks and evidence, and plan follow-up
+work for changed behavior instead of silently reopening completed tasks.
+
 ## Inspect existing tasks first
 
 Before allocating new task IDs, inspect `docs/tasks/` for tasks already linked to the target spec.
@@ -160,7 +170,10 @@ If existing tasks already provide complete, valid coverage of the spec, leave th
 
 ## Build the acceptance map first
 
-Before creating tasks, identify every acceptance criterion in the spec.
+Before creating tasks, identify every active acceptance criterion in the spec.
+Keep explicitly retired/superseded criteria as linked history, not new work;
+exclude them only when the accepted owning contract says they no longer apply.
+A difficult or unimplemented criterion is not implicitly retired.
 
 Construct a working mapping:
 
@@ -358,7 +371,9 @@ all linked tasks already reviewed and done
 
 Do not implement code.
 
-Do not move a task to `in_progress`.
+Do not move a task to `in_progress`. When supporting `$change-scope`, return
+affected review-readiness evidence to that parent; it owns any invalidation
+transition under its scope-change contract.
 
 Do not fabricate evidence.
 

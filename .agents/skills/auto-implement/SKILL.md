@@ -21,6 +21,12 @@ all existing task documents in the current repository at invocation. Record the
 exact batch IDs in working notes and report the scope; do not include tasks
 created later automatically, reopen done tasks, or invent missing tasks.
 
+Exclude a task from the executable queue only when its repository cancellation
+state or `Retired by scope change:` record cites an accepted contract change
+and confirms no work remains. Report retired IDs separately from `done`; do not
+skip ordinary blocked tasks. Check surviving dependency edges before proceeding.
+A retirement does not authorize replacement tasks outside the original batch.
+
 Include upstream dependency closure only when already authorized by the batch.
 If a requested subset requires unfinished tasks outside that subset, explain
 which prerequisite IDs must be completed or included and obtain that scope
@@ -77,6 +83,20 @@ changes. Report actionable remediation and wait for the user to resolve it.
 On resume, re-read changed evidence and recheck the whole batch; preserve already
 agreed choices. Mark only demonstrably resolved active blockers as resolved,
 using the existing task contract and retaining useful history.
+
+## Changed agreements and optional assessments
+
+When the user intends to change an existing agreed behavior across its spec and
+task plan, hand that change to `$change-scope`; do not rewrite the contract as
+an implementation fix or review waiver. Unsettled product decisions still
+belong to `$grill-workflow`. Resume only after the affected contract and task
+readiness are reconciled. Existing batch authorization does not include new
+follow-up tasks automatically.
+
+`$verify-feature` can assess a requested cross-task acceptance question and
+`$release-check` can assess a requested release candidate. Neither replaces
+this skill's task verification/review contract or changes its status authority.
+Do not invoke them as extra mandatory completion gates.
 
 ## Sequential execution
 
@@ -139,13 +159,16 @@ done tasks done, and never reset the batch or discard prior changes to resume.
 
 At completion or interruption report:
 
-- Batch scope and each task's observed status: done, in_review, unfinished, or
-  blocked, with task paths and relevant check/review results.
+- Batch scope and each task's observed status: done, in_review, unfinished,
+  blocked, or demonstrably retired, with task paths and relevant evidence.
 - Changed files and commit/uncommitted state under the effective policy.
 - Remaining blockers with concrete user actions, and tasks waiting on them.
 - The next resume/review/decision action, if needed.
 
-Claim the batch fully done only when every selected task is actually done.
+Claim all selected tasks done only when they are actually done. If accepted
+scope changes retired selected tasks, report executable work complete only when
+all surviving selected tasks are done, and list retired IDs separately. An empty
+executable queue is a no-op, not proof that retired tasks were implemented.
 If all tasks are implemented but await review, say so. Do not start another
 batch, mark a spec done without its owning lifecycle checks, or schedule future
 work automatically.

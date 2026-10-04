@@ -5,10 +5,10 @@
 This repository contains reusable Agent Skills for the Phat workflow. The
 completed setup objective was to make the collection discoverable and
 installable from the GitLab repository through the `skills` CLI. The collection
-now has 19 skills across workflow, brownfield support, utility, prototype, and
-verification categories. `code-to-context` is complete under SPEC-002;
-the latest completed feature specification is SPEC-007 for automated
-implementation verification agents.
+now has 22 skills across workflow, brownfield support, utility, prototype,
+verification, and optional assessment categories. `code-to-context` is complete under SPEC-002;
+the latest completed feature specification is SPEC-008 for scope changes
+and optional feature/release assessments.
 
 ## Vocabulary
 
@@ -26,14 +26,15 @@ implementation verification agents.
 ## Established repository facts
 
 - Skills are stored under `.agents/skills/`.
-- The repository currently contains 19 skills: nine core workflow skills —
+- The repository currently contains 22 skills: ten core workflow skills —
   `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`, `write-spec`,
-  `to-tasks`, `implement-task`, `auto-implement`, and `code-review`; one
+  `to-tasks`, `implement-task`, `auto-implement`, `code-review`, and `change-scope`; one
   brownfield support skill, `code-to-context`; three utilities, `compact-context`,
   `ui-design`, and `debug-task`;
   and three optional prototype skills — `to-prototype`, `edit-prototype`, and
   `spec-with-prototype`; and three verification capabilities — `unit-test`,
-  `integration-test`, and `e2e-test`.
+  `integration-test`, and `e2e-test`; and two optional assessments,
+  `verify-feature` and `release-check`.
 - Each current skill has a `SKILL.md` with `name` and `description` frontmatter.
 - No product application code, package manifest, or repository-local build/test
   system is present.

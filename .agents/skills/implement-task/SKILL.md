@@ -140,6 +140,20 @@ If the spec is no longer sufficient, route to `$write-spec`.
 
 If a product, domain, scope, or architecture decision is required, route to `$grill-workflow`.
 
+## Changed agreements and optional assessments
+
+When the user intends to change an existing agreed behavior across its spec and
+task plan, hand that change to `$change-scope`; do not rewrite the contract as
+an implementation fix or review waiver. Unsettled product decisions still
+belong to `$grill-workflow`. Resume only after the affected contract and task
+readiness are reconciled. Existing batch authorization does not include new
+follow-up tasks automatically.
+
+`$verify-feature` can assess a requested cross-task acceptance question and
+`$release-check` can assess a requested release candidate. Neither replaces
+this skill's task verification/review contract or changes its status authority.
+Do not invoke them as extra mandatory completion gates.
+
 ## Task file contract
 
 Task files created by `$to-tasks` keep only three body sections:
