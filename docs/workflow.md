@@ -36,7 +36,7 @@ The pack distinguishes five kinds of capability:
   `implement-task`, `auto-implement`, and `code-review`. They own project-state transitions
   and handoffs.
 - **Brownfield support:** `code-to-context` derives a safe generated context
-  snapshot before setup or specification work in an existing codebase.
+  snapshot when existing-codebase onboarding or material context gaps require it.
 - **Utility skills:** `compact-context` reduces a temporary handoff;
   `debug-task` supports evidence-driven diagnosis without production fixes;
   `ui-design` supports content-led UI composition and rendered inspection when
@@ -89,7 +89,7 @@ the verified focused diff uncommitted. Never push automatically.
   requirements after product grilling; `ui-design` consumes that agreement.
 - `$setup-project`: establish repository context and workflow navigation.
 - `$code-to-context`: derive read-only repository evidence into the marked
-  generated context section when existing code context is missing or stale.
+  generated context section for onboarding, explicit refresh, or material gaps.
 - `$compact-context`: reduce a verbose temporary handoff when a parent workflow
   explicitly needs a smaller agent-facing summary; never use it as a substitute
   for reading a canonical requirement, spec, task, or review target.
@@ -139,15 +139,19 @@ setup-project → to-prototype → edit-prototype* → spec-with-prototype → t
 Use it only when seeing the UI helps resolve navigation, hierarchy, state, or
 interaction uncertainty. It does not replace the owning requirement or spec.
 
-The brownfield path is:
+When onboarding requires repository discovery, the brownfield path is:
 
 ```text
 ask-workflow → code-to-context → setup-project → specification
 ```
 
-When meaningful implementation exists, missing or stale generated Codebase
-Context takes precedence over setup. Setup reuses a fresh generated context
-and inspects source only to resolve gaps or verify facts required for setup.
+This is a conditional onboarding path, not a reset after implementation starts.
+Continue a ready active task or review using its spec, status, and current source.
+Missing generated context, a changed SHA, or a dirty tree alone does not justify
+refreshing. Name a material repository-knowledge gap that targeted inspection
+cannot resolve before routing to `code-to-context`. After refresh, consume its
+evidence and return to the pending stage; do not repeat discovery for the same
+resolved gap. Setup remains conditional on actual workflow/navigation gaps.
 
 The compact utility may sit beside, not inside, the canonical workflow:
 

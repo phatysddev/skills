@@ -104,7 +104,7 @@ Prototype when seeing the UI will help you make a decision.
 | --- | --- |
 | Unsure what the project needs next | [`ask-workflow`](.agents/skills/ask-workflow/SKILL.md) |
 | An idea that needs clearer scope and decisions | [`grill-workflow`](.agents/skills/grill-workflow/SKILL.md) |
-| Existing code with missing or stale generated context | [`code-to-context`](.agents/skills/code-to-context/SKILL.md) |
+| Existing code needing onboarding or a material context refresh | [`code-to-context`](.agents/skills/code-to-context/SKILL.md) |
 | Agreed requirements that need visual validation | [`to-prototype`](.agents/skills/to-prototype/SKILL.md), after project setup |
 | One ready implementation task | [`implement-task`](.agents/skills/implement-task/SKILL.md) |
 | A ready task batch you want implemented automatically | [`auto-implement`](.agents/skills/auto-implement/SKILL.md) |
@@ -126,8 +126,9 @@ ask-workflow → grill-workflow → setup-project
                                  code-review
 ```
 
-For existing code, refresh generated context with `code-to-context` before
-project setup when it is missing or stale. For custom UI direction, add
+For existing code, use `code-to-context` when onboarding or material repository
+knowledge gaps require it. Continue active tasks without refreshing solely
+because commits changed or a generated block is absent. For custom UI direction, add
 `grill-design`; for visual validation, take the optional prototype path.
 
 [Read the full workflow contract →](docs/workflow.md)

@@ -1,6 +1,6 @@
 ---
 name: setup-project
-description: "Prepare a new or existing repository for the Phat workflow by persisting agreed project context. Use after grill-workflow or fresh code-to-context; route missing or stale generated context to code-to-context first."
+description: "Prepare a new or existing repository for the Phat workflow by persisting agreed project context. Use when agreed context needs project setup; request code-to-context only for material repository-knowledge gaps requiring broad discovery."
 ---
 
 # Setup Project
@@ -50,7 +50,7 @@ Inspect repository
 Detect new vs existing project
         ↓
 Existing implementation?
-        ├─ yes + missing/stale Codebase Context → $code-to-context
+        ├─ yes + material knowledge gap requiring broad discovery → $code-to-context
         └─ otherwise continue
         ↓
 Collect agreed context
@@ -102,11 +102,13 @@ Then inspect only what is needed:
 
 For an existing project with meaningful code or configuration:
 
-1. Check whether the generated Codebase Context is present and fresh.
-2. If it is missing or stale, stop setup and recommend `$code-to-context`.
-3. If it is fresh, treat it as the primary repository-fact index.
-4. Inspect source, manifests, CI, and commands directly only to resolve a gap
-   or verify a fact required for setup.
+1. Reuse human-authored context and any generated snapshot as a repository-fact
+   index, verifying relevant claims against current files when necessary.
+2. Inspect source, manifests, CI, and commands narrowly to resolve setup gaps.
+3. Recommend `$code-to-context` only when a concrete gap blocks setup and needs
+   broad discovery. Missing markers, changed SHA, or a dirty tree alone do not
+   require a refresh. Explain the gap and consume the returned evidence before
+   continuing setup; do not repeat the same resolved handoff.
 
 Do not run a second broad repository discovery pass when the generated context
 already answers the setup question. This reuse applies only to repository
@@ -150,9 +152,9 @@ Do not restructure an existing repository simply to make it match the Phat defau
 Phat conventions are fallback conventions, not a reason to rewrite a healthy project.
 
 Before continuing setup for an existing project, apply [Reuse fresh codebase
-context](#reuse-fresh-codebase-context). Missing or stale generated context is
-the brownfield handoff to `$code-to-context`, not a reason for setup to inspect
-the same codebase broadly again.
+context](#reuse-fresh-codebase-context). Request brownfield discovery only for
+a material unresolved gap; do not reset an established implementation workflow
+simply because its generated snapshot is absent or older.
 
 ## Handoff from Grill Workflow
 
@@ -278,8 +280,8 @@ Before finishing, verify that:
 * `CONTEXT.md` contains one complete, inspectable verification policy with
   explicit `auto`, `required`, or `off` modes for `unit-test`, `integration-test`,
   `e2e-test`, and `code-review`, or setup has stopped with the policy unresolved;
-* a fresh generated Codebase Context was reused when available, or a missing/
-  stale context was routed to `$code-to-context`;
+* available repository context was reused and setup-critical facts verified,
+  or a concrete gap requiring broad discovery was routed to `$code-to-context`;
 * no empty future documents were created;
 * no duplicate source of truth was introduced;
 * no new product or architecture decision was made by setup itself;

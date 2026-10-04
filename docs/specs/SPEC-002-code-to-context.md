@@ -237,6 +237,33 @@ That recommendation does not authorize automatic execution.
   when `ask-phat` evaluates the repository, then it can recommend
   `code-to-context` as the next skill without invoking it automatically.
 
+## Routing clarification (2026-10-04)
+
+The current `ask-workflow` identifier replaces historical `ask-phat` references.
+AC-10 permits discovery when needed; it does not require a snapshot before every
+implementation step. For this correction, active scope and task/review evidence
+precede optional context maintenance. A refresh requires an explicit request or
+material repository facts that cannot be established with a targeted read.
+Snapshot SHA/timestamp and dirty state are provenance, not automatic invalidation.
+The setup handoff uses the same material-gap rule so it cannot reintroduce the loop.
+After refresh, return evidence for the pending stage without routing back to the
+router or inventing new product work. Planned incomplete tasks alone are not
+implementation conflicts.
+
+Behavioral regression scenarios for this correction:
+
+| Situation | Expected result |
+| --- | --- |
+| Greenfield project now has code, a ready `in_progress` task, and no generated block | Recommend `implement-task` for that task. |
+| Snapshot SHA differs only because context/docs were committed | Continue the pending stage; no refresh. |
+| A dirty snapshot was just generated and the same implementation remains uncommitted | Reuse the inspected facts; no automatic rerun. |
+| Active task is `in_review` with required checks complete and an older snapshot | Recommend `code-review`. |
+| Unfamiliar existing repository has no usable map and broad discovery is necessary | Recommend `code-to-context` and name the knowledge gap. |
+| A structural change invalidates relevant context beyond a targeted read | Recommend one refresh for that material gap. |
+| Spec includes a feature whose owning task is still `todo` | Record observed progress, not a conflict or new backlog. |
+| Refresh cannot write because of ambiguous markers | Report the concrete repair needed; do not loop on refresh. |
+| All scoped tasks are done with no new request | Report completion without manufacturing a stage. |
+
 ## Verification plan
 
 | AC | Verification |

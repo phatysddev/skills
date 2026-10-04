@@ -1,6 +1,6 @@
 ---
 name: code-to-context
-description: "Inspect an existing repository safely and refresh a code-derived snapshot in the generated section of CONTEXT.md using explicit Observed, Inferred, and Unknown evidence labels. Use for brownfield projects when repository context is missing, stale, or needs synchronization with current code while preserving human-authored context, authoritative requirements, and secrets."
+description: "Inspect an existing repository and refresh only the generated section of CONTEXT.md with attributable Observed, Inferred, and Unknown evidence. Use for onboarding, material repository-context gaps, or explicit refresh; not as a mandatory stage during ongoing implementation."
 ---
 
 # Code to Context
@@ -87,25 +87,33 @@ Before discovering implementation details, read when present:
 3. `docs/requirement.md`;
 4. relevant files under `docs/specs/`;
 5. `docs/workflow.md`;
-6. relevant ADRs under `docs/adr/`.
+6. relevant ADRs under `docs/adr/`;
+7. the active task, linked dependencies, and available review evidence under
+   `docs/tasks/` or the repository's equivalent.
 
-Use these sources to establish vocabulary and authoritative constraints before interpreting code.
+Use these sources and the conversation to establish vocabulary, authoritative
+constraints, and the current implementation stage before interpreting code.
+Task status describes progress; it does not prove behavior or passing tests.
 
 Do not treat older generated Codebase Context as authoritative evidence for the new snapshot.
 
 ## Freshness
 
-Treat the generated codebase context as stale when any of these apply:
+Refresh when explicitly requested, or when missing/incorrect repository facts
+require onboarding or material synchronization. An absent generated block is
+not a mandatory prerequisite for a project already progressing through tasks.
 
-- no generated block exists;
-- the user explicitly requests a refresh;
-- the recorded Git revision differs from current `HEAD`;
-- relevant manifests, repository structure, entrypoints, or configuration changed after the recorded snapshot;
-- the previous snapshot recorded an uncommitted working tree and the current repository state cannot be shown to match it.
+`Source revision` and `Generated at` identify the inspected snapshot; they are
+not validity gates. A changed `HEAD`, dirty working tree, routine implementation,
+or the commit that saves `CONTEXT.md` alone does not establish material staleness.
+Compare relevant current manifests, structure, entrypoints, configuration, and
+claims. If an earlier revision is unavailable or its uncommitted state cannot
+be reconstructed, inspect current evidence and record the comparison limitation
+instead of assuming every claim is stale. Never include changes to the generated
+block itself as evidence that another refresh is required.
 
-Do not treat human-authored context as stale merely because implementation changed.
-
-Refresh only the generated block owned by this skill.
+Do not treat human-authored context as stale merely because implementation
+changed. Refresh only the generated block owned by this skill.
 
 ## Safe repository discovery
 
@@ -238,11 +246,20 @@ Use when safe inspection cannot determine a material fact.
 [Unknown] <question or gap> — Searched: <scope, path, pattern, or failed safe command>
 ```
 
-If a category contains no verifiable information, prefer one meaningful `[Unknown]` entry over invented filler.
+If a category contains no verifiable information, prefer one meaningful `[Unknown]` entry over invented filler. Distinguish "not found in the inspected scope" from "does not exist." An unknown is not automatically a defect, missing requirement, or recommendation to add infrastructure.
 
 ## Authoritative-source comparison
 
 Compare implementation evidence against relevant human-authored requirements, accepted specs, ADRs, and context.
+
+Account for implementation progress before declaring a disagreement. Behavior
+still planned in a `todo` or `in_progress` task is expected incomplete work,
+not by itself a conflict requiring a new decision. Record the current behavior
+and link the owning task in the relevant schema section. A directly contradictory
+implementation choice remains a conflict even during an open task. If delivery
+status is unclear, record the uncertainty instead of asserting noncompliance.
+Do not claim checks passed merely because scripts or tests exist, and do not
+turn uninspected deployment/security/test areas into an unsolicited backlog.
 
 Do not silently resolve disagreements.
 
@@ -445,8 +462,14 @@ After the script runs, report concisely:
 4. skipped categories, including secret-bearing and excluded paths;
 5. conflicts recorded;
 6. major unknowns;
-7. confirmation that no downstream skill was invoked.
+7. the pending task or workflow stage from the incoming request, if known,
+   with any still-material blocker; otherwise say the next stage was not assessed;
+8. confirmation that no downstream skill was invoked.
 
+Do not invent a roadmap or automatically recommend `$ask-workflow`, setup, or
+another refresh. Returning repository evidence completes this skill; resume
+information preserves the incoming scope without selecting a new workflow.
+For `not written`, explain the exact cause and what must change before retrying.
 Do not include secret values in the summary.
 
 Stop after this report.

@@ -55,7 +55,9 @@ The skill will:
   excluding generated output, dependencies, vendor files, build output, and
   secrets;
 - use only safe read-only discovery commands and redact sensitive values;
-- be recommended by `ask-workflow` when repository context is missing or stale.
+- be recommended by `ask-workflow` for explicit refresh or a concrete repository
+  knowledge gap that blocks the next scoped step and needs broad discovery;
+  missing generated context or changed commits alone must not interrupt active tasks.
 
 The skill must not modify code, configuration, `AGENTS.md`, README, specs, or
 tasks, and must not create ADRs or implementation tasks from observations.
