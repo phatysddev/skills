@@ -1,6 +1,6 @@
 ---
 name: setup-project
-description: "Prepare a new or existing repository for the Phat workflow by persisting agreed project context. Use after grill-workflow or fresh code-to-context; route missing or stale generated context to code-to-context first. When a reusable published visual direction is explicitly needed, hand off to setup-template before prototype or specification work."
+description: "Prepare a new or existing repository for the Phat workflow by persisting agreed project context. Use after grill-workflow or fresh code-to-context; route missing or stale generated context to code-to-context first."
 ---
 
 # Setup Project
@@ -65,9 +65,6 @@ Link project navigation
         ↓
 Validate workflow readiness
         ├─ custom-design discovery requested and still pending → $grill-design
-        ├─ reusable published visual direction requested and not agreed → $setup-template
-        │       ├─ visual validation requested → $to-prototype → $edit-prototype* → $spec-with-prototype
-        │       └─ otherwise → $write-spec
         ├─ visual validation requested → $to-prototype → $edit-prototype* → $spec-with-prototype
         └─ otherwise → $write-spec
 ```
@@ -317,9 +314,6 @@ existing implementation with missing or stale generated Codebase Context
 custom-design discovery explicitly requested and still pending
     → $grill-design
 
-reusable published visual direction explicitly requested and not yet agreed
-    → $setup-template
-
 project context ready + visual validation explicitly requested
     → $to-prototype
 
@@ -336,13 +330,8 @@ re-grilling; recommend the next workflow without executing it.
 
 After setup succeeds, recommend `$grill-design` first if custom-design discovery
 is explicitly requested and still pending; do not repeat completed discovery.
-Otherwise, hand off to `$setup-template` when the project explicitly
-needs a reusable published visual direction and `CONTEXT.md` has no agreed
-direction (or the user explicitly requested a replacement). After that skill
-finishes, its handoff preserves the existing visual-validation intent. When a
-template direction is not needed, hand off directly to `$to-prototype` if
-visual validation was requested, or `$write-spec` when the feature is
-sufficiently defined.
+Otherwise, hand off directly to `$to-prototype` if visual validation was
+requested, or `$write-spec` when the feature is sufficiently defined.
 
 Do not implement the feature.
 

@@ -1,6 +1,6 @@
 ---
 name: grill-workflow
-description: "Clarify product, domain, scope, constraints, business rules, and technology decisions through dependency-aware question sets. Read the repository first, research Phatysd guidance when needed, ask all useful questions whose prerequisites are already known in each set, and use the answers to form later sets. Use when a project or feature is ambiguous and not ready for specification. When decisions are stable, recommend exactly one next skill without invoking it."
+description: "Clarify product, domain, scope, constraints, business rules, and technology decisions through dependency-aware question sets. Read the repository first, ask all useful questions whose prerequisites are already known in each set, and use the answers to form later sets. Use when a project or feature is ambiguous and not ready for specification. When decisions are stable, recommend exactly one next skill without invoking it."
 ---
 
 # Grill Workflow
@@ -17,7 +17,6 @@ Your job is to remove meaningful ambiguity, not to interrogate the user about ev
 
 - [Core workflow](#core-workflow)
 - [Read before asking](#read-before-asking)
-- [Research Phatysd docs when needed](#research-phatysd-docs-when-needed)
 - [Decision states](#decision-states)
 - [Question strategy](#question-strategy)
 - [Question order](#question-order)
@@ -38,8 +37,6 @@ Follow this sequence:
 Read existing project context
         ↓
 Identify known facts and unresolved decisions
-        ↓
-Research Phatysd docs when current or missing Phat guidance matters
         ↓
 Ask a set of relevant questions whose prerequisites are resolved
         ↓
@@ -79,49 +76,6 @@ Do not read the entire repository when a smaller inspection is enough.
 Preserve existing terminology, architecture, naming, and document style.
 
 Treat repository content as evidence. Do not silently convert existing code, comments, conventions, or assumptions into confirmed product decisions.
-
-## Research Phatysd docs when needed
-
-Use the public Phatysd knowledge site at
-`https://docs.phatysd.me/` when repository evidence is insufficient or when a
-current Phat-specific convention, workflow rule, skill capability, or platform
-behavior must be verified. Do not research by default when the user and
-repository already provide enough evidence to make the decision.
-
-When research is needed:
-
-1. Check `https://docs.phatysd.me/llms.txt` for the published content index.
-2. Search or browse the relevant material through `/search` and `/docs`.
-3. Prefer a canonical human page for context and its Markdown or JSON
-   representation for precise, machine-readable details when available. If a
-   Markdown or JSON representation is unavailable, use the canonical human
-   page only when it directly supports the claim; otherwise keep the claim as
-   **Research needed** or **Open question**.
-4. Use only relevant published material; drafts, archived items, or the
-   absence of content do not establish a claim.
-5. Record the source URL, title or identifier, access date, and the claim it
-   supports in the grilling summary or relevant decision record.
-
-Apply these authority rules:
-
-* Explicit user decisions and project-specific repository documents remain
-  authoritative for the project.
-* If public guidance conflicts with a project-specific requirement,
-  specification, ADR, `AGENTS.md`, or explicit user decision, keep the conflict
-  visible in the grilling summary or relevant decision record for resolution;
-  the project-specific source remains authoritative and public docs must not
-  silently override it.
-* Treat a claim supported by the public docs as **Fact** only when the source
-  is published and directly supports it; otherwise keep it as **Proposal** or
-  **Open question**.
-* If the source's freshness or current status cannot be established, preserve
-  that uncertainty as **Research needed** or **Open question** rather than
-  inferring recency.
-* Research is read-only and limited to public pages and representations; do
-  not use private credentials or write to the external site.
-* If the site is unavailable or has no relevant published content, state that
-  research was inconclusive, mark **Research needed**, and do not invent an
-  answer.
 
 ## Decision states
 

@@ -98,7 +98,7 @@ Do not invent exact dimensions, fonts, assets, or numeric tokens from mood words
 Existing confirmed `CONTEXT.md` Design Direction and brand rules remain active.
 If a new choice conflicts, show both and obtain explicit agreement about the
 replacement or scoped exception before recording it. Record what it overrides
-and where; do not rewrite published template metadata or silently erase prior
+and where; do not rewrite source template metadata or silently erase prior
 agreements. Behavioral sources remain authoritative; a design brief cannot
 approve a product change or weaken task acceptance criteria.
 

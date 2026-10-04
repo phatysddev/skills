@@ -1,5 +1,10 @@
 # SPEC-004: Conditional Phatysd Docs research during grilling
 
+> Historical record: the external Phatysd Docs research behavior was removed
+> on 2026-10-03. Research instructions and checks below no longer apply.
+> The template-selection skill was also removed on 2026-10-03; project setup
+> now hands off directly to prototype or specification.
+
 - Status: done
 - Requirement: [docs/requirement.md](../requirement.md)
 - Context: [CONTEXT.md](../../CONTEXT.md)

@@ -5,7 +5,7 @@
 This repository contains reusable Agent Skills for the Phat workflow. The
 completed setup objective was to make the collection discoverable and
 installable from the GitLab repository through the `skills` CLI. The collection
-now has 20 skills across workflow, brownfield support, utility, prototype, and
+now has 19 skills across workflow, brownfield support, utility, prototype, and
 verification categories. `code-to-context` is complete under SPEC-002;
 the latest completed feature specification is SPEC-007 for automated
 implementation verification agents.
@@ -26,9 +26,9 @@ implementation verification agents.
 ## Established repository facts
 
 - Skills are stored under `.agents/skills/`.
-- The repository currently contains 20 skills: ten core workflow skills —
+- The repository currently contains 19 skills: nine core workflow skills —
   `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`, `write-spec`,
-  `setup-template`, `to-tasks`, `implement-task`, `auto-implement`, and `code-review`; one
+  `to-tasks`, `implement-task`, `auto-implement`, and `code-review`; one
   brownfield support skill, `code-to-context`; three utilities, `compact-context`,
   `ui-design`, and `debug-task`;
   and three optional prototype skills — `to-prototype`, `edit-prototype`, and
@@ -51,7 +51,8 @@ implementation verification agents.
 - SPEC-003 for the `compact-context` utility and its conditional handoff
   integrations is complete. It is decomposed into TASK-005, TASK-006, and
   TASK-007, all `done`.
-- SPEC-004 for conditional Phatysd Docs research is complete through TASK-008.
+- SPEC-004 and TASK-008 record a historical research capability that was removed
+  on 2026-10-03; grilling now uses project evidence and explicit user decisions.
 - SPEC-006 for neutral skill identifiers is complete through TASK-012,
   TASK-013, and TASK-014, all `done`.
 - SPEC-007 for automated implementation verification agents is complete
@@ -100,27 +101,6 @@ prototype editing, and task implementation compose it inline when visual
 choices are needed. It preserves confirmed direction and authoritative behavior;
 the parent owns files, revisions, task status, required verification, and handoff.
 It does not introduce a new workflow stage or require a separate agent.
-
-## Current capability: `setup-template`
-
-`setup-template` is an implemented workflow skill. It runs after
-`setup-project` and before `to-prototype` or `write-spec` when a
-reusable visual direction is needed.
-It reads project context, researches published templates from
-`https://docs.phatysd.me/`, recommends one template, and waits for explicit
-user confirmation before persisting it.
-
-After confirmation, it writes the selected template's identity, canonical URL,
-revision, profile, tokens, examples, and source metadata to a
-`## Design Direction` section in `CONTEXT.md`. An existing design direction remains
-authoritative; conflicts must be surfaced for confirmation rather than
-silently overwritten. If research is unavailable or inconclusive, the skill
-records `Research needed` or `Open question` and does not invent a direction.
-
-The skill does not generate production code, create a prototype automatically,
-or publish changes to the external Phatysd docs site. Its final handoff follows
-the existing visual-validation intent: `to-prototype` when visual validation
-is requested, otherwise `write-spec`.
 
 ## Agreed implementation verification policy
 
@@ -171,13 +151,6 @@ state. Approval moves `in_review` to `done`; findings keep the task in
 | `e2e-test` | `required` |
 | `code-review` | `required` |
 
-The behavioral contract is defined by the ready
-[`SPEC-005`](docs/specs/SPEC-005-setup-template.md). Its implementation work is
-decomposed into [`TASK-009`](docs/tasks/TASK-009-setup-template-research.md),
-[`TASK-010`](docs/tasks/TASK-010-persist-confirmed-design-direction.md), and
-[`TASK-011`](docs/tasks/TASK-011-integrate-setup-template-workflow.md); TASK-009,
-TASK-010, and TASK-011 are `done`.
-
 ## Open questions
 
 - Non-blocking: The preferred installation scope (project or global) has not
@@ -209,7 +182,7 @@ TASK-010, and TASK-011 are `done`.
 ### Commands and workflows
 
 - [Observed] The public installation source is `https://gitlab.com/phatysd.dev/skills`, installed with `npx skills@latest add`; discovery can be narrowed with `--list`, `--skill`, or `--agent`. — Source: `AGENTS.md`; `README.md`
-- [Observed] The workflow supports optional published-template direction and prototype routes before specification, then task decomposition, implementation, verification, and review. — Source: `docs/workflow.md`; `README.md`
+- [Observed] The workflow supports optional custom-design discovery and prototype routes before specification, then task decomposition, implementation, verification, and review. — Source: `docs/workflow.md`; `README.md`
 - [Observed] The repository consistency checker runs with `python3 scripts/check_skill_pack.py`; it checks required skill files, frontmatter names, catalog counts/listing, active skill references, router coverage, and local Markdown links. — Source: `AGENTS.md`; `docs/requirement.md`; `scripts/check_skill_pack.py`
 - [Observed] Brownfield context refresh uses the `code-to-context` skill and its bundled updater, which owns only the marked generated block in `CONTEXT.md`. — Source: `.agents/skills/code-to-context/SKILL.md`; `.agents/skills/code-to-context/scripts/update_context.py`
 - [Observed] Verification modes are `auto`, `required`, and `off`; task commits require explicit user or repository authorization. — Source: `docs/requirement.md`; `.agents/skills/setup-project/references/verification-policy.md`; `docs/workflow.md`

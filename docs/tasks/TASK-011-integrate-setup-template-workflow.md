@@ -1,5 +1,10 @@
 # TASK-011: Integrate setup-template into the workflow and catalog
 
+> Historical record: the external Phatysd Docs research behavior was removed
+> on 2026-10-03. Research instructions and checks below no longer apply.
+> The template-selection skill was also removed on 2026-10-03; project setup
+> now hands off directly to prototype or specification.
+
 - Status: done
 - Spec: [SPEC-005](../specs/SPEC-005-setup-template.md)
 
@@ -61,7 +66,7 @@ Relevant existing area:
   task-scoped commit `bc6533f`
   (`task(TASK-011): integrate setup-template workflow`); no push performed.
 - [x] Route the optional reusable-direction decision from both
-  `setup-project` and `ask-workflow` to `$setup-template` before prototype or
+  `setup-project` and `ask-workflow` to `setup-template` before prototype or
   spec work; preserve the direct route when no template direction is needed
   (AC-14). Verified: both routing instructions require explicit reusable
   direction intent, and visual validation alone still routes to

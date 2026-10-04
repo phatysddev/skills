@@ -1,4 +1,0 @@
-interface:
-  display_name: "Setup Template"
-  short_description: "Research one visual direction"
-  default_prompt: "Use $setup-template to research published templates and recommend one evidence-backed visual direction."

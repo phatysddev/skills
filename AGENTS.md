@@ -17,10 +17,10 @@ This repository is a small collection of Agent Skills for the Phat workflow.
 Each installable skill lives at `.agents/skills/<skill-name>/SKILL.md`.
 Every `SKILL.md` must keep YAML frontmatter with `name` and `description`.
 
-The current pack contains 20 skills:
+The current pack contains 19 skills:
 
 - Core workflow: `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`,
-  `setup-template`, `write-spec`, `to-tasks`, `implement-task`, `auto-implement`,
+  `write-spec`, `to-tasks`, `implement-task`, `auto-implement`,
   `code-review`.
 - Brownfield support: `code-to-context`.
 - Utility: `compact-context`, `ui-design`, `debug-task`.

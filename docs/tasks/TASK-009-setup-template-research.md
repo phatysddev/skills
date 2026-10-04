@@ -1,5 +1,10 @@
 # TASK-009: Research and recommend a published template
 
+> Historical record: the external Phatysd Docs research behavior was removed
+> on 2026-10-03. Research instructions and checks below no longer apply.
+> The template-selection skill was also removed on 2026-10-03; project setup
+> now hands off directly to prototype or specification.
+
 - Status: done
 - Spec: [SPEC-005](../specs/SPEC-005-setup-template.md)
 

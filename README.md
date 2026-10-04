@@ -1,49 +1,139 @@
-# Phat Skills
+<p align="center">
+  <img src="assets/brand/phatysd-icon.png" width="88" height="88" alt="phatysd.dev brand icon">
+</p>
 
-**A lightweight product-to-code workflow for AI coding agents.**
+<h1 align="center">Phat Skills</h1>
 
-Phat is a connected workflow, not a loose prompt collection:
+<p align="center">
+  <strong>Good ideas. Built with intent.</strong><br>
+  A connected product-to-code workflow for AI coding agents.<br>
+  From the first decision to reviewed code.
+</p>
 
-```text
-Decide before spec.
-Spec before tasks.
-Tasks before code.
-Evidence before done.
+<p align="center">
+  <a href="#skill-catalog"><img src="https://img.shields.io/badge/skills-19-244de4?style=flat-square&amp;labelColor=202b26" alt="19 skills"></a>
+  <a href="https://github.com/vercel-labs/skills"><img src="https://img.shields.io/badge/format-Agent%20Skills-244de4?style=flat-square&amp;labelColor=202b26" alt="Agent Skills format"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-244de4?style=flat-square&amp;labelColor=202b26" alt="MIT License"></a>
+</p>
 
-Prototype only when seeing the UI helps.
+<p align="center">
+  <a href="#quick-start">Quick start</a> &nbsp;·&nbsp;
+  <a href="#workflow">Workflow</a> &nbsp;·&nbsp;
+  <a href="#skill-catalog">Skill catalog</a> &nbsp;·&nbsp;
+  <a href="docs/workflow.md">Documentation</a>
+</p>
+
+---
+
+## Quick start
+
+Use Phat with Codex or another agent that supports the Agent Skills format.
+The examples below target Codex. You need Node.js, npm, and internet access.
+
+**1. Install the full pack in your project.**
+
+```bash
+npx skills@latest add https://github.com/phatysddev/skills --skill '*' --agent codex --yes
 ```
 
-The skills are designed to work with Codex and other agents that support the
-Agent Skills format. They keep product decisions, project context, behavioral
-specifications, implementation tasks, and review evidence connected.
+**2. Open your coding agent and start with one question.**
+
+```text
+$ask-workflow
+Read this project and recommend the next step, with your reasoning.
+```
+
+`ask-workflow` inspects the project and recommends one next action. You choose
+when to continue; it does not start implementation from a routing question.
+
+<details>
+<summary><strong>More installation options</strong> — discover, choose a skill, or install globally</summary>
+
+List the available skills without installing:
+
+```bash
+npx skills@latest add https://github.com/phatysddev/skills --list
+```
+
+Start with the router:
+
+```bash
+npx skills@latest add https://github.com/phatysddev/skills --skill ask-workflow --agent codex --yes
+```
+
+When installing a subset, also install the workflow and utility skills needed
+for your chosen path. For example, UI work may need `ui-design` alongside its
+prototype or implementation skill.
+
+Install the router for use across projects:
+
+```bash
+npx skills@latest add https://github.com/phatysddev/skills --skill ask-workflow --agent codex --global --yes
+```
+
+To choose skills and agents interactively:
+
+```bash
+npx skills@latest add https://github.com/phatysddev/skills
+```
+
+`--yes` skips installer confirmation prompts; `--global` selects user scope.
+For other agents, use the appropriate `--agent` identifier and that agent's
+skill invocation syntax. See the [skills CLI documentation](https://github.com/vercel-labs/skills#readme).
+
+</details>
+
+## Why Phat?
+
+Keep product decisions, repository context, specifications, implementation
+tasks, and verification evidence connected. Each skill has a focused job and
+hands the agreed context to the next step.
+
+| Principle | What it gives you |
+| --- | --- |
+| **Decide before spec.** | Clear scope, rules, and constraints before writing the details. |
+| **Spec before tasks.** | Agreed behavior before breaking down the work. |
+| **Tasks before code.** | A bounded piece of work with acceptance criteria. |
+| **Evidence before done.** | Relevant verification and a final review before closing the task. |
+
+Prototype when seeing the UI will help you make a decision.
+
+## Where to start
+
+| Your situation | Start here |
+| --- | --- |
+| Unsure what the project needs next | [`ask-workflow`](.agents/skills/ask-workflow/SKILL.md) |
+| An idea that needs clearer scope and decisions | [`grill-workflow`](.agents/skills/grill-workflow/SKILL.md) |
+| Existing code with missing or stale generated context | [`code-to-context`](.agents/skills/code-to-context/SKILL.md) |
+| Agreed requirements that need visual validation | [`to-prototype`](.agents/skills/to-prototype/SKILL.md), after project setup |
+| One ready implementation task | [`implement-task`](.agents/skills/implement-task/SKILL.md) |
+| A ready task batch you want implemented automatically | [`auto-implement`](.agents/skills/auto-implement/SKILL.md) |
+| A bug or regression whose cause is unclear | [`debug-task`](.agents/skills/debug-task/SKILL.md) |
 
 ## Workflow
 
-The default path is:
-
 ```text
-Idea
-  ↓
-ask-workflow
-  ↓
-grill-workflow
-  ↓
-optional grill-design (when custom UI direction is requested)
-  ↓
-setup-project
-  ↓
-optional setup-template (when a reusable direction is requested)
-  ↓
-write-spec (or to-prototype first when visual validation is requested)
-  ↓
-to-tasks
-  ↓
-implement-task
-  ↓
-unit-test / integration-test / e2e-test (when relevant and selected)
-  ↓
-code-review
+ask-workflow → grill-workflow → setup-project
+                                      ↓
+                                 write-spec
+                                      ↓
+                                  to-tasks
+                                      ↓
+                               implement-task
+                                      ↓
+                        selected verification
+                                      ↓
+                                 code-review
 ```
+
+For existing code, refresh generated context with `code-to-context` before
+project setup when it is missing or stale. For custom UI direction, add
+`grill-design`; for visual validation, take the optional prototype path.
+
+[Read the full workflow contract →](docs/workflow.md)
+
+<details>
+<summary><strong>Workflow details</strong> — routing, prototypes, batch work, and review handoffs</summary>
 
 For an existing repository with meaningful code, `ask-workflow` gives the
 brownfield path priority:
@@ -64,8 +154,6 @@ prototype path between project setup and the final specification:
 ```text
 setup-project
   ↓
-setup-template (only when a reusable visual direction is needed)
-  ↓
 to-prototype
   ↓
 edit-prototype ↺
@@ -75,9 +163,8 @@ spec-with-prototype
 to-tasks
 ```
 
-When a reusable published direction is not requested, continue directly from
-`setup-project` to `to-prototype` or `write-spec`. Visual validation alone does
-not trigger template research.
+After `setup-project`, continue directly to `to-prototype` when visual
+validation is requested, or to `write-spec` when the feature is ready.
 
 After product grilling, choose `grill-design` to customize the visual direction,
 `to-prototype` to validate the UI, or `write-spec` to define behavior (initialize
@@ -106,46 +193,47 @@ choose the next workflow skill. `ui-design` supports visual decisions inside
 retains scope and verification ownership. Routine UI changes with an established
 design may skip it. Install it alongside those skills if using a selected subset.
 
+</details>
+
 ## Skill catalog
 
-The collection contains 20 skills grouped by responsibility.
+The collection contains 19 skills grouped by responsibility.
 
-### Core Workflow — 10
+### Core Workflow — 9
 
-| Skill | Responsibility |
-| --- | --- |
-| `ask-workflow` | Recommend the single next workflow step. |
-| `grill-workflow` | Clarify requirements, domain rules, scope, and decisions. |
-| `grill-design` | Optionally agree on custom UI design requirements for downstream UI work. |
-| `setup-project` | Establish durable project context and workflow navigation. |
-| `setup-template` | Research and persist one confirmed visual direction from published templates. |
-| `write-spec` | Turn agreed decisions into an implementation-ready behavioral spec. |
-| `to-tasks` | Break a ready spec into implementation-ready vertical slices. |
-| `implement-task` | Implement and verify exactly one ready task. |
-| `auto-implement` | Preflight all blockers, then implement an authorized task batch sequentially. |
-| `code-review` | Review implementation against the spec and engineering standards. |
+| Skill | Responsibility | Guide |
+| --- | --- | --- |
+| `ask-workflow` | Recommend the single next workflow step. | [Read](.agents/skills/ask-workflow/SKILL.md) |
+| `grill-workflow` | Clarify requirements, domain rules, scope, and decisions. | [Read](.agents/skills/grill-workflow/SKILL.md) |
+| `grill-design` | Optionally agree on custom UI design requirements for downstream UI work. | [Read](.agents/skills/grill-design/SKILL.md) |
+| `setup-project` | Establish durable project context and workflow navigation. | [Read](.agents/skills/setup-project/SKILL.md) |
+| `write-spec` | Turn agreed decisions into an implementation-ready behavioral spec. | [Read](.agents/skills/write-spec/SKILL.md) |
+| `to-tasks` | Break a ready spec into implementation-ready vertical slices. | [Read](.agents/skills/to-tasks/SKILL.md) |
+| `implement-task` | Implement and verify exactly one ready task. | [Read](.agents/skills/implement-task/SKILL.md) |
+| `auto-implement` | Preflight all blockers, then implement an authorized task batch sequentially. | [Read](.agents/skills/auto-implement/SKILL.md) |
+| `code-review` | Review implementation against the spec and engineering standards. | [Read](.agents/skills/code-review/SKILL.md) |
 
 ### Brownfield Support — 1
 
-| Skill | Responsibility |
-| --- | --- |
-| `code-to-context` | Build a safe, attributable generated codebase context for an existing repository. |
+| Skill | Responsibility | Guide |
+| --- | --- | --- |
+| `code-to-context` | Build a safe, attributable generated codebase context for an existing repository. | [Read](.agents/skills/code-to-context/SKILL.md) |
 
 ### Utility — 3
 
-| Skill | Responsibility |
-| --- | --- |
-| `compact-context` | Compress temporary agent handoffs without replacing canonical sources. |
-| `ui-design` | Compose and refine content-led UI within prototype or implementation scope. |
-| `debug-task` | Diagnose bugs and regressions with symptom-specific evidence before fixes. |
+| Skill | Responsibility | Guide |
+| --- | --- | --- |
+| `compact-context` | Compress temporary agent handoffs without replacing canonical sources. | [Read](.agents/skills/compact-context/SKILL.md) |
+| `ui-design` | Compose and refine content-led UI within prototype or implementation scope. | [Read](.agents/skills/ui-design/SKILL.md) |
+| `debug-task` | Diagnose bugs and regressions with symptom-specific evidence before fixes. | [Read](.agents/skills/debug-task/SKILL.md) |
 
 ### Optional Prototype — 3
 
-| Skill | Responsibility |
-| --- | --- |
-| `to-prototype` | Create a lightweight multi-page HTML/CSS/JavaScript UI prototype. |
-| `edit-prototype` | Make targeted changes to a prototype page by revision ID. |
-| `spec-with-prototype` | Reconcile an accepted prototype into the owning feature spec. |
+| Skill | Responsibility | Guide |
+| --- | --- | --- |
+| `to-prototype` | Create a lightweight multi-page HTML/CSS/JavaScript UI prototype. | [Read](.agents/skills/to-prototype/SKILL.md) |
+| `edit-prototype` | Make targeted changes to a prototype page by revision ID. | [Read](.agents/skills/edit-prototype/SKILL.md) |
+| `spec-with-prototype` | Reconcile an accepted prototype into the owning feature spec. | [Read](.agents/skills/spec-with-prototype/SKILL.md) |
 
 The prototype skills are optional: use them when validating navigation, page
 structure, states, content hierarchy, or interaction flow will reduce product
@@ -153,11 +241,11 @@ uncertainty.
 
 ### Verification Capabilities — 3
 
-| Skill | Responsibility |
-| --- | --- |
-| `unit-test` | Verify isolated task behavior with a repository-detected runner. |
-| `integration-test` | Verify task-owned component and service boundaries. |
-| `e2e-test` | Verify task-owned critical user journeys. |
+| Skill | Responsibility | Guide |
+| --- | --- | --- |
+| `unit-test` | Verify isolated task behavior with a repository-detected runner. | [Read](.agents/skills/unit-test/SKILL.md) |
+| `integration-test` | Verify task-owned component and service boundaries. | [Read](.agents/skills/integration-test/SKILL.md) |
+| `e2e-test` | Verify task-owned critical user journeys. | [Read](.agents/skills/e2e-test/SKILL.md) |
 
 `implement-task` selects these capabilities from the project policy and task
 scope. They run only when relevant and available under the configured mode;
@@ -166,15 +254,17 @@ they run before the task enters `in_review` and do not replace the single final
 dispatches that final reviewer once after `in_review`; otherwise the user can
 invoke `$code-review` manually.
 
-Diagnosis and testing guidance adapts Matt Pocock's
-[diagnosing-bugs](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/diagnosing-bugs/SKILL.md)
-and [tdd](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/tdd/SKILL.md).
-`debug-task` returns evidence to the owning implementation workflow; optional
-red/green development stays with the main agent and does not replace required
-verification. Source links and the upstream MIT notice ship in each adapted
-skill's `references/upstream.md`.
+## Documentation
 
-## Maintainer check
+| Read | For |
+| --- | --- |
+| [Workflow guide](docs/workflow.md) | Routes, project states, and handoffs. |
+| [Project requirements](docs/requirement.md) | Product goals and the current skill-pack contract. |
+| [Repository context](CONTEXT.md) | Domain vocabulary and repository facts. |
+| [Agent guidance](AGENTS.md) | Repository conventions and the consistency check. |
+| [Identifier migration](docs/migrations/skill-identifier-migration.md) | Mapping older skill names to current identifiers. |
+
+## For maintainers
 
 Run the repository consistency checker before publishing skill-pack changes:
 
@@ -189,42 +279,8 @@ local Markdown links.
 The breaking identifier migration is documented in the
 [skill identifier migration map](docs/migrations/skill-identifier-migration.md).
 
-## Installation
-
-The canonical public source is:
-
-```text
-https://gitlab.com/phatysd.dev/skills
-```
-
-The examples below use the `skills` CLI and target Codex.
-
-Discover the available skills before installing:
-
-```bash
-npx skills@latest add https://gitlab.com/phatysd.dev/skills --list
-```
-
-Install one skill:
-
-```bash
-npx skills@latest add https://gitlab.com/phatysd.dev/skills --skill ask-workflow --agent codex --yes
-```
-
-Install the complete current collection, including brownfield, utility,
-prototype, and verification skills:
-
-```bash
-npx skills@latest add https://gitlab.com/phatysd.dev/skills --skill '*' --agent codex --yes
-```
-
-Install one skill globally instead of in the current project:
-
-```bash
-npx skills@latest add https://gitlab.com/phatysd.dev/skills --skill ask-workflow --agent codex --global --yes
-```
-
-## Repository layout
+<details>
+<summary><strong>Repository layout and skill format</strong></summary>
 
 The canonical source layout for this repository is:
 
@@ -241,7 +297,6 @@ The canonical source layout for this repository is:
         ├── grill-workflow/SKILL.md
         ├── grill-design/SKILL.md
         ├── setup-project/SKILL.md
-        ├── setup-template/SKILL.md
         ├── write-spec/SKILL.md
         ├── to-tasks/SKILL.md
         ├── implement-task/SKILL.md
@@ -263,18 +318,29 @@ Every installable skill has a `SKILL.md` with canonical `name` and
 `description` frontmatter. Skill names and directory names use the same
 lowercase kebab-case identifier.
 
-This repository keeps `.agents/skills/<skill-name>/SKILL.md` as its source and
-`skills` CLI installation contract. GitLab's native project-level convention
-uses `skills/<skill-name>/SKILL.md`; adopting that path or adding a second copy
-is a separate migration decision. The canonical files intentionally avoid
-platform-specific frontmatter such as GitLab slash-command metadata so their
-core instructions remain portable across compatible agents.
+The `.agents/skills/<skill-name>/SKILL.md` files are the canonical sources.
+Each skill also includes `agents/openai.yaml` interface metadata. Core
+instructions remain portable across agents that support the Agent Skills format.
 
-For GitLab's current Agent Skills behavior, see the [GitLab Agent Skills
-documentation](https://docs.gitlab.com/user/duo_agent_platform/customize/agent_skills/).
+</details>
 
-## License
+## Credits and license
+
+Diagnosis and testing guidance adapts Matt Pocock's
+[diagnosing-bugs](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/diagnosing-bugs/SKILL.md)
+and [tdd](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/tdd/SKILL.md).
+`debug-task` returns evidence to the owning implementation workflow; optional
+red/green development stays with the main agent and does not replace required
+verification. Source links and the upstream MIT notice ship in each adapted
+skill's `references/upstream.md`.
 
 Phat Skills is released under the [MIT License](LICENSE). You may use,
 modify, extend, and redistribute it, including in commercial projects, subject
 to the license terms.
+
+---
+
+<p align="center">
+  Built by <a href="https://github.com/phatysddev"><strong>PhatYSD</strong></a> · phatysd.dev<br>
+  <sub>Less guessing. More building.</sub>
+</p>

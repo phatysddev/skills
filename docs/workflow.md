@@ -32,7 +32,7 @@ behavior must be reconciled into the owning spec before task decomposition.
 The pack distinguishes five kinds of capability:
 
 - **Workflow skills:** `ask-workflow`, `grill-workflow`,
-  `grill-design` (optional), `setup-project`, `setup-template`, `write-spec`, `to-tasks`,
+  `grill-design` (optional), `setup-project`, `write-spec`, `to-tasks`,
   `implement-task`, `auto-implement`, and `code-review`. They own project-state transitions
   and handoffs.
 - **Brownfield support:** `code-to-context` derives a safe generated context
@@ -88,9 +88,6 @@ the verified focused diff uncommitted. Never push automatically.
 - `$grill-design`: optionally clarify and record scoped, confirmed UI design
   requirements after product grilling; `ui-design` consumes that agreement.
 - `$setup-project`: establish repository context and workflow navigation.
-- `$setup-template`: research published templates, persist one explicitly
-  confirmed design direction, and recommend the next workflow skill without
-  invoking it.
 - `$code-to-context`: derive read-only repository evidence into the marked
   generated context section when existing code context is missing or stale.
 - `$compact-context`: reduce a verbose temporary handoff when a parent workflow
@@ -118,14 +115,6 @@ the verified focused diff uncommitted. Never push automatically.
 - `$spec-with-prototype`: reconcile an accepted prototype into the owning
   implementation-ready specification.
 
-When a reusable published visual direction is explicitly requested and no
-agreed direction exists, route through `$setup-template` after
-`$setup-project`. An explicit replacement request may use it when a direction
-already exists. After confirmation, `setup-template` recommends
-`$to-prototype` when visual validation was requested or `$write-spec`
-otherwise. A visual-validation request by itself routes directly to
-`$to-prototype`.
-
 For UI work, `grill-workflow` asks once whether custom-design discovery is
 wanted, explains `grill-design`, `to-prototype`, and `write-spec`, and recommends
 one primary next step without invoking it. An opt-in routes to `grill-design`;
@@ -146,10 +135,6 @@ The optional prototype path is:
 ```text
 setup-project → to-prototype → edit-prototype* → spec-with-prototype → to-tasks
 ```
-
-When a reusable visual direction is needed, insert `$setup-template` after
-`$setup-project`. It recommends `$to-prototype` when visual validation was
-requested and `$write-spec` otherwise; it never invokes the handoff.
 
 Use it only when seeing the UI helps resolve navigation, hierarchy, state, or
 interaction uncertainty. It does not replace the owning requirement or spec.
@@ -200,16 +185,14 @@ implementation tasks — [`TASK-005`](tasks/TASK-005-compact-context-skill.md),
 [`TASK-006`](tasks/TASK-006-integrate-compact-handoffs.md), and
 [`TASK-007`](tasks/TASK-007-refresh-public-skill-catalog.md) — are all `done`.
 
-[`SPEC-005`](specs/SPEC-005-setup-template.md) defines the implemented
-`setup-template` workflow skill for selecting and persisting a confirmed design
-direction from published Phatysd templates. Its implementation tasks are
-[`TASK-009`](tasks/TASK-009-setup-template-research.md),
-[`TASK-010`](tasks/TASK-010-persist-confirmed-design-direction.md), and
-[`TASK-011`](tasks/TASK-011-integrate-setup-template-workflow.md); TASK-009,
-TASK-010, and TASK-011 are `done`.
+[`SPEC-005`](specs/SPEC-005-setup-template.md) and TASK-009 through TASK-011
+are historical records of a removed template-selection stage. Project setup
+now hands off directly to prototype or specification, with optional custom
+design discovery through `grill-design`.
 
-[`SPEC-004`](specs/SPEC-004-phatysd-docs-research.md) is complete through
-[`TASK-008`](tasks/TASK-008-conditional-phatysd-docs-research.md).
+[`SPEC-004`](specs/SPEC-004-phatysd-docs-research.md) and
+[`TASK-008`](tasks/TASK-008-conditional-phatysd-docs-research.md) are historical.
+The Phatysd Docs research step was removed on 2026-10-03.
 
 [`SPEC-006`](specs/SPEC-006-neutral-skill-identifiers.md) is complete through
 [`TASK-012`](tasks/TASK-012-rename-skill-source-identifiers.md),

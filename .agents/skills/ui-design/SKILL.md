@@ -58,7 +58,7 @@ missing, return it to the parent instead of making it through design.
 
 If no direction exists, choose a coherent provisional treatment suited to the
 domain and describe the consequential visual assumptions as proposals. Do not
-persist them as confirmed branding or trigger template research automatically.
+persist them as confirmed branding without explicit user agreement.
 For example, an operations screen needs scanable records and clear status;
 a booking form needs sequence and validation; a portfolio may benefit from
 image-led composition. These are decision examples, not mandatory templates.

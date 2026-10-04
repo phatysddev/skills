@@ -1,5 +1,10 @@
 # TASK-008: Add conditional Phatysd Docs research to grill-with-phat
 
+> Historical record: the external Phatysd Docs research behavior was removed
+> on 2026-10-03. Research instructions and checks below no longer apply.
+> The template-selection skill was also removed on 2026-10-03; project setup
+> now hands off directly to prototype or specification.
+
 - Status: done
 - Spec: [SPEC-004](../specs/SPEC-004-phatysd-docs-research.md)
 

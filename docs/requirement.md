@@ -20,10 +20,10 @@ The source GitLab repository is public.
 
 ## Current skill pack
 
-The published collection contains 20 installable skills:
+The published collection contains 19 installable skills:
 
 - Core workflow: `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`,
-  `setup-template`, `write-spec`, `to-tasks`, `implement-task`, `auto-implement`, and
+  `write-spec`, `to-tasks`, `implement-task`, `auto-implement`, and
   `code-review`.
 - Brownfield support: `code-to-context`.
 - Utility: `compact-context`, `ui-design`, `debug-task`.
@@ -123,32 +123,6 @@ sources, file boundaries, verification gates, and workflow ownership. Routine
 UI edits with an already determined design need not invoke it. Missing support
 is reported with a local-pattern fallback and never auto-installed.
 
-## Current capability: `setup-template`
-
-The repository now includes `setup-template` as a workflow skill after
-`setup-project` and before the visual-validation or specification
-handoffs.
-
-The skill:
-
-- read the prepared project context after `setup-project`;
-- research published templates from `https://docs.phatysd.me/` and recommend
-  one design direction with source evidence;
-- wait for explicit user confirmation before persisting the recommendation;
-- write the confirmed direction to a `## Design Direction` section in
-  `CONTEXT.md`, including the template identity, revision, profile, tokens,
-  examples, and source metadata;
-- preserve an existing design direction as authoritative and surface conflicts
-  instead of overwriting them silently;
-- mark an unavailable or inconclusive research result as `Research needed` or
-  `Open question` rather than inventing a template decision; and
-- preserve the existing visual-validation intent when handing off to
-  `to-prototype` or `write-spec`.
-
-The skill does not generate production code, create a prototype automatically,
-publish to `docs.phatysd.me`, or replace an existing direction without explicit
-confirmation.
-
 ## Maintainer consistency check
 
 The repository provides `scripts/check_skill_pack.py` as a standard-library
@@ -223,7 +197,7 @@ the verified focused diff ready for review, and never push automatically.
 
 - Preserve the `.agents/skills/<skill-name>/SKILL.md` layout.
 - Keep each skill's required `name` and `description` frontmatter.
-- Document discovery, installation, and Phat workflow navigation for all 20
+- Document discovery, installation, and Phat workflow navigation for all 19
   skills across workflow, brownfield, utility, prototype, and verification
   categories.
 - Keep catalog and workflow updates idempotent; change skill instructions only
@@ -238,7 +212,7 @@ the verified focused diff ready for review, and never push automatically.
 ## Verification criteria
 
 - `npx skills@latest add https://gitlab.com/phatysd.dev/skills --list` discovers
-  the current 20 skills across the documented categories after publication.
+  the current 19 skills across the documented categories after publication.
 - A selected skill can be installed by name.
 - The complete collection can be installed with the CLI's all-skills option.
 - The installed skill files retain valid frontmatter and their existing

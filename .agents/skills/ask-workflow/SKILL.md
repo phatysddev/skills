@@ -29,7 +29,6 @@ Recommend exactly one primary next action, using the strongest evidence availabl
 | Meaningful code or configuration exists, but generated codebase context in `CONTEXT.md` is missing or stale | `$code-to-context` |
 | Project workflow/context is missing or disconnected, and no meaningful implementation exists or generated codebase context is fresh | `$setup-project` |
 | Product scope is stable, and custom UI design discovery is explicitly requested and still pending, or a material visual-direction conflict remains | `$grill-design` |
-| Project context is ready, and a reusable published visual direction is explicitly requested but no agreed direction exists (or replacement is explicitly requested) | `$setup-template` |
 | The requirement is agreed and visual validation is requested before specification | `$to-prototype` |
 | A named prototype revision needs targeted visual or interaction changes | `$edit-prototype` |
 | An accepted prototype must be reconciled into a feature spec | `$spec-with-prototype` |
@@ -46,12 +45,6 @@ An explicit request to continue product grilling with custom design discovery
 may go to `$grill-design` before new-project setup; carry the confirmed summary.
 Otherwise keep existing-repository freshness/setup precedence. Do not infer a
 request for design discovery merely from UI work; an absent brief is not a blocker.
-
-Use `$setup-template` only when project sources or an explicit user decision
-show that a reusable published template direction is wanted. Check
-`CONTEXT.md#Design Direction` first; an agreed direction satisfies the request
-unless the user explicitly asks to replace or refresh it. A request for visual
-validation alone routes to `$to-prototype` and does not imply a template search.
 
 Apply this precedence for an existing repository:
 
