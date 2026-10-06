@@ -12,6 +12,10 @@
 | `setup-phat-project` | `setup-project` |
 | `to-spec-with-phat` | `write-spec` |
 | `review-with-phat` | `code-review` |
+| `review-task` | `code-review` |
+
+`review-task` was an intermediate historical name for the review skill; it is
+also retired and maps directly to the current `code-review` identifier.
 
 ## Compatibility
 

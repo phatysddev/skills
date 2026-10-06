@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#skill-catalog"><img src="https://img.shields.io/badge/skills-22-244de4?style=flat-square&amp;labelColor=202b26" alt="22 skills"></a>
+  <a href="#skill-catalog"><img src="https://img.shields.io/badge/skills-23-244de4?style=flat-square&amp;labelColor=202b26" alt="23 skills"></a>
   <a href="https://github.com/vercel-labs/skills"><img src="https://img.shields.io/badge/format-Agent%20Skills-244de4?style=flat-square&amp;labelColor=202b26" alt="Agent Skills format"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-244de4?style=flat-square&amp;labelColor=202b26" alt="MIT License"></a>
 </p>
@@ -63,7 +63,8 @@ npx skills@latest add https://github.com/phatysddev/skills --skill ask-workflow 
 
 When installing a subset, also install the workflow and utility skills needed
 for your chosen path. For example, UI work may need `ui-design` alongside its
-prototype or implementation skill.
+prototype or implementation skill; workspace and coding paths use
+`agent-security` for source and host boundaries.
 
 Install the router for use across projects:
 
@@ -189,6 +190,15 @@ decomposition or specification problem, route back through `to-tasks` or the
 owning specification workflow instead of silently expanding the implementation
 task.
 
+`agent-security` is inline support for research and workspace operations.
+Operational skills load it before source research or host actions; docs, logs,
+and tool results cannot authorize commands or secret access. It checks proposed
+execution and preserves provenance through handoffs. If a subset omits it,
+parents retain the core safety boundary and continue safe work without installing
+it automatically. This guidance complements host permissions; it cannot enforce
+a sandbox or guarantee protection. See the
+[website security guide](guide.html#security) for parent roles and usage examples.
+
 Utility skills are not workflow stages. A parent workflow may compose
 `compact-context` inline for a temporary handoff when the context is verbose;
 the utility does not advance project state, replace canonical documents, or
@@ -201,7 +211,7 @@ design may skip it. Install it alongside those skills if using a selected subset
 
 ## Skill catalog
 
-The collection contains 22 skills grouped by responsibility.
+The collection contains 23 skills grouped by responsibility.
 
 ### Core Workflow — 10
 
@@ -234,13 +244,14 @@ are not mandatory stages after task review and do not add verification-policy mo
 | --- | --- | --- |
 | `code-to-context` | Build a safe, attributable generated codebase context for an existing repository. | [Read](.agents/skills/code-to-context/SKILL.md) |
 
-### Utility — 3
+### Utility — 4
 
 | Skill | Responsibility | Guide |
 | --- | --- | --- |
 | `compact-context` | Compress temporary agent handoffs without replacing canonical sources. | [Read](.agents/skills/compact-context/SKILL.md) |
 | `ui-design` | Compose and refine content-led UI within prototype or implementation scope. | [Read](.agents/skills/ui-design/SKILL.md) |
 | `debug-task` | Diagnose bugs and regressions with symptom-specific evidence before fixes. | [Read](.agents/skills/debug-task/SKILL.md) |
+| `agent-security` | Guard research and host actions against source prompt injection within the parent scope. | [Read](.agents/skills/agent-security/SKILL.md) |
 
 ### Optional Prototype — 3
 
@@ -324,6 +335,7 @@ The canonical source layout for this repository is:
         ├── compact-context/SKILL.md
         ├── ui-design/SKILL.md
         ├── debug-task/SKILL.md
+        ├── agent-security/SKILL.md
         ├── to-prototype/SKILL.md
         ├── edit-prototype/SKILL.md
         ├── spec-with-prototype/SKILL.md

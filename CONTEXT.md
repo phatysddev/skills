@@ -5,10 +5,10 @@
 This repository contains reusable Agent Skills for the Phat workflow. The
 completed setup objective was to make the collection discoverable and
 installable from the GitLab repository through the `skills` CLI. The collection
-now has 22 skills across workflow, brownfield support, utility, prototype,
+now has 23 skills across workflow, brownfield support, utility, prototype,
 verification, and optional assessment categories. `code-to-context` is complete under SPEC-002;
-the latest completed feature specification is SPEC-008 for scope changes
-and optional feature/release assessments.
+the latest completed feature specification is SPEC-009 for inline agent
+security support. SPEC-008 covers scope changes and optional assessments.
 
 ## Vocabulary
 
@@ -26,11 +26,11 @@ and optional feature/release assessments.
 ## Established repository facts
 
 - Skills are stored under `.agents/skills/`.
-- The repository currently contains 22 skills: ten core workflow skills —
+- The repository currently contains 23 skills: ten core workflow skills —
   `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`, `write-spec`,
   `to-tasks`, `implement-task`, `auto-implement`, `code-review`, and `change-scope`; one
-  brownfield support skill, `code-to-context`; three utilities, `compact-context`,
-  `ui-design`, and `debug-task`;
+  brownfield support skill, `code-to-context`; four utilities, `compact-context`,
+  `ui-design`, `debug-task`, and `agent-security`;
   and three optional prototype skills — `to-prototype`, `edit-prototype`, and
   `spec-with-prototype`; and three verification capabilities — `unit-test`,
   `integration-test`, and `e2e-test`; and two optional assessments,
@@ -60,6 +60,20 @@ and optional feature/release assessments.
   through TASK-015, TASK-016, TASK-017, TASK-018, and TASK-019, all `done`.
 - The agreed `code-to-context` behavior preserves human-authored context and
   writes only a marked generated section when implemented.
+
+SPEC-009 and TASK-021 deliver the inline security utility and its parent/handoff
+integrations; both are complete.
+
+## Current capability: `agent-security`
+
+`agent-security` is an inline utility for source research and host/workspace
+operations. It separates retrieved evidence from authority, checks execution
+scope and effects (including hooks), protects secrets, and preserves provenance
+through compacted and delegated handoffs. Operational parent skills compose it;
+when unavailable they retain the core boundary without automatic installation.
+It adds no workflow stage, verification mode, or default confirmation for
+understood authorized work. Unsafe dependent actions return concrete gaps while
+unaffected work continues. It is behavioral guidance, not a sandbox guarantee.
 
 ## Current capability: `debug-task` and testing quality
 

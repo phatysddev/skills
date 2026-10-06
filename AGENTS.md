@@ -10,21 +10,21 @@ This repository is a small collection of Agent Skills for the Phat workflow.
 - Feature specifications: [`docs/specs/`](docs/specs/)
 - Implementation tasks: [`docs/tasks/`](docs/tasks/)
 - Individual skills: [`.agents/skills/`](.agents/skills/)
-- Latest completed specification: [`SPEC-008`](docs/specs/SPEC-008-scope-and-assessments.md)
+- Latest completed specification: [`SPEC-009`](docs/specs/SPEC-009-agent-security.md)
 
 ## Repository structure
 
 Each installable skill lives at `.agents/skills/<skill-name>/SKILL.md`.
 Every `SKILL.md` must keep YAML frontmatter with `name` and `description`.
 
-The current pack contains 22 skills:
+The current pack contains 23 skills:
 
 - Core workflow: `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`,
   `write-spec`, `to-tasks`, `implement-task`, `auto-implement`,
   `code-review`, `change-scope`.
 - Optional assessments: `verify-feature`, `release-check`.
 - Brownfield support: `code-to-context`.
-- Utility: `compact-context`, `ui-design`, `debug-task`.
+- Utility: `compact-context`, `ui-design`, `debug-task`, `agent-security`.
 - Optional prototype: `to-prototype`, `edit-prototype`,
   `spec-with-prototype`.
 - Verification capabilities: `unit-test`, `integration-test`, `e2e-test`.

@@ -20,14 +20,14 @@ The source GitLab repository is public.
 
 ## Current skill pack
 
-The published collection contains 22 installable skills:
+The published collection contains 23 installable skills:
 
 - Core workflow: `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`,
   `write-spec`, `to-tasks`, `implement-task`, `auto-implement`, and
   `code-review`, `change-scope`.
 - Optional assessments: `verify-feature`, `release-check`.
 - Brownfield support: `code-to-context`.
-- Utility: `compact-context`, `ui-design`, `debug-task`.
+- Utility: `compact-context`, `ui-design`, `debug-task`, `agent-security`.
 - Optional prototype: `to-prototype`, `edit-prototype`, and
   `spec-with-prototype`.
 - Verification capabilities: `unit-test`, `integration-test`, and `e2e-test`.
@@ -72,6 +72,18 @@ and assess release readiness for a specific candidate/environment. Preserve
 canonical ownership, completed work, verification policy, and explicit batch
 scope. These skills must not form new mandatory stages or recursive handoffs.
 Assessment reports do not authorize implementation, task approval, or deployment.
+
+## Current capability: `agent-security`
+
+`agent-security` is an inline utility for source research and host/workspace
+operations. It separates retrieved evidence from authority, checks execution
+scope and effects (including hooks), protects secrets, and preserves provenance
+through compacted and delegated handoffs. Operational parent skills compose it;
+when unavailable they retain the core boundary without automatic installation.
+It adds no workflow stage, verification mode, or default confirmation for
+understood authorized work. Unsafe dependent actions return concrete gaps while
+unaffected work continues. It is behavioral guidance, not a sandbox guarantee.
+
 
 ## Current capability: `compact-context`
 
@@ -210,7 +222,7 @@ the verified focused diff ready for review, and never push automatically.
 
 - Preserve the `.agents/skills/<skill-name>/SKILL.md` layout.
 - Keep each skill's required `name` and `description` frontmatter.
-- Document discovery, installation, and Phat workflow navigation for all 22
+- Document discovery, installation, and Phat workflow navigation for all 23
   skills across workflow, brownfield, utility, prototype, and verification
   categories.
 - Keep catalog and workflow updates idempotent; change skill instructions only
@@ -225,7 +237,7 @@ the verified focused diff ready for review, and never push automatically.
 ## Verification criteria
 
 - `npx skills@latest add https://gitlab.com/phatysd.dev/skills --list` discovers
-  the current 22 skills across the documented categories after publication.
+  the current 23 skills across the documented categories after publication.
 - A selected skill can be installed by name.
 - The complete collection can be installed with the CLI's all-skills option.
 - The installed skill files retain valid frontmatter and their existing
