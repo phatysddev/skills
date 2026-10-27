@@ -67,6 +67,17 @@ and, after entering `in_review`, its single final `code-review` stage. Utility
 skills may be used internally within the parent's scope; the parent remains
 responsible for authoritative documents, verification, and the next explicit handoff.
 
+### Focused UI operations
+
+`ui-design` selects focused build, critique, audit, refinement, adaptation,
+copy/state, motion, performance, variant, and system-reuse playbooks from the
+request. Critique/audit alone is read-only; authorized fixes continue within the
+same scope. Standalone bounded requests need no new workflow setup. Existing
+parents still own files, prototype revisions, task status and verification.
+Alternatives do not select themselves; documenting observed design values does
+not confirm new branding. The local HTML helper is partial source evidence,
+not canonical review, a browser audit or a visual-quality verdict.
+
 ### Source and host safety support
 
 Operational skills compose `$agent-security` before source research or workspace

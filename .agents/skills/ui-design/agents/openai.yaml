@@ -1,3 +1,4 @@
 interface:
   display_name: "UI Design"
-  short_description: "Design coherent UI within the parent workflow"
+  short_description: "Build, audit, refine, and reuse coherent UI systems"
+  default_prompt: "Use $ui-design on the named UI target. Select the narrowest useful capability, preserve its system and behavior, and verify the requested result."

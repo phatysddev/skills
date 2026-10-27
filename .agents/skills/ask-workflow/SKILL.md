@@ -41,6 +41,7 @@ Recommend one primary next action when evidence supports it. The table lists rou
 | Project workflow/navigation is missing or disconnected; any necessary repository discovery is already sufficient | `$setup-project` |
 | Product scope is stable, and custom UI design discovery is explicitly requested and still pending, or a material visual-direction conflict remains | `$grill-design` |
 | The requirement is agreed and visual validation is requested before specification | `$to-prototype` |
+| An explicit bounded UI critique/audit, refinement, motion, visual alternatives, or system-reuse request has a clear target | `$ui-design` within the current parent, or standalone when no parent owns it |
 | A named prototype revision needs targeted visual or interaction changes | `$edit-prototype` |
 | An accepted prototype must be reconciled into a feature spec | `$spec-with-prototype` |
 | The requirement is agreed but no feature spec exists and visual validation is not requested | `$write-spec` |
@@ -51,6 +52,12 @@ Recommend one primary next action when evidence supports it. The table lists rou
 | Implementation is ready for review with required checks complete, or a task is `in_review` | `$code-review` |
 
 ## Continue the current work before onboarding
+
+An explicit bounded UI utility request can use `ui-design` without restarting
+setup, discovery, specification, or task decomposition. Keep an existing
+prototype/implementation parent in control when it already owns the target.
+Evaluation alone does not authorize fixes or status changes; broader behavioral
+changes still follow their owning workflow.
 
 Honor an explicit scope-change, feature-assessment, or release-readiness request
 before the default continuation route. These are conditional routes, not stages

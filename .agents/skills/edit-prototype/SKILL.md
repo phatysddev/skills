@@ -148,6 +148,19 @@ Keep revision IDs, proposal labels, verification, and handoff under this skill;
 check shared-style effects on other pages. If unavailable, preserve established
 patterns and report the fallback without auto-installing it.
 
+For substantial visual work, carry a brief visual thesis into the build:
+what leads, the reading/task path, and the type, spacing, color, and asset roles.
+Use the utility's craft reference before implementation and its critique
+reference on rendered output. Resolve hierarchy and responsive failures before
+detail polish; return actual inspected widths/states and unavailable evidence.
+Use only the requested UI capability: audit/critique alone reports; authorized
+polish, adaptation, motion, copy, variants or component reuse can edit within
+this parent's boundaries. Variants keep existing revision/artifact conventions;
+no winner is persisted without selection or explicit delegated choice. Check
+scoped static HTML with the utility's local checker when applicable; its findings
+supplement rendered inspection and never replace required tests or code review.
+Do not introduce a separate design approval or review stage.
+
 Preserve unrelated prototype behavior.
 
 Do not:

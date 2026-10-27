@@ -148,6 +148,23 @@ sources, file boundaries, verification gates, and workflow ownership. Routine
 UI edits with an already determined design need not invoke it. Missing support
 is reported with a local-pattern fallback and never auto-installed.
 
+The UI craft revision described in [SPEC-010](specs/SPEC-010-ui-design-craft.md)
+adds a surface-purpose and concrete visual thesis, focused typography/layout/
+color/imagery guidance, Thai and mixed-script checks, and a rendered critique
+pass before detail polish. Callers carry that direction and inspection evidence.
+Refinement preserves identity; critique-only requests do not edit UI. Guidance
+adapts selected Impeccable concepts with pinned attribution and Apache-2.0 terms,
+without importing its tooling, setup files, or extra workflow stages.
+
+[SPEC-011](specs/SPEC-011-ui-design-capabilities.md) extends the same utility with
+intent-based audit, refinement, adaptation/hardening, copy/onboarding states,
+motion/delight, performance, visual variants and design-system documentation/
+extraction. It adds a standard-library read-only local HTML checker with tested
+syntax/ID diagnostics and advisory naming/alt/viewport candidates. Evaluation
+alone does not edit source; authorized fixes keep parent boundaries and gates.
+No new skill identifiers, installed upstream tooling, mandatory setup records,
+live panel or claim of tool/visual parity is added.
+
 ## Maintainer consistency check
 
 The repository provides `scripts/check_skill_pack.py` as a standard-library

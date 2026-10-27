@@ -58,6 +58,14 @@ Offer a recommendation grounded in the domain when the user wants guidance,
 but keep it a Proposal until confirmed. "You decide" can explicitly delegate
 specified choices; record that latitude instead of inventing confirmed values.
 
+Ground visual discussion in the surface's job: deciding on an offer, completing
+recurring work, reading, or exploring artifacts. Offer concrete compositions
+and tradeoffs when needed, rather than asking the user to choose vague style
+labels. Capture which content leads, intended density, and the role of imagery
+or type when consequential. A local refinement inherits the incumbent identity;
+only a requested redesign opens replacement of that identity. Do not add an
+interview when choices are already agreed or explicitly delegated.
+
 Respect explicit styling preferences even when they differ from the defaults
 in `ui-design`. Identify feasibility or accessibility conflicts with concrete
 consequences and ask for a workable resolution; do not silently replace the

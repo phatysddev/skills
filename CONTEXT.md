@@ -7,8 +7,10 @@ completed setup objective was to make the collection discoverable and
 installable from the GitLab repository through the `skills` CLI. The collection
 now has 23 skills across workflow, brownfield support, utility, prototype,
 verification, and optional assessment categories. `code-to-context` is complete under SPEC-002;
-the latest completed feature specification is SPEC-009 for inline agent
-security support. SPEC-008 covers scope changes and optional assessments.
+the latest completed feature specification is SPEC-011 for focused UI capabilities.
+SPEC-010 covers UI design craft.
+SPEC-009 covers inline agent security support; SPEC-008 covers scope changes
+and optional assessments.
 
 ## Vocabulary
 
@@ -36,8 +38,8 @@ security support. SPEC-008 covers scope changes and optional assessments.
   `integration-test`, and `e2e-test`; and two optional assessments,
   `verify-feature` and `release-check`.
 - Each current skill has a `SKILL.md` with `name` and `description` frontmatter.
-- No product application code, package manifest, or repository-local build/test
-  system is present.
+- No product application code or package manifest is present. Python standard-library
+  checkers and the UI HTML-helper unittest suite support skill maintenance.
 - The canonical hosting target is the GitLab project identified by the
   configured remote `phatysd.dev/skills.git`, available at
   `https://gitlab.com/phatysd.dev/skills`.
@@ -116,6 +118,23 @@ prototype editing, and task implementation compose it inline when visual
 choices are needed. It preserves confirmed direction and authoritative behavior;
 the parent owns files, revisions, task status, required verification, and handoff.
 It does not introduce a new workflow stage or require a separate agent.
+
+The UI craft revision described in [SPEC-010](docs/specs/SPEC-010-ui-design-craft.md)
+adds a surface-purpose and concrete visual thesis, focused typography/layout/
+color/imagery guidance, Thai and mixed-script checks, and a rendered critique
+pass before detail polish. Callers carry that direction and inspection evidence.
+Refinement preserves identity; critique-only requests do not edit UI. Guidance
+adapts selected Impeccable concepts with pinned attribution and Apache-2.0 terms,
+without importing its tooling, setup files, or extra workflow stages.
+
+[SPEC-011](docs/specs/SPEC-011-ui-design-capabilities.md) extends the same utility with
+intent-based audit, refinement, adaptation/hardening, copy/onboarding states,
+motion/delight, performance, visual variants and design-system documentation/
+extraction. It adds a standard-library read-only local HTML checker with tested
+syntax/ID diagnostics and advisory naming/alt/viewport candidates. Evaluation
+alone does not edit source; authorized fixes keep parent boundaries and gates.
+No new skill identifiers, installed upstream tooling, mandatory setup records,
+live panel or claim of tool/visual parity is added.
 
 ## Agreed implementation verification policy
 

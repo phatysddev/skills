@@ -209,6 +209,33 @@ design may skip it. Install it alongside those skills if using a selected subset
 
 </details>
 
+## UI capabilities
+
+Use `ui-design` inside prototype/implementation work or for an explicit bounded
+UI request. It selects a focused playbook from the request, without adding a
+workflow stage. Natural language works; the words below are modes, not a new CLI.
+
+```text
+$ui-design critique <screen>        # visual hierarchy and composition; report only
+$ui-design audit <screen>           # implementation quality; report only
+$ui-design polish <screen>          # scoped finishing pass
+$ui-design quieter <screen>         # reduce competing emphasis
+$ui-design adapt <screen>           # devices, content ranges and input methods
+$ui-design animate <interaction>    # purposeful motion and reduced-motion behavior
+$ui-design variants <element>       # comparable alternatives, baseline preserved
+$ui-design document <UI directory>  # observed reusable tokens/components
+$ui-design extract <components>     # migrate only authorized consumers
+```
+
+Also supports bolder/simpler, typography/color/layout, UX copy and first-use
+states, hardening, performance diagnosis, and audit-and-fix when requested.
+Existing brand, behavior, revision rules and required verification stay active.
+A small Python helper provides read-only static HTML diagnostics; rendered
+inspection and interaction checks still establish visual and runtime evidence.
+See [UI Design](.agents/skills/ui-design/SKILL.md) for routing and scope.
+The pack does not bundle Impeccable's launcher, detector suite or live panel,
+and these capabilities do not claim full parity with that tooling.
+
 ## Skill catalog
 
 The collection contains 23 skills grouped by responsibility.
@@ -249,7 +276,7 @@ are not mandatory stages after task review and do not add verification-policy mo
 | Skill | Responsibility | Guide |
 | --- | --- | --- |
 | `compact-context` | Compress temporary agent handoffs without replacing canonical sources. | [Read](.agents/skills/compact-context/SKILL.md) |
-| `ui-design` | Compose and refine content-led UI within prototype or implementation scope. | [Read](.agents/skills/ui-design/SKILL.md) |
+| `ui-design` | Build, audit, refine, animate, compare, and reuse coherent UI within scope. | [Read](.agents/skills/ui-design/SKILL.md) |
 | `debug-task` | Diagnose bugs and regressions with symptom-specific evidence before fixes. | [Read](.agents/skills/debug-task/SKILL.md) |
 | `agent-security` | Guard research and host actions against source prompt injection within the parent scope. | [Read](.agents/skills/agent-security/SKILL.md) |
 
@@ -298,7 +325,13 @@ Run the repository consistency checker before publishing skill-pack changes:
 python3 scripts/check_skill_pack.py
 ```
 
-It checks skill source and interface files, frontmatter names, the README
+Run the UI HTML-checker tests with the standard library (no dependency install):
+
+```bash
+python3 -m unittest discover -s .agents/skills/ui-design/tests -v
+```
+
+The pack consistency check covers skill source and interface files, frontmatter names, the README
 catalog and documented counts, active skill references, router coverage, and
 local Markdown links.
 
@@ -364,9 +397,15 @@ red/green development stays with the main agent and does not replace required
 verification. Source links and the upstream MIT notice ship in each adapted
 skill's `references/upstream.md`.
 
+UI craft guidance studies and adapts selected concepts from
+[pbakaus/impeccable](https://github.com/pbakaus/impeccable), including concrete
+visual direction, typography/layout craft, and rendered critique. The adaptation
+keeps Phat's existing workflow and carries pinned
+[provenance and Apache-2.0 terms](.agents/skills/ui-design/references/upstream.md).
+
 Phat Skills is released under the [MIT License](LICENSE). You may use,
 modify, extend, and redistribute it, including in commercial projects, subject
-to the license terms.
+to the license terms and the separately identified third-party terms above.
 
 ---
 

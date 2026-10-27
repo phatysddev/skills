@@ -10,7 +10,7 @@ This repository is a small collection of Agent Skills for the Phat workflow.
 - Feature specifications: [`docs/specs/`](docs/specs/)
 - Implementation tasks: [`docs/tasks/`](docs/tasks/)
 - Individual skills: [`.agents/skills/`](.agents/skills/)
-- Latest completed specification: [`SPEC-009`](docs/specs/SPEC-009-agent-security.md)
+- Latest completed specification: [`SPEC-011`](docs/specs/SPEC-011-ui-design-capabilities.md)
 
 ## Repository structure
 
@@ -31,9 +31,10 @@ The current pack contains 23 skills:
 
 ## Commands and verification
 
-No package manifest, build configuration, test runner, or lint configuration is
-currently present, so no repository-local build, test, or lint commands are
-known. The repository provides a standard-library consistency checker:
+There is no application package manifest, build, or lint configuration. The
+skill pack uses Python standard-library maintenance checks. UI HTML-checker tests
+run with `python3 -m unittest discover -s .agents/skills/ui-design/tests -v`.
+The repository also provides a standard-library consistency checker:
 
 ```bash
 python3 scripts/check_skill_pack.py

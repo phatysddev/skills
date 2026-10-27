@@ -1,6 +1,6 @@
 ---
 name: ui-design
-description: "Design and refine coherent, content-led UI within an authorized prototype or implementation scope. Use as a supporting skill when creating a screen, choosing hierarchy or visual direction, or correcting generic AI-generated UI; skip routine UI changes already determined by established components."
+description: "Build, critique, audit, and refine UI within a named surface. Use for visual direction, polish, bolder/quieter/simpler treatment, typography, color, layout, responsive adaptation, motion, interaction states, UX copy, visual variants, and design-system reuse. Supports standalone requests or prototype/implementation parents; skip backend-only work and mechanical wiring of an already designed component."
 ---
 
 # UI Design
@@ -27,13 +27,46 @@ and handoff. Using it does not require a separate agent.
 Use it when the work involves meaningful composition, hierarchy, responsive
 layout, visual identity, or remediation of generic UI. Skip it for a label
 change, a behavior-only fix, or wiring an established component whose design
-is already determined. It can also handle an explicit, bounded UI request.
+is already determined. It also handles explicit, bounded UI requests, including evaluation without edits.
 
 Work only within the caller's authorized surface. Do not change business rules,
 requirements, specs, task criteria/status, or confirmed design direction. In a
 prototype, keep mock behavior and proposal labels; in production, use the
 project's actual components and behavior. Do not redesign neighboring screens
 or edit accepted prototypes during implementation.
+
+## Select the capability
+
+Select from the user's intent; these are modes of this utility, not new skills,
+CLI commands, or workflow stages. `$ui-design audit <target>` is an invocation
+example; ordinary requests such as “make this calmer” work equally well.
+Load only the reference and sections needed for the selected operation.
+
+| Intent / example | Operation and reference |
+| --- | --- |
+| Build a screen or explicitly redesign it | Establish the design basis below, then [design craft](references/design-craft.md). |
+| Critique hierarchy, composition, or visual character | Read-only [visual critique](references/visual-critique.md). |
+| Audit accessibility, responsive, theme, or implementation defects | Read-only [interface quality: audit](references/interface-quality.md#audit). |
+| Polish an existing flow | [Refinement: polish](references/refinement-playbook.md#polish). |
+| Bolder / quieter / simpler | [Refinement: emphasis and simplification](references/refinement-playbook.md#emphasis-and-simplification). |
+| Typography / color / layout | [Refinement: type-color-layout](references/refinement-playbook.md#type-color-layout) and the relevant craft section. |
+| Adapt to devices or harden for real content | [Interface quality: adapt and harden](references/interface-quality.md#adapt-and-harden). |
+| Clarify labels, recovery, first-use or empty states | [Interface quality: copy and onboarding](references/interface-quality.md#copy-and-onboarding). |
+| Animate / add a useful delightful detail / ambitious effects | [Motion](references/motion-and-variants.md#motion). |
+| Optimize UI performance | [Interface quality: optimize](references/interface-quality.md#optimize). |
+| Compare visual alternatives for a named element/screen | [Variants](references/motion-and-variants.md#variants). |
+| Document an existing visual system or extract reusable tokens/components | [Design system](references/design-system.md). |
+
+Combine modes only when they serve the same requested outcome. For “audit and
+fix,” diagnose first, then make authorized corrections without another permission
+round. Critique/audit alone never edits source, installs tools, changes task
+status, or initiates a repair stage. A bare invocation with no discernible target
+asks for the target/outcome; it does not start a whole-project redesign.
+
+A polish, quieter, or simplify request preserves content and behavior. An explicit
+redesign opens the named visual treatment while retaining pinned brand choices.
+A technical audit is evidence about implementation; aesthetic preference is not
+a defect. Keep both distinct when a request asks for both kinds of evaluation.
 
 ## Establish a design basis
 
@@ -54,6 +87,21 @@ aesthetic defaults. If design discovery was skipped or no brief exists, continue
 with the established direction or provisional treatment below. Behavioral
 sources remain authoritative if a visual reference conflicts.
 
+Distinguish the requested operation before choosing visual changes:
+
+- New screen: inherit any established identity and design its composition.
+- Refinement: preserve identity, content, behavior, and surrounding surfaces;
+  improve the specific weakness. A polish request does not authorize redesign.
+- Explicit redesign: replace the requested visual treatment decisively while
+  preserving product truth, required content, behavior, and pinned brand rules.
+- Critique/audit only: report observations and recommendations without editing UI.
+
+A missing design document does not erase a coherent system already in code.
+Do not require PRODUCT.md, DESIGN.md, another setup process, or a mandatory
+interview when existing project sources and user intent suffice. Explicit
+system-documentation requests follow the design-system reference and write only
+the requested destination; normal UI work does not create new branding records.
+
 Before writing UI, form a short working brief:
 
 - Who uses this screen, what they need to understand, and its primary action.
@@ -64,12 +112,47 @@ Keep this in working notes or the parent update; do not create a new project
 document merely to satisfy this skill. If a material product decision is
 missing, return it to the parent instead of making it through design.
 
+Name the surface's job, not just its product category:
+
+| Surface job | Design priority | Typical consequence |
+| --- | --- | --- |
+| Decide or act on an offer | Immediate understanding, credible proof, distinct voice | A deliberate opening composition with a clear action; imagery when it carries evidence. |
+| Complete recurring work | Scanability, density, predictable actions | Stable navigation, comparable rows, legible status, compact useful controls. |
+| Read and understand | Comfortable reading, structure, wayfinding | Controlled text measure, purposeful headings, restrained supporting navigation. |
+| Explore creative work | The work itself and discovery | Artifacts lead; interface chrome recedes. |
+
+One product can contain all of these. Do not turn an admin screen into a
+landing page or a documentation index into a sales hero.
+
+For substantial new composition with real latitude, consider a few structurally
+different approaches in working notes, then choose one and explain why it fits.
+Alternatives should differ in reading path, density, image role, or task
+structure, not merely accent color. Do not build multiple variants or stop for
+approval unless requested or a consequential unresolved choice requires it.
+
+State a concrete visual thesis: what leads, how the page unfolds, which type
+and color roles carry its voice, and the distinctive detail tied to this
+product. For example: “The repair queue leads with comparable rows; urgency
+uses one accent; a quiet detail panel keeps the selected job in context.”
+“Modern, clean, premium” is not an implementation direction.
+
 If no direction exists, choose a coherent provisional treatment suited to the
 domain and describe the consequential visual assumptions as proposals. Do not
 persist them as confirmed branding without explicit user agreement.
 For example, an operations screen needs scanable records and clear status;
 a booking form needs sequence and validation; a portfolio may benefit from
 image-led composition. These are decision examples, not mandatory templates.
+
+## Craft references
+
+Before building a new composition or making substantial visual changes, read
+[design craft](references/design-craft.md). For a narrow typography, color, or
+layout fix, read only its relevant section. Use these decision tools inside
+the established system, not as a reason to replace it.
+
+For critique or the inspection pass after building, read
+[visual critique](references/visual-critique.md). A critique-only request stops
+at its report; an authorized implementation continues through scoped fixes.
 
 ## Compose from content
 
@@ -125,12 +208,20 @@ Preserve useful information rather than hiding it to make a screenshot fit.
 
 ## Inspect and refine
 
+Judge composition before ornament: a wrong reading order cannot be fixed with
+shadows or a more fashionable font. Use the critique reference to identify the
+largest observed weakness, then batch related corrections within scope.
+
 When a browser/rendering tool is available, inspect the rendered target at a
 representative desktop and narrow mobile width. Exercise the primary action
 and relevant states, and check keyboard focus, overflow, clipped text, visual
 hierarchy, adherence to applicable confirmed design decisions and their
 verification notes, and consistency with neighboring UI. A DOM or source-code check
 alone does not establish visual quality.
+
+Capture only after fonts, assets, and layout have settled; ensure the image
+shows the intended route, viewport, and state. Inspect both overall composition
+and readable detail rather than judging a full-page thumbnail alone.
 
 Fix observed problems within scope and inspect again after material changes.
 For shared styling, check affected neighboring screens for regressions. Scale
@@ -142,9 +233,21 @@ visual inspection as unverified. Do not claim screenshots, accessibility
 compliance, or responsive success without the corresponding evidence. This
 inspection supplements the parent's required tests and review gates.
 
+For static HTML edits or a requested source audit, when Python is available,
+run `python3 <skill-dir>/scripts/inspect_html.py <target.html-or-directory>` on
+the scoped source. The helper reads local HTML only and emits JSON. Exit 1 means
+definite syntax/ID findings; exit 2 means incomplete input/read coverage. Fix
+confirmed defects when editing is authorized; audit-only returns findings.
+Treat advisory naming/alt/viewport observations as review candidates. JSX,
+rendered templates, CSS, browser accessibility, and visual quality require their
+own checks. No tool availability or clean scan creates a new gate or proves
+compliance. See [interface quality](references/interface-quality.md#local-html-check).
+
 ## Return to the caller
 
-Return the changed files, consequential design choices and their basis,
+Return the selected operation, changed files or findings, and consequential choices with their basis,
 states/widths actually inspected, and remaining assumptions or limitations.
 Keep the report proportional to the work. The parent owns prototype IDs,
 task evidence, status transitions, and the next workflow step.
+
+Adaptation provenance and retained license: [upstream](references/upstream.md).

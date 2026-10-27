@@ -234,8 +234,11 @@ Avoid common AI-generated UI problems such as:
 Follow existing brand guidance, confirmed Design Direction, and applicable
 Agreed UI Design Requirements. The defaults above do not override explicit
 user-confirmed styling. If no direction or custom preference exists, choose a
-restrained provisional treatment appropriate to the content rather than
-inventing elaborate branding.
+coherent provisional treatment appropriate to the content. Lightweight refers
+to the implementation, not a lower visual standard: a narrative prototype can
+use expressive type and relevant imagery while a work screen can use precise
+density and alignment. Use `ui-design` for craft decisions and rendered
+critique; do not compensate for missing content with decoration.
 
 ## Responsive behavior
 
