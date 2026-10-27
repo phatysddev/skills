@@ -1,0 +1,7 @@
+{
+  "worktree_common_dir_matches": true,
+  "clone_identity_matches": true,
+  "relative_project_boundary": ".",
+  "actual_root_changed": true,
+  "scope": "temporary repositories only; identity checks do not alone prove policy adherence"
+}

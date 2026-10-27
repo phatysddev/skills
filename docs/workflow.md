@@ -329,3 +329,19 @@ and no open question or blocker remains. Explicitly retired tasks/criteria are
 linked history and are excluded only by an accepted scope change; they are never
 reported as completed implementation. A spec stays `ready` while any active
 linked task is `todo`, `in_progress`, `in_review`, or `blocked`.
+
+## Agreement synchronization and host portability
+
+After an owning spec exists, grill-workflow, grill-design and setup capture
+changed decisions as pending reconciliation; change-scope applies them across
+authoritative sources and the task plan before marking synchronized. Its stable
+change record supports interruption/resume and duplicate-free delta tasks.
+Implementation must not consume pending changes as a synchronized agreement.
+
+Setup reports delegation, rendering, package runners and environment availability
+before verification policy selection. Clear explicit choices need no repeated
+confirmation. Verification uses ordered package runner sets with separate
+outcomes and preserves delegated execution. Portable Git policy identifies the
+project and relative boundary; an observed absolute checkout path is not the
+permission identity. See [SPEC-015](specs/SPEC-015-agreement-synchronization.md)
+and the [artifact validation reference](../.agents/skills/to-tasks/references/artifact-validation.md).

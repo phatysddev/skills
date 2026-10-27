@@ -232,8 +232,11 @@ Classify the effective policy:
 
 When a commit is required or explicitly authorized:
 
-1. Verify Git is available and the current worktree root matches the agreed
-   repository boundary. Do not initialize Git from implementation. Inspect
+1. Verify Git is available and resolve the current checkout against the portable
+   project identity and relative boundary using setup-project’s
+   [relocation rules](../../setup-project/references/git-policy.md#checkout-relocation).
+   A proven clone/worktree relocation preserves standing authorization without
+   reconfirming solely for a changed absolute path. Do not initialize Git from implementation. Inspect
    `git status`, working-tree diff and the entire staged diff, including any
    pre-existing staged changes. If required Git/identity/hooks are unavailable,
    report the blocker/remedy without installing tools, bypassing hooks or

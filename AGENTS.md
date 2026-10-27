@@ -29,6 +29,8 @@ The current pack contains 23 skills:
   `spec-with-prototype`.
 - Verification capabilities: `unit-test`, `integration-test`, `e2e-test`.
 
+- Latest workflow hardening specification: [`SPEC-015`](docs/specs/SPEC-015-agreement-synchronization.md)
+
 ## Commands and verification
 
 There is no application package manifest, build, or lint configuration. The
@@ -41,6 +43,7 @@ python3 scripts/check_skill_pack.py
 ```
 
 Run it after changing skill sources, metadata, routing, or catalog documents.
+Artifact-checker regressions run with `python3 -m unittest discover -s scripts/tests -v`.
 
 The target installation command, supplied as the project requirement, is:
 

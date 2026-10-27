@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "specs": [
+    {
+      "id": "SPEC-001",
+      "path": "docs/specs/SPEC-001-pages.md",
+      "sha256": "bf183fb6b67a950e0620ef3a9993eaef3af37a588fa0177a016325e6f4e13bf4",
+      "agreement": "b2",
+      "acs": [
+        "AC-01",
+        "AC-02",
+        "AC-03",
+        "AC-04"
+      ],
+      "baselines": [
+        "b2"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "path": "docs/tasks/TASK-001-page1.md",
+      "spec": "SPEC-001",
+      "status": "todo",
+      "agreement": "b2",
+      "acs": [
+        "AC-01"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "TASK-002",
+      "path": "docs/tasks/TASK-002-page2.md",
+      "spec": "SPEC-001",
+      "status": "in_progress",
+      "agreement": "b2",
+      "acs": [
+        "AC-02"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "TASK-003",
+      "path": "docs/tasks/TASK-003-page3.md",
+      "spec": "SPEC-001",
+      "status": "in_progress",
+      "agreement": "b2",
+      "acs": [
+        "AC-03"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "TASK-004",
+      "path": "docs/tasks/TASK-004-page4.md",
+      "spec": "SPEC-001",
+      "status": "done",
+      "agreement": "b1",
+      "acs": [
+        "AC-04"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "TASK-005",
+      "path": "docs/tasks/TASK-005-page4-b2.md",
+      "spec": "SPEC-001",
+      "status": "todo",
+      "agreement": "b2",
+      "acs": [
+        "AC-04"
+      ],
+      "dependencies": []
+    }
+  ],
+  "baselines": [
+    {
+      "id": "b1",
+      "files": {
+        "docs/assets/prototype-baselines/pages/b1/inventory.json": "2d5cf9ef9ed8bf1fb1b0a2b0fe9f7dbd5000d90ee5af20b71011772dc60ba9b4",
+        "docs/assets/prototype-baselines/pages/b1/page1.html": "eb8e693213d9409e8a0f5b4e280171d592b278d5cd296978aaabc53ac83ea855",
+        "docs/assets/prototype-baselines/pages/b1/page2.html": "26417732f67d0df0f1aedb66b684a5c8fddddd72d2337311ad91f3947ffe7995",
+        "docs/assets/prototype-baselines/pages/b1/page3.html": "26a30eb363f1732b0581670735a0e8cfdeb4f008f5584c8547bd7594ed5953eb",
+        "docs/assets/prototype-baselines/pages/b1/page4.html": "941642ea718d0432ac601148d69a1f42e56e6cc9684b25635fa087b87273c9cf",
+        "docs/assets/prototype-baselines/pages/b1/style.css": "51252446393dab6ccadca3017af06fe92731fde84b7ac25dc6b77212e3726986"
+      }
+    },
+    {
+      "id": "b2",
+      "files": {
+        "docs/assets/prototype-baselines/pages/b2/inventory.json": "93af62755b4481f73a2a9eef7dc1608530fecc7717fb2385dee2e234e6714214",
+        "docs/assets/prototype-baselines/pages/b2/page1.html": "714fcfe46ae1ded805d93e7d6c2798d765d1283f35cfd9601a9240af10ed44d0",
+        "docs/assets/prototype-baselines/pages/b2/page2.html": "b7b54fc25e4d0d84a277cebd9879b808b8d817f27cd1b92b00c5d152c06e8c6e",
+        "docs/assets/prototype-baselines/pages/b2/page3.html": "9d1cf6cb42b3f459cc665b8157f392aec8c06998dbf02661622c6b1123d303da",
+        "docs/assets/prototype-baselines/pages/b2/page4.html": "231388cf78b34820605de63aadc2ce371a93707c4f5d072cbd1340bbcc8bc83b",
+        "docs/assets/prototype-baselines/pages/b2/style.css": "86306b9716f97caa2e44a4841d2329de3c49d04693df0b0ae3eca929b8fe1988"
+      }
+    }
+  ]
+}

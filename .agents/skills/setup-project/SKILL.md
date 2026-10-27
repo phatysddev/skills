@@ -175,7 +175,7 @@ When invoked from `$grill-workflow`, treat explicitly confirmed decisions from t
 Preserve a request for visual validation as workflow intent. It determines the
 next handoff, but does not make prototype visuals authoritative requirements.
 
-Persist them into their appropriate project sources.
+Before persisting a changed existing agreement, apply the existing-agreement guard from `$grill-workflow`: preserve the active sources and hand pending reconciliation to `$change-scope`. Persist unchanged or new-project decisions into their appropriate project sources.
 
 Use this mapping:
 
@@ -239,6 +239,23 @@ Before completing setup, inspect `CONTEXT.md` for the project-owned
 [the verification policy reference](references/verification-policy.md) for
 the canonical shape and validity rules.
 
+Before asking for policy, inspect host capabilities without installing or
+provisioning anything. Report delegation availability, installed verification
+skills, browser/rendering access, repository runner commands with package/cwd
+and evidence paths, and required environment availability. Use available,
+unavailable or unknown; an unexecuted command is not a passing probe. Store
+observations under `## Host Capabilities` in CONTEXT with host/date, separately
+from portable policy. Refresh these observations on a different host or resume
+when capabilities may have changed.
+
+Explain the effective choices before the user selects: relevant required work
+blocks without delegation/runner/render evidence; auto records an unavailable
+skip; off does not execute. Rendering required by a visual AC remains unverified
+when unavailable regardless of test modes. This pack uses delegated verification
+only; there is no implicit inline fallback or new execution profile. Preserve
+an explicit required choice even on an incapable host and report that setup
+is documented but implementation is blocked by the named prerequisite.
+
 If the section is absent, ask one grouped confirmation containing four
 independent choices. Do not infer a value or persist a partial policy. Ask the
 user to choose `auto`, `required`, or `off` separately for:
@@ -248,8 +265,8 @@ user to choose `auto`, `required`, or `off` separately for:
 * `e2e-test`; and
 * `code-review`.
 
-After all four choices are explicit, repeat the complete set of modes for
-confirmation, then persist one `## Verification Policy` section in `CONTEXT.md`
+Clear explicit answers already confirm those choices. Ask again only for an
+ambiguous/conflicting answer or a newly synthesized choice, then persist one `## Verification Policy` section in `CONTEXT.md`
 using the reference shape. Preserve the user's choices exactly and report the
 confirmed policy in setup output. If `CONTEXT.md` does not exist yet, create it
 through the normal durable-document flow and include the policy section.
@@ -336,7 +353,7 @@ Use this routing:
 material product/domain/architecture decision unresolved
     → $grill-workflow
 
-existing implementation with missing or stale generated Codebase Context
+existing implementation with a concrete setup-blocking knowledge gap requiring broad discovery
     → $code-to-context
 
 custom-design discovery explicitly requested and still pending

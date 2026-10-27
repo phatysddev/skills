@@ -52,9 +52,10 @@ is unresolved.
 
 ## First run and rerun behavior
 
-On first setup, ask for all four values before writing the section. Repeat the
-complete set for confirmation and write the section only after the user
-confirms it. Never fill an unanswered choice with a default.
+On first setup, ask for all four values before writing the section. Clear explicit
+answers constitute confirmation; persist without a second confirmation round.
+Ask only about ambiguity, conflicts or newly synthesized choices. Never fill an
+unanswered choice with a default.
 
 On a later setup run, a valid confirmed section is authoritative and is reused
 without asking again or changing its values. Setup may report the reused policy

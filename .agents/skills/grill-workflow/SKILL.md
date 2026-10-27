@@ -317,9 +317,26 @@ Do not introduce without a concrete requirement:
 
 Prefer managed services and existing project capabilities when they reduce operational burden without violating requirements.
 
+## Existing agreement guard
+
+Before persisting any changed product, domain, architecture or design decision,
+inspect the owning specs and linked tasks. If a spec already exists, capture the
+confirmed change as a pending reconciliation handoff instead of overwriting the
+active requirement, CONTEXT rule, ADR or design brief. Include stable decision
+IDs, acceptance source, old/new agreement, affected spec/AC/UI IDs, shared asset
+consumers, task statuses and evidence impact. Mark `Synchronization: pending`;
+the old agreement stays active until reconciliation completes. Confirmation of
+a choice is distinct from synchronization of the plan.
+
+Recommend `$change-scope` as the next skill for that existing agreement, even
+when no tasks exist yet. It owns requirement/spec reconciliation and any task
+updates. Do not route to write-spec, prototype creation or implementation while
+this change is pending. Unchanged clarification may retain existing sources.
+For a genuinely new unrelated feature, use the normal new-feature path.
+
 ## Recording decisions during grilling
 
-If standard project context documents already exist, update them when a decision is explicitly confirmed.
+If standard project context documents already exist, update them when a decision is explicitly confirmed only when the Existing agreement guard permits it.
 
 Use:
 

@@ -312,7 +312,7 @@ uncertainty.
 
 | Skill | Responsibility | Guide |
 | --- | --- | --- |
-| `unit-test` | Verify isolated task behavior with a repository-detected runner. | [Read](.agents/skills/unit-test/SKILL.md) |
+| `unit-test` | Verify isolated task behavior with task-scoped repository runner sets. | [Read](.agents/skills/unit-test/SKILL.md) |
 | `integration-test` | Verify task-owned component and service boundaries. | [Read](.agents/skills/integration-test/SKILL.md) |
 | `e2e-test` | Verify task-owned critical user journeys. | [Read](.agents/skills/e2e-test/SKILL.md) |
 
@@ -437,3 +437,5 @@ to the license terms and the separately identified third-party terms above.
   Built by <a href="https://github.com/phatysddev"><strong>PhatYSD</strong></a> · phatysd.dev<br>
   <sub>Less guessing. More building.</sub>
 </p>
+
+Maintenance also provides a [read-only project artifact checker](.agents/skills/to-tasks/references/artifact-validation.md). Run its regression suite with `python3 -m unittest discover -s scripts/tests -v`. It checks indexed structure and hashes; rendered fidelity still requires actual visual evidence.

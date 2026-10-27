@@ -4,7 +4,8 @@ Inspect Git availability and repository/worktree membership before asking.
 Use `git rev-parse --show-toplevel` from the project directory; an enclosing
 repository or linked worktree already counts as Git. Do not rely on a local
 `.git` directory check or create a nested repository automatically. Distinguish
-missing Git, non-repository state and other command errors.
+missing Git, non-repository state and other command errors. Command observations
+are evidence only; this reference does not authorize initialization on relocation.
 
 Reuse explicit session decisions and a valid confirmed `## Git Policy` in
 `CONTEXT.md`; do not ask again. If sources conflict, resolve the conflicting
@@ -36,7 +37,9 @@ Persist one section, for example:
 ## Git Policy
 
 Status: confirmed
-Repository root: <resolved project/repository root, or none if declined>
+Repository identity: <stable project identity from authoritative project record>
+Project path: <repository-relative project directory, or .>
+Observed checkout root: <current resolved root; observation only>
 Initialization: initialized
 Task commits: required
 Push: manual
@@ -44,7 +47,7 @@ Push: manual
 
 `Initialization` is `initialized`, `existing` or `declined`; `Task commits` is
 `required`, `allowed` or `disabled`. Record the actual applicable repository
-root, especially when the project is inside an enclosing repository. These
+boundary, especially when the project is inside an enclosing repository. These
 fields represent decisions and observed results, not instructions to create a
 new repository when implementation runs. Confirmed policy is valid only with
 all fields, supported values, and no duplicate/conflicting entries.
@@ -65,3 +68,21 @@ missing Git after prior initialization is a problem, not permission to re-init.
 
 Command semantics: [git-init](https://git-scm.com/docs/git-init),
 [git-rev-parse](https://git-scm.com/docs/git-rev-parse).
+
+## Checkout relocation
+
+Commit permission belongs to the confirmed project identity and relative project
+boundary, not an absolute machine path. At setup and before committing, resolve
+the current top level and relative project path. A linked worktree with the same
+Git common directory, or a clone with matching authoritative project identity,
+relative project boundary and tracked project contract, may reuse standing
+permission. Remote URL alone is insufficient; a changed remote is not itself a
+revocation. Record the observed root locally/in the handoff without rewriting
+portable policy on every machine. Do not ask again solely because a path changed.
+
+Legacy `Repository root` is an observation: migrate when same-project evidence
+above is available, preserving initialization/commit/push decisions. If identity
+or relative scope cannot be established, report the exact mismatch and resolve
+that boundary before committing. Missing Git is never relocation permission to
+initialize; conflicting decisions and declined-to-existing changes still need
+reconciliation. Never broaden authorization to an unrelated enclosing repository.

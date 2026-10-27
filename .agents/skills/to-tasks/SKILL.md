@@ -393,3 +393,7 @@ transition under its scope-change contract.
 Do not fabricate evidence.
 
 Do not create additional scope merely to make decomposition look complete.
+
+## Artifact validation support
+
+Use [project artifact validation](references/artifact-validation.md) for the bundled read-only AC coverage, dependency, agreement and baseline checker. Preserve its manual-review limits and report whether checks were actually run.

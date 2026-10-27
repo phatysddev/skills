@@ -1,0 +1,40 @@
+{
+  "original_authorized_batch": [
+    "TASK-001",
+    "TASK-002",
+    "TASK-003",
+    "TASK-004"
+  ],
+  "interruption": "accepted b2 while plan still b1: stop affected execution",
+  "resume_preflight": {
+    "TASK-001": "todo, b2 current",
+    "TASK-002": "in_progress, b2 current",
+    "TASK-003": "in_progress, old visual evidence superseded",
+    "TASK-004": "done, historical b1 retained"
+  },
+  "excluded_new_member": "TASK-005 requires explicit added batch authorization",
+  "rendering_probe": {
+    "command": "Google Chrome --headless --screenshot ... file:///.../app/page1.html",
+    "exit_code": 134,
+    "screenshot_created": false,
+    "result": "unverified; required visual AC blocks review readiness"
+  },
+  "delegation_case": {
+    "input": "controlled unavailable-delegation host profile",
+    "observed_host_claim": false,
+    "required_code_review": "blocked; no inline fallback"
+  },
+  "resume_result": "blocked before coding; supply working renderer and required reviewer, then re-preflight original batch",
+  "repeat_reconciliation": {
+    "task_count": 5,
+    "changed_files": [],
+    "doc_hashes_equal": true
+  },
+  "shared_css_consumers": [
+    "page1.html",
+    "page4.html",
+    "page3.html",
+    "page2.html"
+  ],
+  "completed_delivery_preserved": true
+}

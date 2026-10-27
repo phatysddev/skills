@@ -1,6 +1,6 @@
 ---
 name: integration-test
-description: "Verify task-owned boundaries between modules, APIs, data stores, queues, or services with one repository-detected integration runner. Use when implement-task selects integration-test verification."
+description: "Verify task-owned boundaries between modules, APIs, data stores, queues, or services with task-scoped repository-detected integration runner. Use when implement-task selects integration-test verification."
 ---
 
 # Integration Test
@@ -25,7 +25,7 @@ continue safe work without auto-installing the utility or adding a new gate.
 - [Role boundary](#role-boundary)
 - [Workflow](#workflow)
 - [Determine relevance](#determine-relevance)
-- [Resolve one runner](#resolve-one-runner)
+- [Resolve runner set](#resolve-runner-set)
 - [Test-file ownership](#test-file-ownership)
 - [Test quality](#test-quality)
 - [Execution and outcomes](#execution-and-outcomes)
@@ -56,7 +56,7 @@ Read task and project context
         ↓
 Determine whether integration verification is relevant
         ↓
-Resolve exactly one existing repository runner and available environment
+Resolve the ordered task-scoped runner set and available environment
         ↓
 Run the task-relevant boundary scope, or report an unresolved gate
         ↓
@@ -79,7 +79,7 @@ task contains no boundary behavior, return `skipped with reason` and do not run
 a command. The reason must identify the mode or task-scope evidence;
 availability of an integration runner is not itself a reason to run it.
 
-## Resolve one runner
+## Resolve runner set
 
 Inspect only repository-supported evidence, such as:
 
@@ -96,12 +96,22 @@ absent, use a runner command only when repository configuration identifies one
 unambiguously. Record the evidence path and exact command, plus any already
 available environment required to run it.
 
-If no usable runner or required existing environment is detected, return
-`blocked` with `runner: missing` and execute nothing. If more than one runner
-or command is a plausible match and repository evidence does not select one,
-return `blocked` with `runner: ambiguous` and list the candidates. Never
-install or upgrade a skill, dependency, browser, service, database, or
-replacement runner to resolve the result.
+Build an ordered runner set by task-owned package and behavior. A frontend
+and backend runner are both required when they cover distinct task scope;
+multiple necessary runners are not ambiguity. Prefer an established aggregate
+command if it demonstrably covers all selected packages, avoiding duplicate runs.
+For each entry record package/cwd, evidence path, exact command, covered ACs,
+environment prerequisites and order. Never guess command syntax.
+
+If a scope has no usable runner/environment, report `blocked` with
+`runner: missing` for that entry. If competing commands cover the same scope
+and repository evidence cannot choose, report `runner: ambiguous` with candidates
+for that scope. Do not install or upgrade dependencies, browsers, services or
+runners. Execute independently resolvable entries in order; keep missing or
+ambiguous entries visible. Report each entry's command, exit code, outcome,
+coverage and limitations. Overall passed requires every selected entry to pass;
+any observed failure yields failed, otherwise unresolved entries yield blocked.
+No entry's pass may hide another entry's failure or missing evidence.
 
 ## Test-file ownership
 
@@ -171,7 +181,7 @@ Return an observable report containing every field below:
 Capability: integration-test
 Status: passed | failed | blocked | skipped with reason | overridden
 Relevance: relevant | irrelevant — <task-scope reason>
-Runner: <one detected runner and evidence path>, or missing/ambiguous
+Runner: <ordered detected runners, package/cwd and evidence paths>, or missing/ambiguous
 Scope: <task-owned boundary behavior and test files considered>
 Commands: <exact commands executed, or none>
 Results: <exit/result summary and relevant output>

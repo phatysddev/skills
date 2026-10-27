@@ -62,7 +62,7 @@ The parent prompt must include:
   `e2e-test`);
 - the selected task, linked spec, relevant project context, acceptance
   criteria, implementation diff, and task-owned test scope;
-- the effective mode, relevance decision, resolved repository runner, and
+- the effective mode, relevance decision, ordered repository runner set with package/cwd, AC coverage, and
   runner evidence;
 - the write boundary: only the explicitly task-owned test files may change;
 - the prohibition on production, configuration, unrelated-test, project

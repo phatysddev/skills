@@ -303,3 +303,20 @@ the verified focused diff ready for review, and never push automatically.
 - The complete collection can be installed with the CLI's all-skills option.
 - The installed skill files retain valid frontmatter and their existing
   instructions.
+
+## Current capability: agreement synchronization and portable verification
+
+Agreed changes discovered after an owning spec exists must enter change-scope
+before replacing active requirements, design/domain rules or ADR decisions.
+Pending decisions preserve the active agreement and carry impact and acceptance
+basis. Reconciliation is resumable and repeatable with stable change IDs and no
+duplicate delta tasks. Setup uses one material-knowledge-gap routing rule and
+reuses clear policy answers without a second confirmation round.
+
+Setup reports host delegation/rendering/runner prerequisites before policy
+selection. Verification retains delegated execution and supports ordered runner
+sets for distinct task-owned packages, with per-entry evidence and aggregate
+gate results. Git authorization follows proven project identity and relative
+boundary across checkouts. The artifact checker validates an explicit derived
+index for coverage, cycles, stale agreements and baseline hashes without
+claiming semantic or visual proof. See [SPEC-015](specs/SPEC-015-agreement-synchronization.md).

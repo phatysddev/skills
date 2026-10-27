@@ -89,14 +89,17 @@ For each relevant role whose effective mode is not `off`:
 1. discover installed capability skills using exact role identity and matching
    `SKILL.md` metadata;
 2. require exactly one capability skill for the role;
-3. use that capability's documented runner-resolution contract to detect one
-   repository-supported runner from `AGENTS.md`, `CONTEXT.md`, manifests,
+3. use that capability's documented runner-resolution contract to detect an ordered
+   task-scoped repository-supported runner set from `AGENTS.md`, `CONTEXT.md`, manifests,
    configuration, CI, or existing test guidance; and
 4. record the skill path, runner identity/evidence, or an unresolved result.
 
 No matching skill is `missing`. Multiple matching skills, aliases, or
 conflicting role claims are `ambiguous`. No runner is `missing`. Multiple
-plausible runners without authoritative repository evidence are `ambiguous`.
+necessary package runners are selected together with separate cwd/commands and
+results. Only competing commands for the same scope without authoritative
+evidence are `ambiguous`; retain that per-entry uncertainty. An aggregate
+command must demonstrably cover the selected scopes.
 For `required`, all such results block the current task. For `auto`, record the
 result as a non-blocking skip. Do not auto-install or substitute anything.
 

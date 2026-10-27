@@ -1,0 +1,9 @@
+{
+  "baseline_inventories": "passed b1 and b2",
+  "done_task_byte_preservation": "passed",
+  "second_pass_idempotency": "passed",
+  "task_count": 5,
+  "rendered_fidelity": "unverified",
+  "functional_navigation": "four relative links per page resolve",
+  "production_translation": "initial b1 app exists; changed b2 implementation deliberately not started under blocked preflight"
+}

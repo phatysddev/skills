@@ -1,0 +1,1 @@
+*{box-sizing:border-box}body{font:18px system-ui;margin:0;background:#f3f1e8;color:#173c38}header,main{max-width:1000px;margin:auto;padding:32px}nav{display:flex;gap:24px}a{color:inherit}main{display:grid;grid-template-columns:2fr 1fr;gap:32px}aside{background:#d9e7db;padding:24px;border-radius:8px}@media(max-width:600px){main{grid-template-columns:1fr}nav{flex-wrap:wrap}}

@@ -69,6 +69,17 @@ replacement. Include cross-page consumers of shared styles/assets. Update only
 relevant design requirement references; do not invent a business-rule change
 just to track a visual change.
 
+## Reconciliation identity and completion
+
+Consume pending decision handoffs from grill-workflow, grill-design or setup.
+Use a stable change ID keyed to the owning spec, confirmed decision IDs and
+accepted revision. Search existing change records and delta tasks before editing;
+reuse them on repeat rather than allocating duplicate work. Record synchronization
+as pending until requirement, spec, impacted tasks, coverage and evidence
+invalidation are complete; only then mark synchronized. If interrupted, preserve
+the unfinished stages and stop affected implementation/batches. Resume from that
+record after inspecting current files, not from assumed prior success.
+
 ## Map the impact before editing
 
 Build a concise before/after map identifying:
@@ -139,3 +150,7 @@ without authorization. Report the changed batch membership and invalidated
 tasks to any active auto-implement parent; it must stop affected execution and
 preflight the revised plan before resuming, never silently adopt a new baseline.
 Stop after the report; do not start implementation.
+
+## Artifact validation support
+
+Use [project artifact validation](../to-tasks/references/artifact-validation.md) for the bundled read-only AC coverage, dependency, agreement and baseline checker. Preserve its manual-review limits and report whether checks were actually run.
