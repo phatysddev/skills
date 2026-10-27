@@ -4,7 +4,7 @@
     {
       "id": "SPEC-001",
       "path": "docs/specs/SPEC-001-pages.md",
-      "sha256": "bf183fb6b67a950e0620ef3a9993eaef3af37a588fa0177a016325e6f4e13bf4",
+      "sha256": "1c0302c044ca61c71f8eb37224e31231e391f0956d7e19b5884b7717b1ced32f",
       "agreement": "b2",
       "acs": [
         "AC-01",
@@ -22,7 +22,7 @@
       "id": "TASK-001",
       "path": "docs/tasks/TASK-001-page1.md",
       "spec": "SPEC-001",
-      "status": "todo",
+      "status": "done",
       "agreement": "b2",
       "acs": [
         "AC-01"
@@ -33,7 +33,7 @@
       "id": "TASK-002",
       "path": "docs/tasks/TASK-002-page2.md",
       "spec": "SPEC-001",
-      "status": "in_progress",
+      "status": "done",
       "agreement": "b2",
       "acs": [
         "AC-02"
@@ -44,7 +44,7 @@
       "id": "TASK-003",
       "path": "docs/tasks/TASK-003-page3.md",
       "spec": "SPEC-001",
-      "status": "in_progress",
+      "status": "done",
       "agreement": "b2",
       "acs": [
         "AC-03"
@@ -66,7 +66,7 @@
       "id": "TASK-005",
       "path": "docs/tasks/TASK-005-page4-b2.md",
       "spec": "SPEC-001",
-      "status": "todo",
+      "status": "done",
       "agreement": "b2",
       "acs": [
         "AC-04"

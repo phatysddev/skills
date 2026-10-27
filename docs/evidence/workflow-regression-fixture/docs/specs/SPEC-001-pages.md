@@ -27,4 +27,7 @@ No behavior change or migration. TASK-001 todo and TASK-002 in_progress update
 in place. TASK-003 leaves in_review for in_progress and its historical b1 visual
 evidence is superseded. TASK-004 stays done as history; TASK-005 owns only the
 missing b2 delta for page4. Old snapshots and deliveries remain preserved.
-Synchronization: complete for documents; implementation and visual review pending.
+Synchronization: complete for documents. At the original reconciliation,
+implementation and visual review were pending. The later [b2 follow-up](../../../b2-review/README.md)
+implemented the shared delta and completed desktop/mobile comparisons and final
+consumer reviews for TASK-001/002/003/005. TASK-004 remains historical b1 delivery.

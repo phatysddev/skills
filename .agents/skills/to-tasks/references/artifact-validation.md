@@ -35,8 +35,10 @@ unnecessary delta work. The reviewer must inspect that assessment; the utility
 cannot prove its meaning. `retired: true` requires blocked status. This optional metadata preserves
 Goal / Blocked by / Todo bodies and existing status ownership.
 
-The checker checks source AC declarations (`| AC-01 |` table rows or `AC-01:`
-lines), task status, agreement markers, AC mentions, dependency IDs in Blocked
+The checker checks source AC declarations (`| AC-01 |` table rows, `AC-01:`
+lines or bullet declarations such as the write-spec template’s `- AC-01:`),
+the task’s single `- Spec:` Markdown metadata link against its
+indexed owning spec (resolved target and any SPEC ID in the label), task status, agreement markers, AC mentions, dependency IDs in Blocked
 by, cycles/missing dependencies, current coverage, spec fingerprints and baseline
 hashes. Include all tasks/dependencies and all baseline files including shared
 CSS/JS/assets. Unsupported AC formats fail with a manual-review message.

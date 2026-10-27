@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+from urllib.parse import unquote, urlsplit
 
 class InvalidIndex(ValueError):
     pass
@@ -41,7 +42,7 @@ def check(root, data):
         text = content.decode('utf-8')
         if not re.search(r'(?m)^(?:- )?Agreement: ' + re.escape(spec['agreement']) + r'\s*$', text):
             errors.append(f'{sid}: agreement differs from source')
-        declared = set(re.findall(r'(?m)^\|\s*(AC-[\w-]+)\s*\||^(AC-[\w-]+):', text))
+        declared = set(re.findall(r'(?m)^[ \t]*\|[ \t]*(AC-[\w-]+)[ \t]*\||^[ \t]*(?:[-*+] +)?(AC-[\w-]+):', text))
         declared = {a or b for a, b in declared}
         if not declared:
             errors.append(f'{sid}: no supported AC declarations; review format manually')
@@ -64,6 +65,18 @@ def check(root, data):
         if spec is None:
             errors.append(f'{tid}: unknown spec')
             continue
+        spec_fields = re.findall(r'(?m)^- Spec:[ \t]*(.*)$', text)
+        link = re.fullmatch(r'\[([^\]]+)\]\(([^)]+)\)', spec_fields[0].strip()) if len(spec_fields) == 1 else None
+        if link is None:
+            errors.append(f'{tid}: spec link missing, duplicated or unsupported')
+        else:
+            label, target = link.groups()
+            url = urlsplit(target.strip().removeprefix('<').removesuffix('>'))
+            expected = (root / spec['path']).resolve()
+            actual = (root / task['path']).parent.joinpath(unquote(url.path)).resolve()
+            label_ids = re.findall(r'\bSPEC-\d+\b', label)
+            if url.scheme or url.netloc or url.query or actual != expected or (label_ids and label_ids != [task['spec']]):
+                errors.append(f'{tid}: spec link differs from index')
         if task['status'] != 'done' and not task.get('retired', False) and task['agreement'] != spec['agreement']:
             errors.append(f'{tid}: stale runnable agreement')
         if task.get('retired', False) and task['status'] != 'blocked':

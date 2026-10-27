@@ -1,0 +1,42 @@
+[
+  {
+    "page": 1,
+    "mode": "desktop",
+    "decoded_pixels_equal": true
+  },
+  {
+    "page": 2,
+    "mode": "desktop",
+    "decoded_pixels_equal": true
+  },
+  {
+    "page": 3,
+    "mode": "desktop",
+    "decoded_pixels_equal": true
+  },
+  {
+    "page": 4,
+    "mode": "desktop",
+    "decoded_pixels_equal": true
+  },
+  {
+    "page": 1,
+    "mode": "mobile",
+    "decoded_pixels_equal": true
+  },
+  {
+    "page": 2,
+    "mode": "mobile",
+    "decoded_pixels_equal": true
+  },
+  {
+    "page": 3,
+    "mode": "mobile",
+    "decoded_pixels_equal": true
+  },
+  {
+    "page": 4,
+    "mode": "mobile",
+    "decoded_pixels_equal": true
+  }
+]

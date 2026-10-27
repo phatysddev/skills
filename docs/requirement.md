@@ -320,3 +320,11 @@ gate results. Git authorization follows proven project identity and relative
 boundary across checkouts. The artifact checker validates an explicit derived
 index for coverage, cycles, stale agreements and baseline hashes without
 claiming semantic or visual proof. See [SPEC-015](specs/SPEC-015-agreement-synchronization.md).
+
+## Current capability: checker compatibility and b2 fixture review
+
+The artifact checker must consume write-spec's bullet AC template and verify a
+task's actual Spec link against its indexed owner. Complete the existing static
+b2 consumer evaluation with all four desktop/mobile comparisons and a final
+consumer review. This authorization includes the fixture's TASK-005 visual delta;
+seeded acceptance/history remain evaluation inputs. See [SPEC-016](specs/SPEC-016-checker-compatibility-and-b2-review.md).

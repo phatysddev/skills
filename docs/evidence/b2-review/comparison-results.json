@@ -1,0 +1,86 @@
+{
+  "pairs": [
+    {
+      "mode": "desktop",
+      "page": 1,
+      "rendered_metrics_equal": true,
+      "capture_sha256": {
+        "baseline": "5b9f85fd5a6bd749aa62f4cd6e23e2fa490099aafa3fffc450ec1f437ea0a733",
+        "app": "5b9f85fd5a6bd749aa62f4cd6e23e2fa490099aafa3fffc450ec1f437ea0a733"
+      },
+      "capture_bytes_equal": true
+    },
+    {
+      "mode": "desktop",
+      "page": 2,
+      "rendered_metrics_equal": true,
+      "capture_sha256": {
+        "baseline": "c3e572965ab5188c9563bbfa6998a5565127e9c5a3ba0e699534e0a7b786f918",
+        "app": "c3e572965ab5188c9563bbfa6998a5565127e9c5a3ba0e699534e0a7b786f918"
+      },
+      "capture_bytes_equal": true
+    },
+    {
+      "mode": "desktop",
+      "page": 3,
+      "rendered_metrics_equal": true,
+      "capture_sha256": {
+        "baseline": "eb321b9b37445c340d61720c4382251c8515c2bf95f097558fa013c72d2eb08d",
+        "app": "eb321b9b37445c340d61720c4382251c8515c2bf95f097558fa013c72d2eb08d"
+      },
+      "capture_bytes_equal": true
+    },
+    {
+      "mode": "desktop",
+      "page": 4,
+      "rendered_metrics_equal": true,
+      "capture_sha256": {
+        "baseline": "fa8cc7eef2ffbe0baccac47c4214f9012eec5a10a1ca3724049066d5ff6066ee",
+        "app": "fa8cc7eef2ffbe0baccac47c4214f9012eec5a10a1ca3724049066d5ff6066ee"
+      },
+      "capture_bytes_equal": true
+    },
+    {
+      "mode": "mobile",
+      "page": 1,
+      "rendered_metrics_equal": true,
+      "capture_sha256": {
+        "baseline": "39ab4c377f6ac1d94236a70018073f3b23f926edbc0dd9a71b3f6555b5e96a6e",
+        "app": "39ab4c377f6ac1d94236a70018073f3b23f926edbc0dd9a71b3f6555b5e96a6e"
+      },
+      "capture_bytes_equal": true
+    },
+    {
+      "mode": "mobile",
+      "page": 2,
+      "rendered_metrics_equal": true,
+      "capture_sha256": {
+        "baseline": "ff642b17be6d09b01fb4187507e3e76f57261b513bc0e741cbe040e8861ef9cf",
+        "app": "ff642b17be6d09b01fb4187507e3e76f57261b513bc0e741cbe040e8861ef9cf"
+      },
+      "capture_bytes_equal": true
+    },
+    {
+      "mode": "mobile",
+      "page": 3,
+      "rendered_metrics_equal": true,
+      "capture_sha256": {
+        "baseline": "b2eeaa2546aaa2bebaee4265ecfc3246fba0422694e99a064293bd5f936ea261",
+        "app": "b2eeaa2546aaa2bebaee4265ecfc3246fba0422694e99a064293bd5f936ea261"
+      },
+      "capture_bytes_equal": true
+    },
+    {
+      "mode": "mobile",
+      "page": 4,
+      "rendered_metrics_equal": true,
+      "capture_sha256": {
+        "baseline": "b5e5b1f96c81277d52085c7fdd7ad4b792be9b6be81fa450802c682f5931a7d1",
+        "app": "b5e5b1f96c81277d52085c7fdd7ad4b792be9b6be81fa450802c682f5931a7d1"
+      },
+      "capture_bytes_equal": true
+    }
+  ],
+  "navigation_checks": 32,
+  "historical_inputs_preserved": true
+}

@@ -1,0 +1,258 @@
+[
+  {
+    "mode": "desktop",
+    "source": 1,
+    "target": 1,
+    "heading": "Home",
+    "url": "http://127.0.0.1:8765/app/page1.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 1,
+    "target": 2,
+    "heading": "Booking",
+    "url": "http://127.0.0.1:8765/app/page2.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 1,
+    "target": 3,
+    "heading": "Account",
+    "url": "http://127.0.0.1:8765/app/page3.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 1,
+    "target": 4,
+    "heading": "Help",
+    "url": "http://127.0.0.1:8765/app/page4.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 2,
+    "target": 1,
+    "heading": "Home",
+    "url": "http://127.0.0.1:8765/app/page1.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 2,
+    "target": 2,
+    "heading": "Booking",
+    "url": "http://127.0.0.1:8765/app/page2.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 2,
+    "target": 3,
+    "heading": "Account",
+    "url": "http://127.0.0.1:8765/app/page3.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 2,
+    "target": 4,
+    "heading": "Help",
+    "url": "http://127.0.0.1:8765/app/page4.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 3,
+    "target": 1,
+    "heading": "Home",
+    "url": "http://127.0.0.1:8765/app/page1.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 3,
+    "target": 2,
+    "heading": "Booking",
+    "url": "http://127.0.0.1:8765/app/page2.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 3,
+    "target": 3,
+    "heading": "Account",
+    "url": "http://127.0.0.1:8765/app/page3.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 3,
+    "target": 4,
+    "heading": "Help",
+    "url": "http://127.0.0.1:8765/app/page4.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 4,
+    "target": 1,
+    "heading": "Home",
+    "url": "http://127.0.0.1:8765/app/page1.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 4,
+    "target": 2,
+    "heading": "Booking",
+    "url": "http://127.0.0.1:8765/app/page2.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 4,
+    "target": 3,
+    "heading": "Account",
+    "url": "http://127.0.0.1:8765/app/page3.html",
+    "passed": true
+  },
+  {
+    "mode": "desktop",
+    "source": 4,
+    "target": 4,
+    "heading": "Help",
+    "url": "http://127.0.0.1:8765/app/page4.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 1,
+    "target": 1,
+    "heading": "Home",
+    "url": "http://127.0.0.1:8765/app/page1.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 1,
+    "target": 2,
+    "heading": "Booking",
+    "url": "http://127.0.0.1:8765/app/page2.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 1,
+    "target": 3,
+    "heading": "Account",
+    "url": "http://127.0.0.1:8765/app/page3.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 1,
+    "target": 4,
+    "heading": "Help",
+    "url": "http://127.0.0.1:8765/app/page4.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 2,
+    "target": 1,
+    "heading": "Home",
+    "url": "http://127.0.0.1:8765/app/page1.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 2,
+    "target": 2,
+    "heading": "Booking",
+    "url": "http://127.0.0.1:8765/app/page2.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 2,
+    "target": 3,
+    "heading": "Account",
+    "url": "http://127.0.0.1:8765/app/page3.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 2,
+    "target": 4,
+    "heading": "Help",
+    "url": "http://127.0.0.1:8765/app/page4.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 3,
+    "target": 1,
+    "heading": "Home",
+    "url": "http://127.0.0.1:8765/app/page1.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 3,
+    "target": 2,
+    "heading": "Booking",
+    "url": "http://127.0.0.1:8765/app/page2.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 3,
+    "target": 3,
+    "heading": "Account",
+    "url": "http://127.0.0.1:8765/app/page3.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 3,
+    "target": 4,
+    "heading": "Help",
+    "url": "http://127.0.0.1:8765/app/page4.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 4,
+    "target": 1,
+    "heading": "Home",
+    "url": "http://127.0.0.1:8765/app/page1.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 4,
+    "target": 2,
+    "heading": "Booking",
+    "url": "http://127.0.0.1:8765/app/page2.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 4,
+    "target": 3,
+    "heading": "Account",
+    "url": "http://127.0.0.1:8765/app/page3.html",
+    "passed": true
+  },
+  {
+    "mode": "mobile",
+    "source": 4,
+    "target": 4,
+    "heading": "Help",
+    "url": "http://127.0.0.1:8765/app/page4.html",
+    "passed": true
+  }
+]

@@ -103,3 +103,10 @@ this one state. Saved evidence: [application](app-b1-desktop.jpg) and
 mobile, the other pages, b2 implementation and final delegated visual review
 remain unverified. The unavailable-render case above remains a real failed
 probe, but does not imply every renderer on this host is unavailable.
+
+## Later b2 follow-up
+
+The [subsequent b2 run](b2-review/README.md) implements the shared color delta,
+retains all four desktop/mobile baseline/application pairs and executes real
+navigation. It also fixes the checker’s bullet AC and task Spec-link gaps. This
+adds new evidence without replacing the original run’s limitations/history.
