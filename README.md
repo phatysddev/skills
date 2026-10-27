@@ -36,6 +36,13 @@ The examples below target Codex. You need Node.js, npm, and internet access.
 npx skills@latest add https://github.com/phatysddev/skills --skill '*' --agent codex --yes
 ```
 
+During `setup-project`, projects without Git are asked whether to initialize it.
+Choosing yes also enables automatic local commits for each verified task in
+`implement-task` and `auto-implement`, unless you override that choice. Setup
+saves this in `CONTEXT.md` under `Git Policy`; later tasks reuse it without
+asking again. Existing repositories keep their policy, or are asked about task
+commits if none exists. Setup does not create an initial commit or push.
+
 **2. Open your coding agent and start with one question.**
 
 ```text
@@ -402,6 +409,14 @@ UI craft guidance studies and adapts selected concepts from
 visual direction, typography/layout craft, and rendered critique. The adaptation
 keeps Phat's existing workflow and carries pinned
 [provenance and Apache-2.0 terms](.agents/skills/ui-design/references/upstream.md).
+
+Core implementation and review guidance also adapts selected
+[Ponytail](https://github.com/DietrichGebert/ponytail) concepts: choose the
+smallest complete change, trace affected consumers and reuse project seams
+before adding dependencies. Existing scope and verification rules remain in
+force; no separate installation or session mode is needed. Pinned source and
+MIT notices ship with [implementation](.agents/skills/implement-task/references/upstream.md)
+and [review](.agents/skills/code-review/references/upstream.md).
 
 Phat Skills is released under the [MIT License](LICENSE). You may use,
 modify, extend, and redistribute it, including in commercial projects, subject

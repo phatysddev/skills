@@ -43,6 +43,7 @@ continue safe work without auto-installing the utility or adding a new gate.
 - [Classify the project](#classify-the-project)
 - [Handoff from Grill Workflow](#handoff-from-grill-workflow)
 - [Facts, decisions, and unknowns](#facts-decisions-and-unknowns)
+- [Configure Git policy](#configure-git-policy)
 - [Configure verification policy](#configure-verification-policy)
 - [Durable documents and conventions](#durable-documents-and-conventions)
 - [Idempotency](#idempotency)
@@ -63,6 +64,8 @@ Existing implementation?
         └─ otherwise continue
         ↓
 Collect agreed context
+        ↓
+Configure Git initialization and task-commit policy
         ↓
 Configure verification policy
         ↓
@@ -184,6 +187,7 @@ Use this mapping:
 * pending custom-design discovery and visual-validation preference → preserve
   as workflow intent in the requirements/handoff, not as confirmed styling;
 * domain vocabulary, concepts, relationships, invariants, and business rules → `CONTEXT.md`;
+* confirmed Git initialization and task-commit decisions → `CONTEXT.md` under `## Git Policy`;
 * project verification modes → `CONTEXT.md` under `## Verification Policy`;
 * significant architecture or technology decisions → `docs/adr/NNNN-<decision>.md`;
 * working rules, repository commands, conventions, and navigation → `AGENTS.md`.
@@ -216,6 +220,17 @@ If two existing sources disagree:
 2. identify the conflict;
 3. avoid choosing a winner unless an authoritative decision already resolves it;
 4. route the unresolved decision to `$grill-workflow` when it materially affects future work.
+
+## Configure Git policy
+
+Read [Git initialization and task commits](references/git-policy.md). Ask about
+`git init` when the project has no repository and no prior explicit decision.
+Explain that accepting initialization also enables automatic task-scoped
+commits in `implement-task` and `auto-implement` after successful verification,
+unless the user explicitly overrides commits. Persist the confirmed Git policy
+in `CONTEXT.md`. Existing repositories keep their Git state and explicit policy;
+ask about automatic task commits only when that decision is absent. Reuse
+confirmed choices on rerun. No initial commit or push is part of setup.
 
 ## Configure verification policy
 
@@ -270,6 +285,7 @@ When rerun:
 * avoid duplicate documents;
 * avoid duplicate ADRs;
 * avoid resetting status fields;
+* preserve a confirmed Git policy and verify repository membership without reinitializing;
 * preserve a valid confirmed verification policy instead of asking again or
   rewriting its values;
 * avoid replacing project-specific conventions with generic Phat defaults.
@@ -286,6 +302,7 @@ Before finishing, verify that:
 * significant agreed architecture decisions are recorded when needed;
 * unresolved decisions remain explicitly unresolved;
 * discovered commands are evidence-based;
+* Git initialization/commit choices are confirmed and persisted, or reported unresolved before downstream handoff;
 * `CONTEXT.md` contains one complete, inspectable verification policy with
   explicit `auto`, `required`, or `off` modes for `unit-test`, `integration-test`,
   `e2e-test`, and `code-review`, or setup has stopped with the policy unresolved;
@@ -308,7 +325,7 @@ Report:
 3. files updated;
 4. relevant files intentionally left unchanged;
 5. discovered commands;
-6. confirmed or unresolved verification policy;
+6. confirmed or unresolved Git initialization/task-commit policy and verification policy;
 7. conflicts or unresolved questions;
 8. workflow readiness;
 9. next skill.

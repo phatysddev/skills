@@ -41,6 +41,22 @@ architecture, or duplicate state only when they create meaningful maintenance
 or correctness risk. Do not manufacture findings from generic best practices;
 identify a concrete risk in the implementation.
 
+## Smallest complete change
+
+Trace changed shared interfaces to affected callers, tests, fixtures, exports
+and configuration. Check that simplification preserves validation, failure
+handling, security, accessibility and required behavior. Look for duplicated
+fixes where one existing shared seam could solve the actual cause, and new
+dependencies or extension points with no task-owned need.
+
+Judge the result by completeness and readable maintenance, not the fewest
+lines. A larger change justified by the contract or existing architecture is
+valid. Report complexity only with a concrete consequence and evidence under
+the finding threshold; optional shortening and personal style are not defects.
+Keep this assessment within the selected diff and reviewer write boundary;
+it does not authorize fixes or a separate audit. Ponytail provenance and MIT
+notice are retained in [upstream](upstream.md).
+
 ## Verification quality
 
 Inspect existing tests and relevant checks when available and appropriate.

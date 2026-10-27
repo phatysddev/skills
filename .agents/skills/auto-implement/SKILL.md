@@ -46,6 +46,22 @@ not authorize product decisions, verification-policy changes, infrastructure
 provisioning, deployment, push, or commits beyond the existing explicit policy.
 Preserve unrelated changes and keep each task's diff/evidence distinguishable.
 
+## Persisted task-commit policy
+
+Consume `CONTEXT.md` `## Git Policy` during preflight and pass its effective
+policy to every `implement-task` invocation. Confirmed `Task commits: required`
+(including setup's Git-init opt-in) authorizes and requires a local commit per
+verified task without asking again per task or batch. Commit through the main
+implementation owner after test gates and before `in_review`; the final
+reviewer retains status ownership. Do not collect the whole batch into one
+commit. Follow implement-task's index/path isolation and correction/resume
+rules. Git existence alone grants no authorization; legacy policy still works.
+When commits are required, preflight Git availability, root, usable author
+identity and existing staged-change conflicts; report user-action blockers
+before coding. Never
+initialize Git, change identity/global configuration, push or bypass failed
+hooks as a fallback. An explicit no-commit override remains authoritative.
+
 ## Whole-batch preflight
 
 Read every selected task and its linked spec in full, plus relevant sources,

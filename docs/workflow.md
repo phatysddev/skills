@@ -67,6 +67,29 @@ and, after entering `in_review`, its single final `code-review` stage. Utility
 skills may be used internally within the parent's scope; the parent remains
 responsible for authoritative documents, verification, and the next explicit handoff.
 
+### Git setup and task commits
+
+Setup asks about Git initialization if no repository exists and explains that
+opting in enables automatic task commits. It persists confirmed root,
+initialization choice and task-commit policy in `CONTEXT.md` `## Git Policy`.
+Existing Git/explicit choices are preserved; no policy means asking about
+commits separately. `Task commits: required` is standing authorization for
+`implement-task` and `auto-implement` to commit each verified task before
+`in_review` without asking again. Required commit failures block finalization;
+no-op/resume work avoids empty/duplicate commits. Preserve unrelated staged
+changes; reviewers never commit. No initial setup commit or automatic push.
+See [SPEC-013](specs/SPEC-013-git-setup-and-task-commits.md).
+
+### Smallest complete changes
+
+Implementation traces affected consumers and chooses the smallest complete,
+readable solution using existing project seams before introducing dependencies
+or abstractions. Review checks completeness and concrete maintenance risks,
+without making line count a gate. Required behavior, verification modes and
+reviewer write boundaries remain unchanged. Smaller product alternatives use
+the existing scope-change route. This is inline guidance, not a new skill/stage
+or a session-wide mode. See [SPEC-012](specs/SPEC-012-smallest-complete-changes.md).
+
 ### Focused UI operations
 
 `ui-design` selects focused build, critique, audit, refinement, adaptation,

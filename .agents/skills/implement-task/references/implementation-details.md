@@ -211,7 +211,18 @@ Avoid "while I'm here" development.
 
 ## Git policy
 
-Resolve the effective repository/user commit policy before finalization:
+Resolve the effective repository/user commit policy before finalization.
+Read the project-owned `CONTEXT.md` `## Git Policy`: confirmed
+`Task commits: required` is standing authorization to commit every verified task
+without asking again. This includes policy established when setup initialized
+Git. `allowed` and `disabled` retain their meanings below. Explicit current user
+overrides take precedence; resolve conflicting repository instructions rather
+than guessing. A Git repository's existence alone is not commit permission.
+Legacy projects without this section keep their existing explicit policy; with
+no authorization, default to `disabled`. A malformed/unconfirmed/conflicting
+section cannot authorize commits; resolve it before required finalization.
+
+Classify the effective policy:
 
 * `required` — an explicit user or repository policy requires a task-scoped
   commit before `in_review`;
@@ -221,12 +232,26 @@ Resolve the effective repository/user commit policy before finalization:
 
 When a commit is required or explicitly authorized:
 
-1. Inspect `git status` and the diff.
+1. Verify Git is available and the current worktree root matches the agreed
+   repository boundary. Do not initialize Git from implementation. Inspect
+   `git status`, working-tree diff and the entire staged diff, including any
+   pre-existing staged changes. If required Git/identity/hooks are unavailable,
+   report the blocker/remedy without installing tools, bypassing hooks or
+   changing global configuration.
 2. Stage only files owned by the selected task; never use `git add .`,
    `git add -A`, or a broad path that could include unrelated work.
-3. Create one task-scoped commit, for example:
+3. Verify every staged hunk belongs to this task; plain `git commit` includes
+   the entire index. Preserve unrelated staged work without resetting/stashing
+   it. If paths/hunks cannot be isolated safely, report a blocker instead of
+   absorbing them. Create one task-scoped commit for this implementation cycle,
+   for example:
    `task(TASK-###): <short goal>`.
-4. Verify the commit succeeded and record its hash in the existing commit Todo item.
+4. Verify the commit succeeded and inspect its actual changed paths; record
+   its hash in the existing commit Todo item. Do not create an empty commit
+   when the task has no owned diff; record that reason or reuse the verified
+   task commit on resume. For review corrections, commit the verified new
+   task-owned diff without amending/replacing earlier history. Final reviewer
+   status/evidence updates may remain uncommitted; the reviewer cannot commit.
 
 When a commit is not required or authorized, leave the verified focused diff
 uncommitted and report that state. Do not push, rewrite history, discard

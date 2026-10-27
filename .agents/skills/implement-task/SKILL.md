@@ -270,6 +270,33 @@ Reuse before creating.
 
 Change the smallest reasonable surface while still producing a maintainable result.
 
+### Smallest complete change
+
+Before editing a shared seam, search its consumers and identify affected
+callers, tests, fixtures, exports and configuration. Fix a shared root cause
+once when appropriate, and update every affected part needed for compatibility;
+a short diff that leaves a broken consumer is incomplete.
+
+Choose the first suitable option: existing project helper/component/pattern,
+standard-library or platform feature, an already installed dependency, then
+small local code. Respect established project layers and house components.
+Add a dependency only when its concrete benefit justifies its maintenance cost;
+do not add one for a few straightforward lines.
+
+Avoid speculative wrappers, conversions, options and extension points. Prefer
+readable code over compressed one-liners or a purely smaller line count.
+Preserve trust-boundary validation, data-loss prevention, error handling,
+security, accessibility and all agreed behavior when moving or merging code.
+When a justified shortcut has a material limit, record that limit and the
+concrete condition for revisiting it near the decision. A shortcut cannot waive
+an acceptance criterion or required verification gate.
+
+If a smaller alternative changes agreed behavior, present it as a proposal and
+use the existing scope-change route; do not silently remove requirements.
+Report material limitations and checks not run through the normal finalization
+contract. This guidance applies within this task, without persistent modes.
+Adaptation and license: [upstream](references/upstream.md).
+
 ## Verification and review gates
 
 Read the persisted policy from `CONTEXT.md` before implementation and follow
@@ -315,6 +342,15 @@ direction; it may not redesign neighboring features or edit the prototype.
 Its rendered inspection supplements required verification. If it is unavailable,
 reuse the established UI patterns and report the fallback without auto-installing
 it or treating it as a missing verification capability.
+
+## Git policy support
+
+Read confirmed `## Git Policy` from `CONTEXT.md` alongside verification policy.
+`Task commits: required`, including a setup Git-init opt-in, requires an
+automatic task-scoped commit after successful verification before `in_review`;
+do not request permission again. Apply the detailed Git policy in
+[implementation details](references/implementation-details.md#git-policy),
+preserving unrelated staged work. Do not infer permission from Git existence.
 
 ## Implementation
 

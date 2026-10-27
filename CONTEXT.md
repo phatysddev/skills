@@ -66,6 +66,35 @@ and optional assessments.
 SPEC-009 and TASK-021 deliver the inline security utility and its parent/handoff
 integrations; both are complete.
 
+## Current capability: Git setup and automatic task commits
+
+`setup-project` asks once whether to initialize Git when no repository exists,
+explaining that accepting also enables automatic local task commits. It records
+confirmed initialization/root and `required`, `allowed` or `disabled` task-commit
+policy under `## Git Policy` in the consumer project's `CONTEXT.md`. Existing
+repositories are not reinitialized; existing explicit decisions are reused,
+and an absent commit decision is asked separately. Declining leaves Git and
+commits disabled unless explicitly overridden. `implement-task` and
+`auto-implement` consume confirmed `Task commits: required` as standing
+authorization, commit each verified task before `in_review` without asking
+again, preserve unrelated staged work, and report commit failures as blockers.
+No initial setup commit, automatic push, history rewrite or identity change is
+included. See [SPEC-013](docs/specs/SPEC-013-git-setup-and-task-commits.md).
+
+## Current capability: smallest complete changes
+
+Adapt selected core Ponytail guidance into `implement-task` and `code-review`:
+trace affected consumers, prefer existing project seams/platform features and
+installed dependencies, avoid speculative abstractions, and preserve validation,
+failure handling, security, accessibility and all agreed behavior. Completeness
+and readable maintenance take precedence over line count. Smaller alternatives
+that change the contract remain proposals through the existing scope route.
+Review findings still require concrete impact. Existing verification policy,
+parent ownership and review boundaries remain authoritative. No new identifier,
+session mode, installer, dependency or workflow gate is added. Pinned source
+attribution and MIT notice ship in both adapted skills. See
+[SPEC-012](docs/specs/SPEC-012-smallest-complete-changes.md).
+
 ## Current capability: `agent-security`
 
 `agent-security` is an inline utility for source research and host/workspace

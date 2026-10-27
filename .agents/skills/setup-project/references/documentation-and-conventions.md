@@ -299,7 +299,11 @@ Record what the repository actually requires.
 
 If an existing policy exists, preserve it.
 
-If no policy exists, use this conservative default:
+Use the [Git setup reference](git-policy.md) to ask about initialization and
+persist `## Git Policy` in `CONTEXT.md`. Accepting initialization enables
+required local task commits unless explicitly overridden. For an existing
+repository without a commit decision, ask about automatic task commits.
+Until that decision is explicit, use this conservative default:
 
 * prepare reviewable changes;
 * do not push automatically;
