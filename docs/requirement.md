@@ -194,6 +194,21 @@ again, preserve unrelated staged work, and report commit failures as blockers.
 No initial setup commit, automatic push, history rewrite or identity change is
 included. See [SPEC-013](specs/SPEC-013-git-setup-and-task-commits.md).
 
+## Current capability: prototype fidelity and revision reconciliation
+
+An accepted prototype becomes a faithful UI contract in its owning spec with
+stable UI IDs, observable visual ACs, immutable source/asset baseline and
+comparable viewport/content/state evidence. Task decomposition carries those
+references and rendered comparisons into task Todo; implementation and review
+cannot substitute functional tests or generic styling for accepted appearance.
+Explicit allowed differences remain visible. Exploratory edits preserve the
+old contract; an accepted replacement after tasks exist is reconciled through
+`change-scope`, composing `spec-with-prototype` and `to-tasks` within one
+bounded document operation. Track shared-style impact, invalidate only affected
+evidence/review readiness, preserve done deliveries and plan missing follow-up
+work. No silent batch expansion or global new verification mode. See
+[SPEC-014](specs/SPEC-014-prototype-fidelity-and-reconciliation.md).
+
 ## Maintainer consistency check
 
 The repository provides `scripts/check_skill_pack.py` as a standard-library

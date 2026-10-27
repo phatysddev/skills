@@ -33,7 +33,7 @@ Recommend one primary next action when evidence supports it. The table lists rou
 
 | Evidence | Next skill |
 | --- | --- |
-| An intended change to an existing feature must be reconciled across its requirement, spec, and tasks | `$change-scope` |
+| An intended behavior change or accepted prototype replacement with existing tasks must reconcile its requirement/UI contract, spec, and task plan | `$change-scope` |
 | A feature-completeness check is requested, or a concrete unresolved acceptance gap spans multiple tasks | `$verify-feature` |
 | The user is preparing a named release or asks whether a candidate is ready for a target environment | `$release-check` |
 | Only an idea, or the problem/scope/user is unsettled | `$grill-workflow` |
@@ -43,7 +43,7 @@ Recommend one primary next action when evidence supports it. The table lists rou
 | The requirement is agreed and visual validation is requested before specification | `$to-prototype` |
 | An explicit bounded UI critique/audit, refinement, motion, visual alternatives, or system-reuse request has a clear target | `$ui-design` within the current parent, or standalone when no parent owns it |
 | A named prototype revision needs targeted visual or interaction changes | `$edit-prototype` |
-| An accepted prototype must be reconciled into a feature spec | `$spec-with-prototype` |
+| An accepted prototype must be reconciled into a feature spec and no task plan exists yet | `$spec-with-prototype` |
 | The requirement is agreed but no feature spec exists and visual validation is not requested | `$write-spec` |
 | A ready spec is broad or has no implementation tasks | `$to-tasks` |
 | User requests automatic implementation of all existing scoped tasks after readiness/blocker preflight | `$auto-implement` |
@@ -130,8 +130,11 @@ A parent may use
 without changing project state. Route prototype or implementation work to its
 owning workflow, which may compose the supporting skill when needed.
 
-Prototype is a visual decision aid, not a requirement source. Never route from
-prototype directly to `$to-tasks`; accepted behavior must pass through
+An accepted prototype becomes a scoped UI contract through the owning spec;
+experimental revisions are visual decision aids. Once tasks exist, an accepted
+replacement goes through change-scope, which composes spec-with-prototype and
+reconciles tasks. Drift against an unchanged UI contract goes to implement-task.
+Never route from prototype directly to `$to-tasks`; accepted behavior must pass through
 `$spec-with-prototype` and the owning spec first.
 
 If review found a fixable issue, recommend `$implement-task` for the affected task, not a new spec, unless the finding changes scope or architecture. A small, clearly bounded change may go directly to `$implement-task` without manufacturing documents.

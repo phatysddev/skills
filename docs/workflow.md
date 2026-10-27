@@ -67,6 +67,27 @@ and, after entering `in_review`, its single final `code-review` stage. Utility
 skills may be used internally within the parent's scope; the parent remains
 responsible for authoritative documents, verification, and the next explicit handoff.
 
+### Accepted prototype fidelity and revisions
+
+Accepted prototype → immutable HTML/CSS/JS/asset baseline → spec UI contract
+and visual ACs → task UI mapping/comparison Todo → rendered implementation
+comparison → canonical review. Faithful visual treatment is the default;
+functional equivalence alone does not satisfy the UI contract. Explicit
+exceptions and actual viewports/data/states are recorded, without requiring
+universal pixel identity. Missing required render evidence is unverified.
+
+Before editing accepted live files, preserve recoverable old content and shared
+assets. Experimental edits do not replace the contract. Once tasks exist, an
+accepted new revision (including visual-only changes) goes through
+`change-scope`, which composes `spec-with-prototype` then `to-tasks` and finishes
+the impacted plan in one authorized document operation. Open tasks update in
+place; done deliveries retain history with linked delta follow-ups; affected
+in_review readiness and superseded evidence are invalidated. Unaffected work
+stays valid. Active batches stop affected stale work and re-preflight; new
+members need authorization. Drift against the unchanged baseline is a fix,
+not a reason to weaken the agreement. See
+[SPEC-014](specs/SPEC-014-prototype-fidelity-and-reconciliation.md).
+
 ### Git setup and task commits
 
 Setup asks about Git initialization if no repository exists and explains that

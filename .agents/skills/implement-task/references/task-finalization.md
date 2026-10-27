@@ -29,6 +29,7 @@ Set `Status: in_review` only when:
   reflect current implementation; review-approval items remain reviewer-owned;
 - required or explicitly authorized commit handling is complete, or the
   focused uncommitted diff is ready for review;
+- task-owned visual ACs have rendered baseline comparison evidence and resolved deviations, or an explicit scoped override;
 - no known blocker prevents meaningful review; and
 - the diff is focused enough to review.
 

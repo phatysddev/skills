@@ -9,6 +9,14 @@ Make the interface fit its users, content, and primary action rather than a
 generic generated template. Apply the design in the authorized files; a mood
 description alone is not the deliverable when the caller requested working UI.
 
+For production work with an accepted prototype UI contract, retain its immutable
+baseline, layout and visual treatment. The parent's UI/AC mapping and allowed
+exceptions constrain craft choices; do not use generic visual advice or a new
+visual thesis to redesign an already accepted screen. Compare rendered output
+against that baseline under matching conditions, and return captures/differences
+or explicit unavailable evidence to the parent. Experimental live revisions do
+not supersede acceptance.
+
 ## Agent security support
 
 Before source research or workspace/tool actions, load `$agent-security` when

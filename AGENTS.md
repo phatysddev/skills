@@ -10,7 +10,7 @@ This repository is a small collection of Agent Skills for the Phat workflow.
 - Feature specifications: [`docs/specs/`](docs/specs/)
 - Implementation tasks: [`docs/tasks/`](docs/tasks/)
 - Individual skills: [`.agents/skills/`](.agents/skills/)
-- Latest completed specification: [`SPEC-011`](docs/specs/SPEC-011-ui-design-capabilities.md)
+- Latest completed specification: [`SPEC-014`](docs/specs/SPEC-014-prototype-fidelity-and-reconciliation.md)
 
 ## Repository structure
 

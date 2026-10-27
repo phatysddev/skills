@@ -70,7 +70,13 @@ Keep the Goal concise but include the authoritative links or essential context
 needed to start the task. Do not add a separate context section.
 
 When visual behavior matters, link to the owning spec and any prototype IDs it
-uses as supporting evidence. The spec, not the prototype, remains authoritative.
+uses as supporting evidence. Include the spec's UI contract/UI IDs and immutable
+baseline link in Goal; the spec remains authoritative. For every owned visual AC,
+add unchecked Todo work to implement its accepted treatment and compare rendered
+baseline/production at recorded viewports/data/states with evidence. Include
+allowed differences by reference. Do not copy a mutable live URL as the sole
+baseline or replace this with "build page"/"tests pass". Coverage maps include
+UI/visual ACs as well as behavior, including shared-style effects across pages.
 
 ## Scope boundaries
 

@@ -192,7 +192,13 @@ index.html
 
 The revision is represented by prototype metadata, not the filename.
 
-Version control is the preferred historical record when available.
+Version control is a historical record only when the exact accepted content
+and its shared assets are recoverable at a recorded immutable commit. A mutable
+page revision ID or uncommitted live files are insufficient. Before accepted
+files are overwritten, retain a baseline snapshot with file/hash inventory
+outside the live tree at `docs/assets/prototype-baselines/`, or reference a
+recoverable immutable Git commit. These contract baselines are distinct from
+exploratory visual alternatives. Preserve CSS/JS/assets as well as HTML.
 
 Do not create copied files such as:
 

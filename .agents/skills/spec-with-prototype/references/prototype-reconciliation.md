@@ -27,7 +27,7 @@ Safe to reflect in the spec.
 
 A UI/UX behavior explicitly accepted by the user during prototype review.
 
-May become part of the spec when it affects implementation behavior.
+Becomes part of the applicable behavioral or visual UI contract.
 
 ### Visual-only
 
@@ -39,11 +39,16 @@ Examples:
 * non-contractual typography;
 * decorative imagery.
 
-Usually do not belong in a behavioral spec. If an exact visual choice is an
+For an accepted prototype these belong in the scoped UI contract by baseline
+reference, with observable visual ACs; do not discard its appearance merely
+because business behavior is unchanged. See [UI contract](ui-contract.md).
+If an exact visual choice is an
 Agreed constraint in UI Design Requirements, preserve it by reference and map
 it to appropriate verification as `$write-spec` does. Do not discard a required
 visual constraint merely because the prototype represents it as color or spacing.
-Preferences, delegated choices, and proposals remain non-mandatory.
+Preferences and proposals outside the accepted surface remain non-mandatory.
+Once the user selects a rendered design, that accepted appearance is captured
+as a contract even if its individual choices were originally delegated.
 
 ### Prototype proposal
 
@@ -113,7 +118,8 @@ Add a section such as:
 - `booking-v2` — `docs/assets/prototype/booking.html`
 ```
 
-Prototype IDs are revision references, not acceptance criteria.
+Prototype IDs alone are insufficient: link the immutable baseline inventory
+and UI contract with visual ACs as described in [UI contract](ui-contract.md).
 
 ## UI states
 
@@ -137,7 +143,8 @@ Only include states that matter to behavior or verification.
 
 ## Acceptance criteria
 
-Acceptance criteria remain behavioral and observable.
+Acceptance criteria cover observable functional behavior and accepted visual
+fidelity. Give each kind a concrete verification method.
 
 Use the prototype to make ACs more concrete.
 
@@ -175,9 +182,13 @@ Unless explicitly stated otherwise, implementation should preserve:
 * navigation structure;
 * meaningful control placement.
 
-It does not require pixel-perfect reproduction.
+Faithful appearance is the default for an accepted prototype: retain its
+layout, typography roles, spacing, color and component treatment via the UI
+contract. This does not require universal pixel-perfect reproduction, but it
+also does not allow an unrelated redesign merely because behavior matches.
 
-Production implementation may adapt details to:
+Production implementation may adapt details, with recorded reasons while
+preserving the agreed design, to:
 
 * framework conventions;
 * accessibility;
@@ -208,8 +219,8 @@ prototype clarifies existing requirement
 prototype adds explicitly confirmed behavior
 → update spec
 
-prototype is visual-only
-→ no behavioral spec change
+prototype changes accepted appearance only
+→ update UI contract/visual ACs; reconcile existing tasks through change-scope
 
 prototype proposal is not confirmed
 → leave out

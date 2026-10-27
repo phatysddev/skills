@@ -46,6 +46,17 @@ not authorize product decisions, verification-policy changes, infrastructure
 provisioning, deployment, push, or commits beyond the existing explicit policy.
 Preserve unrelated changes and keep each task's diff/evidence distinguishable.
 
+## Prototype contract freshness
+
+Preflight each UI task against its owning spec's current accepted baseline and
+UI/AC mapping. Recheck before dispatch/resume when a prototype change is
+reported. An experimental live revision does not supersede the contract. An
+accepted replacement with unreconciled tasks stops affected execution and routes
+to change-scope; do not continue with stale UI instructions or silently add new
+follow-up tasks to the authorized batch. After reconciliation, preflight again
+and obtain authorization for any added batch members. Unchanged-baseline visual
+drift is an in-scope correction with the existing correction budget.
+
 ## Persisted task-commit policy
 
 Consume `CONTEXT.md` `## Git Policy` during preflight and pass its effective

@@ -295,6 +295,15 @@ are not mandatory stages after task review and do not add verification-policy mo
 | `edit-prototype` | Make targeted changes to a prototype page by revision ID. | [Read](.agents/skills/edit-prototype/SKILL.md) |
 | `spec-with-prototype` | Reconcile an accepted prototype into the owning feature spec. | [Read](.agents/skills/spec-with-prototype/SKILL.md) |
 
+Accepted prototypes retain their appearance through a spec `UI contract` with
+an immutable baseline and visual acceptance criteria. Tasks carry the baseline
+and rendered comparison work; implementation/review check layout and visual
+treatment as well as behavior. After tasks exist, accepting an edited prototype
+uses `change-scope` to reconcile the spec and impacted task plan together.
+Exploratory edits leave the old agreement intact; done tasks retain history
+and changed work gets a linked follow-up. See the
+[workflow contract](docs/workflow.md#accepted-prototype-fidelity-and-revisions).
+
 The prototype skills are optional: use them when validating navigation, page
 structure, states, content hierarchy, or interaction flow will reduce product
 uncertainty.

@@ -1,6 +1,6 @@
 ---
 name: edit-prototype
-description: "Edit one or more existing Phat prototype pages by prototype revision ID while preserving unrelated pages and confirmed requirements. Use when the user references an ID such as home-v1 or booking-v2 and wants targeted visual, layout, content, state, navigation, or interaction changes before specification."
+description: "Edit one or more existing Phat prototype pages by prototype revision ID while preserving unrelated pages and confirmed requirements. Use when the user references an ID such as home-v1 or booking-v2 and wants targeted visual, layout, content, state, navigation, or interaction changes before or after specification, with downstream impact reporting."
 ---
 
 # Edit Prototype
@@ -137,6 +137,25 @@ $grill-workflow
 ```
 
 before treating them as authoritative.
+
+## Preserve accepted baselines and inspect downstream use
+
+Before editing, inspect specs/tasks referencing this page and its shared files.
+Preserve any accepted baseline and its HTML/CSS/JS/assets before overwriting live
+files. Reuse a recoverable immutable Git revision or create a self-contained
+snapshot outside the live prototype tree under
+`docs/assets/prototype-baselines/<feature>/<baseline-id>/`, with page IDs and
+file/hash inventory. Do not create a commit without authorization. If the old
+accepted files are already unavailable, report that fact; never relabel current
+files as the lost revision. Shared CSS/JS/asset changes affect every accepted
+page that consumes them, even when its HTML did not change.
+
+Keep a before/after delta: old/new page IDs and dependency hashes, changed
+appearance/behavior/states, referencing specs/UI/AC IDs, affected open/done tasks,
+and whether this is exploratory or an explicitly accepted replacement. A live
+edit alone leaves the old accepted contract valid; do not silently advance it
+or invalidate tasks for an unaccepted experiment. Do not claim the plan is
+synchronized after changing only prototype files.
 
 ## Targeted editing
 
@@ -280,7 +299,7 @@ Report:
 5. changes made;
 6. shared files changed;
 7. prototype proposals introduced;
-8. unresolved decisions;
+8. downstream spec/task impact, baseline preserved, acceptance/synchronization status and unresolved decisions;
 9. next skill.
 
 Use:
@@ -289,8 +308,11 @@ Use:
 more visual iteration wanted
     → $edit-prototype
 
-prototype accepted
+prototype accepted and no implementation tasks exist
     → $spec-with-prototype
+
+prototype explicitly accepted as replacement and tasks already exist
+    → $change-scope with old/new baseline delta
 
 product decision required
     → $grill-workflow

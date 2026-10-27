@@ -242,10 +242,13 @@ Do not require the implementer to re-prove unrelated areas unless the new change
 
 If the implementation conflicts with the spec, do not modify the spec merely to approve the code.
 
-If the implementation conflicts only with a prototype while the spec is
-correct, review against the spec. If the prototype represents accepted
-behavior missing from the spec, route to `$spec-with-prototype` before deciding
-whether implementation changes are required.
+Review against the spec, including its UI contract and referenced immutable
+baseline. Contracted visual drift is an implementation finding even when
+functional behavior passes. If accepted appearance/behavior lacks spec coverage,
+report the contract gap; route through `$change-scope` when tasks already exist,
+composing `$spec-with-prototype` for interpretation. An exploratory live revision
+does not replace the accepted baseline. Do not rewrite the contract to approve
+a mismatch, or treat missing visual evidence as verified.
 
 Route based on the problem:
 

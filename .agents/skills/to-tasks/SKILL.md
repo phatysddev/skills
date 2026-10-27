@@ -103,7 +103,13 @@ The target spec must be `ready`.
 
 When the spec references a prototype, treat the spec and its acceptance
 criteria as authoritative. Use the prototype only to understand accepted
-visual states, hierarchy, and interaction evidence.
+visual states, hierarchy, and interaction evidence. The spec's UI contract and
+its immutable baseline are required implementation inputs, not optional
+inspiration. For each UI ID/visual AC, map an owning task, source baseline,
+relevant pages/states and explicit rendered-comparison Todo item. A functionality-
+only task plan is incomplete for a faithful UI contract. If accepted appearance
+has no contract/AC coverage, return that gap to spec-with-prototype before
+planning; if an accepted new baseline affects existing tasks, use change-scope.
 
 Do not decompose a `draft` spec as if implementation can safely begin.
 
@@ -139,7 +145,7 @@ proposals outside that behavior do not prevent planning the agreed contract.
 
 ## Changes to an existing agreement
 
-Use `$change-scope` when a requested behavioral change requires coordinated
+Use `$change-scope` when a requested behavioral or accepted visual change requires coordinated
 reconciliation of existing requirements, the owning spec, and its task plan.
 Ordinary spec clarification or decomposition stays here. When this skill is
 already supporting `change-scope` and the changed behavior is settled, complete

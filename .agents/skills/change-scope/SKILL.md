@@ -1,12 +1,13 @@
 ---
 name: change-scope
-description: "Assess and reconcile an agreed requirement change across an existing feature's requirement, spec, and task plan. Use when requested behavior changes after planning or implementation has started; not for ordinary implementation defects or a new unrelated feature."
+description: "Assess and reconcile an agreed requirement change across an existing feature's requirement, spec, and task plan. Use when requested behavior or accepted prototype appearance changes after planning or implementation has started; not for ordinary implementation defects or a new unrelated feature."
 ---
 
 # Change Scope
 
 Keep an existing feature's authoritative contract and work plan consistent when
-its intended behavior changes. Preserve completed work, evidence, and stable IDs.
+its intended behavior or accepted UI design changes. Preserve completed work,
+evidence, and stable IDs.
 Do not change production code, tests, runtime configuration, verification policy,
 or the generated Codebase Context block.
 
@@ -38,11 +39,41 @@ Keep proposals separate from the accepted contract; recommend `$grill-workflow`
 for product decisions or `$grill-design` for visual decisions. Do not repeatedly
 return settled decisions to discovery.
 
+## Prototype changes during planned or active implementation
+
+Visual-only changes to an accepted UI contract count as scope reconciliation
+when tasks exist, even if API/business rules are unchanged. Compare the old
+accepted baseline and the explicitly selected new revision, including shared
+CSS/JS/assets and responsive/interaction states. Recover missing old evidence
+from actual history or report the gap; do not invent a before state.
+An exploratory edit is impact-only until accepted. An explicit request to use
+or replace with the named revision already authorizes scoped reconciliation.
+Production drift against an unchanged accepted baseline remains a defect.
+
+When prototype interpretation is needed, load `$spec-with-prototype` and its
+UI-contract reference as support within this parent. Let it establish baseline,
+UI/AC mapping and visual delta, then continue here through task reconciliation
+in the same authorized operation. Do not bounce between the two skills or
+stop after merely recommending to-tasks for planning already authorized here.
+If a support skill is unavailable, report the precise unfinished stage.
+
+Persist a concise change record in the owning spec: old/new baseline, acceptance
+basis, affected UI/AC IDs, task/status/evidence impact and remaining work. Each
+affected task Goal/checklist must point to the new contract; unaffected tasks
+keep their current evidence and links. For a done task create only the missing
+follow-up delta and link its prior delivery. For todo/in_progress tasks update
+remaining work in place. For in_review invalidate review readiness before
+resuming work. Retain historical checks but label evidence for the old baseline
+superseded and add unchecked current verification; never claim it proves the
+replacement. Include cross-page consumers of shared styles/assets. Update only
+relevant design requirement references; do not invent a business-rule change
+just to track a visual change.
+
 ## Map the impact before editing
 
 Build a concise before/after map identifying:
 
-- changed behavior and affected acceptance-criterion IDs;
+- changed behavior/appearance and affected baseline, UI and acceptance-criterion IDs;
 - requirement/spec sections, task IDs, interfaces and dependencies affected;
 - completed work and evidence that remain valid;
 - work or evidence invalidated by the change;
@@ -57,8 +88,9 @@ Update the authoritative requirement and its existing owning spec in place.
 Keep unaffected criteria/IDs stable, allocate new IDs for new behavior, and note
 superseded criteria without reusing their IDs for a different meaning. Preserve
 traceability to the prior agreement and relevant accepted prototype/design.
-An accepted prototype that still needs interpretation belongs to
-`$spec-with-prototype`; do not invent its behavioral meaning here. A conflict
+An accepted prototype needing interpretation is reconciled by composing
+`$spec-with-prototype` within this parent, then completing the task plan here;
+do not invent its meaning or leave the plan stale. A conflict
 with an ADR needs an explicit superseding decision, not a silent ADR rewrite.
 
 Use `$write-spec`'s quality contract when updating the spec. Keep it `draft`
@@ -90,8 +122,8 @@ Never mark removed work `done` as if tested.
 
 ## Handoff and validation
 
-Verify every revised AC has task coverage or evidence still valid for that
-exact behavior. Check links, dependency cycles, stale runnable work, task status,
+Verify every revised functional/visual AC and UI ID has task coverage or
+evidence still valid for that exact agreement. Check links, dependency cycles, stale runnable work, task status,
 and preservation of unrelated changes. The parent `change-scope` owns
 invalidation of existing review readiness; composed `to-tasks` does not start
 tasks or perform those transitions. No implementation/test/review runs occur
@@ -103,4 +135,7 @@ Recommend at most one next action: the first ready `$implement-task`, a concrete
 remaining planning/decision step, or no action if nothing remains. Use
 `$auto-implement` only when the user explicitly requests a batch and identifies
 its authorized scope. Newly created tasks are not added to an existing batch
-without authorization. Stop after the report; do not start implementation.
+without authorization. Report the changed batch membership and invalidated
+tasks to any active auto-implement parent; it must stop affected execution and
+preflight the revised plan before resuming, never silently adopt a new baseline.
+Stop after the report; do not start implementation.

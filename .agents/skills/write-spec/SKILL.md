@@ -211,6 +211,12 @@ requirements. A conflict in visual intent belongs to `$grill-design`; a conflict
 in product behavior belongs to `$grill-workflow`. Design discovery remains
 optional and its absence does not itself prevent a spec from being ready.
 
+Preserve any existing accepted UI contract, baseline links, UI IDs and visual
+ACs when revising a prototype-backed spec; do not reduce them to behavior-only
+requirements. Accepted prototype appearance is reconciled through
+spec-with-prototype, or through change-scope composing it once tasks exist.
+Do not route ordinary drift against an unchanged contract into a redesign.
+
 ## Spec content and quality
 
 When creating or updating a spec, read [the spec template and quality reference](references/spec-template-and-quality.md). It contains the full content template and the detailed acceptance, verification, traceability, and status rules.

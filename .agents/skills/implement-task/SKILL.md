@@ -207,10 +207,30 @@ Implement only behavior owned by the selected task.
 
 The selected task may reference multiple acceptance criteria, but implementation must remain within its stated scope.
 
-Use an accepted prototype only as supporting visual evidence for behavior,
-states, hierarchy, and interaction flow. Do not treat pixel-level differences
-or prototype-only proposals as implementation requirements, and do not edit the
+Use the spec's accepted UI contract and immutable baseline for behavior and
+faithful appearance: composition, content hierarchy, typography/spacing/color,
+component treatment, responsive layout and important states. Inspect the actual
+baseline HTML/CSS/JS/assets before building; reuse appropriate tokens/assets and
+translate its layout into the production stack rather than generating a fresh
+design. Follow recorded allowed differences; framework conventions alone do
+not justify visual drift. Do not promote proposals to requirements or edit the
 prototype during production implementation.
+
+Before coding or resuming, verify the task's UI/AC mapping and baseline still
+match the owning spec and check baseline files against their recorded inventory. An exploratory live edit does not supersede an accepted
+baseline. An explicitly accepted replacement with an unreconciled task plan
+must pass through change-scope before affected implementation continues.
+Unchanged accepted appearance that production fails to reproduce is a defect
+for this task, not permission to weaken the contract.
+
+Compare rendered production and baseline under the spec's recorded viewport,
+content and states, including affected shared-component surfaces. Record actual
+captures, compared UI/AC IDs, differences and their resolution in task Todo.
+Functional tests/source inspection do not prove visual fidelity. A required
+visual AC without rendered evidence remains unverified and blocks readiness
+until evidence or an explicit scoped user override resolves it. Preserve the
+existing four verification modes; this is task acceptance evidence, not an
+additional capability or review stage.
 
 Do not:
 

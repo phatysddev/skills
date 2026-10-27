@@ -19,8 +19,14 @@ behavior was added. Do not approve an AC merely because related code exists;
 the behavior must be credibly verifiable.
 
 When the spec cites a prototype, compare accepted behavior such as states,
-hierarchy, navigation, and interaction flow. Pixel differences and
-prototype-only proposals are not findings. Independently check applicable
+hierarchy, navigation, interaction flow and the spec's accepted UI contract.
+Inspect the immutable baseline and rendered implementation evidence at comparable
+viewport/content/states. Differences in contracted layout, typography, spacing,
+color, component treatment or responsive behavior are actionable when they
+violate a visual AC; do not dismiss them as "visual-only". Report missing required
+rendered evidence as unverified, never a visual pass from source/tests alone.
+Honor recorded allowed differences and do not demand universal pixel identity
+or promote unaccepted proposals to requirements. Independently check applicable
 Agreed UI Design Requirements cited by the contract; required visual constraints
 are not mere taste. Preferences and delegated choices must not become mandatory
 findings. The prototype never overrides the requirement, domain context, ADR,

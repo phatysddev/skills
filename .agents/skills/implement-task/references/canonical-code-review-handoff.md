@@ -75,7 +75,10 @@ Pass the reviewer enough context to preserve the existing Phat review:
 3. `AGENTS.md`, `CONTEXT.md`, requirements, and relevant ADRs;
 4. the final implementation diff and any task-owned test diff; and
 5. every selected test-stage report, including skipped, blocked, overridden,
-   failed, or passed results.
+   failed, or passed results; and
+6. for UI tasks, the spec's current UI contract, immutable baseline/inventory,
+   task-owned UI/visual AC mapping, actual baseline/production comparison
+   captures and inspected viewport/data/states, allowed differences and gaps.
 
 Do not reduce the handoff to a generic code-quality prompt or discard test
 evidence before review.
