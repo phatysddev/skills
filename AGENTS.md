@@ -17,9 +17,9 @@ This repository is a small collection of Agent Skills for the Phat workflow.
 Each installable skill lives at `.agents/skills/<skill-name>/SKILL.md`.
 Every `SKILL.md` must keep YAML frontmatter with `name` and `description`.
 
-The current pack contains 23 skills:
+The current pack contains 24 skills:
 
-- Core workflow: `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`,
+- Core workflow: `start-workflow`, `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`,
   `write-spec`, `to-tasks`, `implement-task`, `auto-implement`,
   `code-review`, `change-scope`.
 - Optional assessments: `verify-feature`, `release-check`.
@@ -33,7 +33,8 @@ The current pack contains 23 skills:
 
 ## Commands and verification
 
-There is no application package manifest, build, or lint configuration. The
+The v2 local web/event runtime is bundled in start-workflow and uses Python
+3.10+ standard library. There is no application package manifest or lint configuration. The
 skill pack uses Python standard-library maintenance checks. UI HTML-checker tests
 run with `python3 -m unittest discover -s .agents/skills/ui-design/tests -v`.
 The repository also provides a standard-library consistency checker:
@@ -73,3 +74,5 @@ Use `--list` to verify discovery before installing, and use `--skill` or
 - When implementation needs a commit decision, classify it as `required`,
   `allowed`, or `disabled`; absent an explicit user or repository requirement,
   leave the verified focused diff uncommitted.
+
+For v2 bridge regressions run `python3 -m unittest discover -s .agents/skills/start-workflow/tests -v`.

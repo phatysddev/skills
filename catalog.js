@@ -1,5 +1,13 @@
 window.PHAT_SKILLS = [
   {
+    "name": "start-workflow",
+    "category": "Core workflow",
+    "title": "Start the web workflow",
+    "description": "เปิดเว็บ localhost:9909 รับคำขอ ตอบคำถาม และปรับ prototype ผ่าน event กับ agent",
+    "when": "เริ่มหรือกลับมาทำ workflow ผ่านเว็บ",
+    "prompt": "ใช้ $start-workflow เปิด web workspace สำหรับโปรเจกต์นี้ที่ localhost:9909"
+  },
+  {
     "name": "ask-workflow",
     "category": "Core workflow",
     "title": "Find your next step",

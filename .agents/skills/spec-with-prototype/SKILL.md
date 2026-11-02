@@ -5,6 +5,17 @@ description: "Create or update a Phat feature specification using an accepted UI
 
 # Spec With Prototype
 
+## Web workflow v2
+
+When invoked inside an active `$start-workflow` session, read
+[the web event adapter](../start-workflow/references/web-events.md) and use it
+for questions, progress, decisions and handoffs. It replaces chat-only delivery
+and later-turn invocation requirements with matching web events; all scope,
+artifact ownership and verification rules below remain in force. A next-stage
+button authorizes only that named stage. Standalone/chat use stays supported.
+Delegated utilities and verification workers report to the parent event consumer.
+
+
 Turn an accepted prototype into specification evidence without making the prototype itself the product source of truth.
 
 Create or update the relevant feature spec so implementation can reproduce the agreed behavior represented by the prototype.

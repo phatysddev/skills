@@ -5,6 +5,17 @@ description: "Assess an existing feature against its full acceptance criteria an
 
 # Verify Feature
 
+## Web workflow v2
+
+When invoked inside an active `$start-workflow` session, read
+[the web event adapter](../start-workflow/references/web-events.md) and use it
+for questions, progress, decisions and handoffs. It replaces chat-only delivery
+and later-turn invocation requirements with matching web events; all scope,
+artifact ownership and verification rules below remain in force. A next-stage
+button authorizes only that named stage. Standalone/chat use stays supported.
+Delegated utilities and verification workers report to the parent event consumer.
+
+
 Answer whether the selected feature meets its agreed contract, including behavior
 spanning multiple tasks. Return an evidence report; do not implement fixes or
 change requirements, specs, task status, review history, or verification policy.

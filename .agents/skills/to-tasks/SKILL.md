@@ -5,6 +5,17 @@ description: "Break a ready feature specification into small, implementation-rea
 
 # To Tasks
 
+## Web workflow v2
+
+When invoked inside an active `$start-workflow` session, read
+[the web event adapter](../start-workflow/references/web-events.md) and use it
+for questions, progress, decisions and handoffs. It replaces chat-only delivery
+and later-turn invocation requirements with matching web events; all scope,
+artifact ownership and verification rules below remain in force. A next-stage
+button authorizes only that named stage. Standalone/chat use stays supported.
+Delegated utilities and verification workers report to the parent event consumer.
+
+
 Turn one `ready` feature spec into a small dependency graph of implementation-ready tasks.
 
 Each task should deliver a coherent, verifiable behavioral slice and contain enough context to be implemented in a fresh session.

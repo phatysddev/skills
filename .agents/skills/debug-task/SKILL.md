@@ -5,6 +5,17 @@ description: "Diagnose a reported bug, task failure, or performance regression w
 
 # Debug Task
 
+## Web workflow v2
+
+When invoked inside an active `$start-workflow` session, read
+[the web event adapter](../start-workflow/references/web-events.md) and use it
+for questions, progress, decisions and handoffs. It replaces chat-only delivery
+and later-turn invocation requirements with matching web events; all scope,
+artifact ownership and verification rules below remain in force. A next-stage
+button authorizes only that named stage. Standalone/chat use stays supported.
+Delegated utilities and verification workers report to the parent event consumer.
+
+
 Find the cause of the reported symptom before patching it. Return a reproducible
 signal, supporting evidence, and a bounded fix direction rather than a plausible
 story. This supporting diagnostic skill does not mark a task done or replace a

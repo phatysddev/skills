@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start Workflow v2"
+  short_description: "Run the web-first Phat workflow and agent event loop"
+  default_prompt: "Use $start-workflow to open localhost:9909 for this project and handle web events through the Phat workflow."

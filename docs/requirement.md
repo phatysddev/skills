@@ -20,9 +20,9 @@ The source GitLab repository is public.
 
 ## Current skill pack
 
-The published collection contains 23 installable skills:
+The published collection contains 24 installable skills:
 
-- Core workflow: `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`,
+- Core workflow: `start-workflow`, `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`,
   `write-spec`, `to-tasks`, `implement-task`, `auto-implement`, and
   `code-review`, `change-scope`.
 - Optional assessments: `verify-feature`, `release-check`.
@@ -283,7 +283,7 @@ the verified focused diff ready for review, and never push automatically.
 
 - Preserve the `.agents/skills/<skill-name>/SKILL.md` layout.
 - Keep each skill's required `name` and `description` frontmatter.
-- Document discovery, installation, and Phat workflow navigation for all 23
+- Document discovery, installation, and Phat workflow navigation for all 24
   skills across workflow, brownfield, utility, prototype, and verification
   categories.
 - Keep catalog and workflow updates idempotent; change skill instructions only
@@ -298,7 +298,7 @@ the verified focused diff ready for review, and never push automatically.
 ## Verification criteria
 
 - `npx skills@latest add https://gitlab.com/phatysd.dev/skills --list` discovers
-  the current 23 skills across the documented categories after publication.
+  the current 24 skills across the documented categories after publication.
 - A selected skill can be installed by name.
 - The complete collection can be installed with the CLI's all-skills option.
 - The installed skill files retain valid frontmatter and their existing
@@ -328,3 +328,16 @@ task's actual Spec link against its indexed owner. Complete the existing static
 b2 consumer evaluation with all four desktop/mobile comparisons and a final
 consumer review. This authorization includes the fixture's TASK-005 visual delta;
 seeded acceptance/history remain evaluation inputs. See [SPEC-016](specs/SPEC-016-checker-compatibility-and-b2-review.md).
+
+## Version 2: web-first skills
+
+Start with `$start-workflow` on http://localhost:9909. Collect a request and
+reference attachments (docs/ref/), then run grill-workflow through browser
+questions on /grill. Continue the existing workflow using durable browser/agent
+events and named stage actions. Prototype work uses /prototype with a 70/30
+workspace/tools split and a 10/60/30 tab/preview/activity split on the left.
+The lower section is provisional until its final use is agreed. Every skill
+uses the adapter within a web session; chat remains a compatible standalone
+entrypoint. The bridge never executes browser-provided commands or calls an
+LLM itself. An active agent owns event consumption and records real artifacts,
+verification and review results. See [SPEC-017](specs/SPEC-017-web-workflow-v2.md).

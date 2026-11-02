@@ -31,7 +31,7 @@ behavior must be reconciled into the owning spec before task decomposition.
 
 The pack distinguishes six kinds of capability:
 
-- **Workflow skills:** `ask-workflow`, `grill-workflow`,
+- **Workflow skills:** `start-workflow`, `ask-workflow`, `grill-workflow`,
   `grill-design` (optional), `setup-project`, `write-spec`, `to-tasks`,
   `implement-task`, `auto-implement`, `code-review`, and `change-scope`. They own project-state transitions
   and handoffs.
@@ -345,3 +345,26 @@ outcomes and preserves delegated execution. Portable Git policy identifies the
 project and relative boundary; an observed absolute checkout path is not the
 permission identity. See [SPEC-015](specs/SPEC-015-agreement-synchronization.md)
 and the [artifact validation reference](../.agents/skills/to-tasks/references/artifact-validation.md).
+
+## Version 2 — web-first interaction
+
+The default entrypoint is `$start-workflow`: `/` collects a textarea request
+and optional file references into `docs/ref/`, then enqueues `request.submitted`
+and redirects to `/grill`. The active parent agent runs `$grill-workflow`,
+publishes dependency-ready checkbox/select/input/textarea questions, and awaits
+matching browser answers. It offers named next-stage buttons instead of asking
+for another chat invocation. A clicked action authorizes only that stage.
+
+All existing stages preserve their artifact ownership, optional branches and
+verification policy. Progress, blockers, summaries and next actions appear on
+`/workflow`; prototype creation/edit/acceptance use `/prototype`. Its left 70%
+contains tabs (10% height), preview (60%) and provisional activity/feedback
+(30%); right 30% contains viewport, reload, edit requests and next actions.
+
+The shared [event protocol](../.agents/skills/start-workflow/references/web-events.md)
+defines persistence, acknowledgement and recovery. One active parent consumes
+the queue; delegated verification workers report to that parent. A running web
+server does not itself run a model. If the host cannot continue waiting, resume
+the agent with `$start-workflow`; queued events survive interruption. Standalone
+chat skill use is retained. This v2 interaction contract supersedes chat-only
+question delivery and later-turn handoff requirements inside a web session.

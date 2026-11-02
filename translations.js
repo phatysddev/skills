@@ -37,8 +37,8 @@ window.PHAT_TRANSLATIONS = [
     "เปลี่ยนไอเดียให้เป็นโค้ดที่ตรวจสอบได้"
   ],
   [
-    "With 23 skills that connect every step",
-    "ด้วย 23 skills ที่เชื่อมทุกขั้นตอนเข้าด้วยกัน"
+    "With 24 skills that connect every step",
+    "ด้วย 24 skills ที่เชื่อมทุกขั้นตอนเข้าด้วยกัน"
   ],
   [
     "Start building",
@@ -198,7 +198,7 @@ window.PHAT_TRANSLATIONS = [
   ],
   [
     "23 SKILLS. ONE CONNECTED SYSTEM.",
-    "23 สกิล เชื่อมเป็นระบบเดียว"
+    "24 สกิล เชื่อมเป็นระบบเดียว"
   ],
   [
     "Small skills.",
@@ -417,8 +417,8 @@ window.PHAT_TRANSLATIONS = [
     "เป็นระบบขึ้น ชัดเจนขึ้น"
   ],
   [
-    "Phat Skills connects product decisions, implementation, and verification evidence through 23 skills for coding agents.",
-    "Phat Skills คือชุด 23 skills สำหรับ coding agents ที่เชื่อมการตัดสินใจเรื่องโปรดักต์เข้ากับการเขียนโค้ดและหลักฐานการตรวจสอบ"
+    "Phat Skills connects product decisions, implementation, and verification evidence through 24 skills for coding agents.",
+    "Phat Skills คือชุด 24 skills สำหรับ coding agents ที่เชื่อมการตัดสินใจเรื่องโปรดักต์เข้ากับการเขียนโค้ดและหลักฐานการตรวจสอบ"
   ],
   [
     "Start here: install the skill pack, then invoke",
@@ -553,8 +553,8 @@ window.PHAT_TRANSLATIONS = [
     "ติดตั้งทั้งชุด"
   ],
   [
-    "Install all 23 skills for the current project, covering workflows, utilities, prototypes, and verification.",
-    "ติดตั้งทั้ง 23 skills สำหรับโปรเจกต์ปัจจุบัน ครอบคลุม workflow, utilities, prototype และ verification"
+    "Install all 24 skills for the current project, covering workflows, utilities, prototypes, and verification.",
+    "ติดตั้งทั้ง 24 skills สำหรับโปรเจกต์ปัจจุบัน ครอบคลุม workflow, utilities, prototype และ verification"
   ],
   [
     "Use it across projects",
@@ -781,8 +781,8 @@ window.PHAT_TRANSLATIONS = [
     "คำถามที่พบบ่อย"
   ],
   [
-    "Do I need all 23 skills?",
-    "ต้องติดตั้งทั้ง 23 skills ไหม?"
+    "Do I need all 24 skills?",
+    "ต้องติดตั้งทั้ง 24 skills ไหม?"
   ],
   [
     "No. Select individual skills with --skill. Some workflows use shared utilities, such as ui-design for UI work, so install the supporting skills needed for your path.",

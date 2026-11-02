@@ -5,6 +5,17 @@ description: "Assess a named release candidate and target environment using exis
 
 # Release Check
 
+## Web workflow v2
+
+When invoked inside an active `$start-workflow` session, read
+[the web event adapter](../start-workflow/references/web-events.md) and use it
+for questions, progress, decisions and handoffs. It replaces chat-only delivery
+and later-turn invocation requirements with matching web events; all scope,
+artifact ownership and verification rules below remain in force. A next-stage
+button authorizes only that named stage. Standalone/chat use stays supported.
+Delegated utilities and verification workers report to the parent event consumer.
+
+
 Produce a bounded readiness assessment for a release candidate. Do not deploy,
 publish, push, tag, create a release, change configuration, run migrations, or
 modify infrastructure. Readiness is tied to a candidate and environment, not a

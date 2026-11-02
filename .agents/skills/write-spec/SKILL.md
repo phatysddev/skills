@@ -5,6 +5,17 @@ description: "Turn agreed product, domain, scope, and architecture decisions int
 
 # Write Spec
 
+## Web workflow v2
+
+When invoked inside an active `$start-workflow` session, read
+[the web event adapter](../start-workflow/references/web-events.md) and use it
+for questions, progress, decisions and handoffs. It replaces chat-only delivery
+and later-turn invocation requirements with matching web events; all scope,
+artifact ownership and verification rules below remain in force. A next-stage
+button authorizes only that named stage. Standalone/chat use stays supported.
+Delegated utilities and verification workers report to the parent event consumer.
+
+
 Turn agreed decisions into one durable specification for one feature or coherent change.
 
 Define what the system must do, what users or other systems can observe, and how the behavior will be verified.

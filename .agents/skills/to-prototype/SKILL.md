@@ -5,6 +5,17 @@ description: "Create a lightweight multi-page HTML/CSS/JavaScript UI prototype f
 
 # To Prototype
 
+## Web workflow v2
+
+When invoked inside an active `$start-workflow` session, read
+[the web event adapter](../start-workflow/references/web-events.md) and use it
+for questions, progress, decisions and handoffs. It replaces chat-only delivery
+and later-turn invocation requirements with matching web events; all scope,
+artifact ownership and verification rules below remain in force. A next-stage
+button authorizes only that named stage. Standalone/chat use stays supported.
+Delegated utilities and verification workers report to the parent event consumer.
+
+
 Turn agreed product requirements into a lightweight, navigable UI prototype that can be reviewed and edited before implementation planning.
 
 This workflow is optional.

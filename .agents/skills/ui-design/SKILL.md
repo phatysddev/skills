@@ -5,6 +5,17 @@ description: "Build, critique, audit, and refine UI within a named surface. Use 
 
 # UI Design
 
+## Web workflow v2
+
+When invoked inside an active `$start-workflow` session, read
+[the web event adapter](../start-workflow/references/web-events.md) and use it
+for questions, progress, decisions and handoffs. It replaces chat-only delivery
+and later-turn invocation requirements with matching web events; all scope,
+artifact ownership and verification rules below remain in force. A next-stage
+button authorizes only that named stage. Standalone/chat use stays supported.
+Delegated utilities and verification workers report to the parent event consumer.
+
+
 Make the interface fit its users, content, and primary action rather than a
 generic generated template. Apply the design in the authorized files; a mood
 description alone is not the deliverable when the caller requested working UI.

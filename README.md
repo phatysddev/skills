@@ -2,7 +2,7 @@
   <img src="assets/brand/phatysd-icon.png" width="88" height="88" alt="phatysd.dev brand icon">
 </p>
 
-<h1 align="center">Phat Skills</h1>
+<h1 align="center">Phat Skills v2</h1>
 
 <p align="center">
   <strong>Good ideas. Built with intent.</strong><br>
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#skill-catalog"><img src="https://img.shields.io/badge/skills-23-244de4?style=flat-square&amp;labelColor=202b26" alt="23 skills"></a>
+  <a href="#skill-catalog"><img src="https://img.shields.io/badge/skills-24-244de4?style=flat-square&amp;labelColor=202b26" alt="24 skills"></a>
   <a href="https://github.com/vercel-labs/skills"><img src="https://img.shields.io/badge/format-Agent%20Skills-244de4?style=flat-square&amp;labelColor=202b26" alt="Agent Skills format"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-244de4?style=flat-square&amp;labelColor=202b26" alt="MIT License"></a>
 </p>
@@ -43,15 +43,23 @@ saves this in `CONTEXT.md` under `Git Policy`; later tasks reuse it without
 asking again. Existing repositories keep their policy, or are asked about task
 commits if none exists. Setup does not create an initial commit or push.
 
-**2. Open your coding agent and start with one question.**
+**2. Open your coding agent and start the v2 web workspace.**
 
 ```text
-$ask-workflow
-Read this project and recommend the next step, with your reasoning.
+$start-workflow
+Start the web workspace for this project at http://localhost:9909.
 ```
 
-`ask-workflow` inspects the project and recommends one next action. You choose
-when to continue; it does not start implementation from a routing question.
+`start-workflow` starts a Python 3.10+ local server and keeps the current agent
+waiting for web events. Enter your request and references, answer grilling
+questions on `/grill`, and inspect/edit prototypes on `/prototype`. Stage
+buttons invoke the named next skill. The agent must remain active to process
+events; restart `$start-workflow` to resume after its turn ends. No API key is
+required by the bridge itself. `ask-workflow` remains available for chat routing.
+
+The runtime is bundled inside the start-workflow skill, so installed packs work
+without a separate app checkout. Session state persists in `.phat-workflow/`;
+reference files are stored in `docs/ref/`. Keep `.phat-workflow/` out of commits.
 
 <details>
 <summary><strong>More installation options</strong> — discover, choose a skill, or install globally</summary>
@@ -110,6 +118,7 @@ Prototype when seeing the UI will help you make a decision.
 
 | Your situation | Start here |
 | --- | --- |
+| Start or resume the web workflow | [`start-workflow`](.agents/skills/start-workflow/SKILL.md) |
 | Unsure what the project needs next | [`ask-workflow`](.agents/skills/ask-workflow/SKILL.md) |
 | An idea that needs clearer scope and decisions | [`grill-workflow`](.agents/skills/grill-workflow/SKILL.md) |
 | Existing code needing onboarding or a material context refresh | [`code-to-context`](.agents/skills/code-to-context/SKILL.md) |
@@ -124,7 +133,7 @@ Prototype when seeing the UI will help you make a decision.
 ## Workflow
 
 ```text
-ask-workflow → grill-workflow → setup-project
+start-workflow → grill-workflow → setup-project
                                       ↓
                                  write-spec
                                       ↓
@@ -245,12 +254,13 @@ and these capabilities do not claim full parity with that tooling.
 
 ## Skill catalog
 
-The collection contains 23 skills grouped by responsibility.
+The collection contains 24 skills grouped by responsibility.
 
-### Core Workflow — 10
+### Core Workflow — 11
 
 | Skill | Responsibility | Guide |
 | --- | --- | --- |
+| `start-workflow` | Start the v2 local web workspace and agent event loop. | [Read](.agents/skills/start-workflow/SKILL.md) |
 | `ask-workflow` | Recommend the single next workflow step. | [Read](.agents/skills/ask-workflow/SKILL.md) |
 | `grill-workflow` | Clarify requirements, domain rules, scope, and decisions. | [Read](.agents/skills/grill-workflow/SKILL.md) |
 | `grill-design` | Optionally agree on custom UI design requirements for downstream UI work. | [Read](.agents/skills/grill-design/SKILL.md) |

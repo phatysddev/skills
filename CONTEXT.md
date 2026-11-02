@@ -5,7 +5,7 @@
 This repository contains reusable Agent Skills for the Phat workflow. The
 completed setup objective was to make the collection discoverable and
 installable from the GitLab repository through the `skills` CLI. The collection
-now has 23 skills across workflow, brownfield support, utility, prototype,
+now has 24 skills across workflow, brownfield support, utility, prototype,
 verification, and optional assessment categories. `code-to-context` is complete under SPEC-002;
 the latest completed feature specification is SPEC-011 for focused UI capabilities.
 SPEC-010 covers UI design craft.
@@ -28,8 +28,8 @@ and optional assessments.
 ## Established repository facts
 
 - Skills are stored under `.agents/skills/`.
-- The repository currently contains 23 skills: ten core workflow skills —
-  `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`, `write-spec`,
+- The repository currently contains 24 skills: eleven core workflow skills —
+  `start-workflow`, `ask-workflow`, `grill-workflow`, `grill-design`, `setup-project`, `write-spec`,
   `to-tasks`, `implement-task`, `auto-implement`, `code-review`, and `change-scope`; one
   brownfield support skill, `code-to-context`; four utilities, `compact-context`,
   `ui-design`, `debug-task`, and `agent-security`;
@@ -38,7 +38,7 @@ and optional assessments.
   `integration-test`, and `e2e-test`; and two optional assessments,
   `verify-feature` and `release-check`.
 - Each current skill has a `SKILL.md` with `name` and `description` frontmatter.
-- No product application code or package manifest is present. Python standard-library
+- The v2 local web/event runtime is bundled in `start-workflow`; no package manifest is required. Python standard-library
   checkers and the UI HTML-helper unittest suite support skill maintenance.
 - The canonical hosting target is the GitLab project identified by the
   configured remote `phatysd.dev/skills.git`, available at
@@ -309,3 +309,9 @@ state. Approval moves `in_review` to `done`; findings keep the task in
 - [Observed] Historical skill identifiers remain only in migration/history references or explicit retired-identifier guidance; active invocations use current identifiers. — Source: `docs/migrations/skill-identifier-migration.md`; active skill sources; successful `scripts/check_skill_pack.py` run
 
 <!-- phat:code-to-context:end -->
+
+## Web workflow v2
+
+`start-workflow` is the default web entrypoint on localhost:9909. The runtime
+is bundled with that installable skill; all skill entrypoints share its event
+adapter. See SPEC-017 and docs/workflow.md for stage semantics and recovery.

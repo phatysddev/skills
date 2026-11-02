@@ -5,6 +5,17 @@ description: "Clarify product, domain, scope, constraints, business rules, and t
 
 # Grill Workflow
 
+## Web workflow v2
+
+When invoked inside an active `$start-workflow` session, read
+[the web event adapter](../start-workflow/references/web-events.md) and use it
+for questions, progress, decisions and handoffs. It replaces chat-only delivery
+and later-turn invocation requirements with matching web events; all scope,
+artifact ownership and verification rules below remain in force. A next-stage
+button authorizes only that named stage. Standalone/chat use stays supported.
+Delegated utilities and verification workers report to the parent event consumer.
+
+
 Turn an idea or ambiguous requirement into clear, reviewable decisions.
 
 Read the repository before asking questions. Ask one set per turn containing
